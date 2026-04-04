@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Contact SOHO Residence & Hotel in District 1, Ho Chi Minh City. Reach us via email, phone, WhatsApp, Zalo, or Telegram. 24/7 response.",
   openGraph: {
     title: "Contact | SOHO Residence & Hotel",
-    images: [{ url: "/images/hero_3.jpg" }],
+    images: [{ url: "/images/hero_3.jpeg" }],
   },
 };
 

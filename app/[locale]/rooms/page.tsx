@@ -65,7 +65,7 @@ export default async function RoomsPage({
       {/* ── Page header ──────────────────────────────────────────────────── */}
       <div className="relative h-56 md:h-72 overflow-hidden mb-16">
         <Image
-          src="/images/hero_2.jpg"
+          src="/images/hero_2.png"
           alt="SOHO Rooms"
           fill
           priority

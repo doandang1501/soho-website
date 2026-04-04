@@ -6,9 +6,9 @@ import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const SLIDES = [
-  { src: "/images/hero_1.jpg", alt: "SOHO Residence - Living space" },
-  { src: "/images/hero_2.jpg", alt: "SOHO Residence - Bedroom" },
-  { src: "/images/hero_3.jpg", alt: "SOHO Residence - City view" },
+  { src: "/images/hero_1.jpeg", alt: "SOHO Residence - Living space" },
+  { src: "/images/hero_2.png", alt: "SOHO Residence - Bedroom" },
+  { src: "/images/hero_3.jpeg", alt: "SOHO Residence - City view" },
 ];
 
 const SLIDE_DURATION = 5500;

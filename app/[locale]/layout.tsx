@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Boutique apartment-hotel in the heart of Saigon. Studio, 2-bed & 3-bed residences with city views.",
     images: [
       {
-        url: "/images/hero_1.jpg",
+        url: "/images/hero_1.jpeg",
         width: 1200,
         height: 630,
         alt: "SOHO Residence & Hotel",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "SOHO Residence & Hotel",
     description:
       "Luxury boutique apartment-hotel in District 1, Ho Chi Minh City.",
-    images: ["/images/hero_1.jpg"],
+    images: ["/images/hero_1.jpeg"],
   },
   robots: {
     index: true,
