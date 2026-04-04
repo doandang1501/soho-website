@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": "首页",
+    "rooms": "客房",
+    "amenities": "设施",
+    "location": "位置",
+    "contact": "联系我们"
+  },
+  "booking": {
+    "checkIn": "入住日期",
+    "checkOut": "退房日期",
+    "rooms": "房间数",
+    "adults": "成人",
+    "children": "儿童",
+    "cta": "查看空房",
+    "errors": {
+      "CHECK_IN_REQUIRED": "请选择入住日期。",
+      "CHECK_OUT_REQUIRED": "请选择退房日期。",
+      "CHECK_IN_PAST": "入住日期不能为过去的日期。",
+      "CHECK_OUT_NOT_AFTER_CHECK_IN": "退房日期必须晚于入住日期。",
+      "MIN_ROOMS": "至少需要1间客房。",
+      "MIN_ADULTS": "至少需要1位成人。"
+    }
+  },
+  "hero": {
+    "eyebrow": "胡志明市第一郡",
+    "title": "奢华与城市\n的邂逅",
+    "subtitle": "坐落于西贡心脏地带的精品公寓式酒店，专为追求卓越的旅行者而设。",
+    "cta": "探索客房",
+    "scroll": "向下滚动探索"
+  },
+  "rooms": {
+    "title": "我们的公寓",
+    "subtitle": "每间公寓都是宁静的圣所，设计用心，细节精致。",
+    "from": "起价",
+    "perNight": "/ 晚",
+    "viewDetails": "查看详情",
+    "studio": {
+      "name": "开间",
+      "tagline": "带阳台开间公寓",
+      "price": "950,000越南盾",
+      "description": "现代化开放式布局的开间公寓，配有私人阳台——非常适合独自旅行者或情侣在城市中享受舒适生活。"
+    },
+    "twobed": {
+      "name": "两居室",
+      "tagline": "带城市景观阳台的两居室",
+      "price": "1,700,000越南盾",
+      "description": "宽敞舒适与全景城市景观完美结合。非常适合家庭或需要独立空间的商务旅客。"
+    },
+    "threebed": {
+      "name": "三居室",
+      "tagline": "带城市景观阳台的三居室",
+      "price": "2,600,000越南盾",
+      "description": "终极城市度假胜地。宽敞的空间、壮阔的天际线景观和齐备的厨房——献给永不妥协的您。"
+    }
+  },
+  "amenities": {
+    "title": "精选设施",
+    "subtitle": "每个细节都经过深思熟虑，每项舒适都有所保障。",
+    "items": {
+      "checkin": { "label": "24/7入住", "desc": "随时抵达，我们随时准备好迎接您。" },
+      "security": { "label": "24/7安保", "desc": "全天候现场安保服务。" },
+      "elevator": { "label": "电梯", "desc": "高速电梯直达各层。" },
+      "coffee": { "label": "咖啡厅", "desc": "楼内自设咖啡厅。" },
+      "laundry": { "label": "洗衣机与烘干机", "desc": "房内洗衣机及清洁用品。" },
+      "kitchen": { "label": "全套厨房", "desc": "设施齐全，可自行烹饪。" },
+      "smoke": { "label": "烟雾报警器", "desc": "所有客房均已安装。" },
+      "co": { "label": "一氧化碳报警器", "desc": "一氧化碳检测系统。" },
+      "wifi": { "label": "免费Wi-Fi", "desc": "全楼高速网络覆盖。" },
+      "tv": { "label": "智能电视+Netflix", "desc": "55寸智能电视，含Netflix订阅。" },
+      "balcony": { "label": "私人阳台", "desc": "每间公寓均配有专属阳台。" },
+      "ac": { "label": "空调", "desc": "每间客房独立温控。" }
+    }
+  },
+  "location": {
+    "eyebrow": "找到我们",
+    "title": "坐落西贡中心",
+    "subtitle": "越南胡志明市古江街100号",
+    "description": "距离滨城市场仅数步之遥，被城市最优质的餐饮、文化与商业所环绕。SOHO让您恰好置身于您想要的地方。",
+    "address": "地址",
+    "addressValue": "古江街100号\n胡志明市",
+    "openMaps": "在地图中打开",
+    "nearby": "周边景点",
+    "checkinNote": "随时抵达——我们的团队始终准备好迎接您。",
+    "checkin247": "24/7入住"
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "联系我们",
+    "subtitle": "我们的团队随时为您提供服务——任何渠道，任何时间。",
+    "email": "电子邮件",
+    "phone": "电话 / Zalo",
+    "whatsapp": "WhatsApp / Viber",
+    "social": "微信 / Telegram",
+    "address": "地址",
+    "emailValue": "booking@sohoresidencehotel.vn",
+    "phoneValue": "(+84) 91 771 9966",
+    "socialValue": "@sohoresidencehotel",
+    "addressValue": "越南胡志明市古江街100号",
+    "cta": {
+      "heading": "准备预订了吗？",
+      "body": "使用上方预订栏即时查看空房，或直接联系我们获取团体优惠及特殊需求报价。",
+      "emailBtn": "发送邮件",
+      "whatsappBtn": "WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "坐落于胡志明市核心地带的豪华公寓式酒店。",
+    "residences": "客房",
+    "contactHeading": "联系方式",
+    "studioLink": "开间公寓",
+    "twobedLink": "两居室公寓",
+    "threebedLink": "三居室公寓",
+    "rights": "© 2024 SOHO Residence & Hotel. 版权所有。",
+    "links": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    }
+  }
+}

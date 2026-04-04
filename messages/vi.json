@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "rooms": "Phòng",
+    "amenities": "Tiện Nghi",
+    "location": "Vị Trí",
+    "contact": "Liên Hệ"
+  },
+  "booking": {
+    "checkIn": "Nhận phòng",
+    "checkOut": "Trả phòng",
+    "rooms": "Phòng",
+    "adults": "Người lớn",
+    "children": "Trẻ em",
+    "cta": "Kiểm Tra Phòng Trống",
+    "errors": {
+      "CHECK_IN_REQUIRED": "Vui lòng chọn ngày nhận phòng.",
+      "CHECK_OUT_REQUIRED": "Vui lòng chọn ngày trả phòng.",
+      "CHECK_IN_PAST": "Ngày nhận phòng không thể là ngày trong quá khứ.",
+      "CHECK_OUT_NOT_AFTER_CHECK_IN": "Ngày trả phòng phải sau ngày nhận phòng.",
+      "MIN_ROOMS": "Cần ít nhất 1 phòng.",
+      "MIN_ADULTS": "Cần ít nhất 1 người lớn."
+    }
+  },
+  "hero": {
+    "eyebrow": "Quận 1, Thành phố Hồ Chí Minh",
+    "title": "Nơi Sang Trọng\nHội Ngộ Đô Thị",
+    "subtitle": "Khách sạn căn hộ boutique giữa lòng Sài Gòn, dành cho những ai luôn đòi hỏi điều tốt nhất.",
+    "cta": "Khám Phá Phòng",
+    "scroll": "Cuộn để khám phá"
+  },
+  "rooms": {
+    "title": "Căn Hộ Của Chúng Tôi",
+    "subtitle": "Mỗi căn hộ là một thánh địa yên bình, được thiết kế có chủ đích và hoàn thiện tỉ mỉ.",
+    "from": "Từ",
+    "perNight": "/ đêm",
+    "viewDetails": "Xem Chi Tiết",
+    "studio": {
+      "name": "Studio",
+      "tagline": "Căn Hộ Studio Có Ban Công",
+      "price": "950.000 VNĐ",
+      "description": "Studio mặt bằng mở hiện đại với ban công riêng — lý tưởng cho du khách đơn lẻ hoặc cặp đôi muốn tận hưởng sự tiện nghi trong lòng thành phố."
+    },
+    "twobed": {
+      "name": "2 Phòng Ngủ",
+      "tagline": "Căn Hộ 2 Phòng Ngủ Nhìn Ra Thành Phố",
+      "price": "1.700.000 VNĐ",
+      "description": "Không gian rộng rãi kết hợp với tầm nhìn toàn cảnh thành phố. Lý tưởng cho gia đình hoặc khách công tác cần không gian riêng tư."
+    },
+    "threebed": {
+      "name": "3 Phòng Ngủ",
+      "tagline": "Căn Hộ 3 Phòng Ngủ Nhìn Ra Thành Phố",
+      "price": "2.600.000 VNĐ",
+      "description": "Khu nghỉ dưỡng đô thị tối thượng. Không gian rộng lớn, tầm nhìn đường chân trời bao quát và bếp đầy đủ — dành cho những ai không chấp nhận điều gì kém hơn tốt nhất."
+    }
+  },
+  "amenities": {
+    "title": "Tiện Nghi Được Chắt Lọc",
+    "subtitle": "Mọi chi tiết đều được cân nhắc. Mọi tiện nghi đều được cung cấp.",
+    "items": {
+      "checkin": { "label": "Nhận phòng 24/7", "desc": "Đến bất cứ giờ nào — chúng tôi luôn sẵn sàng." },
+      "security": { "label": "Bảo vệ 24/7", "desc": "An ninh tại chỗ suốt ngày đêm." },
+      "elevator": { "label": "Thang máy", "desc": "Thang máy tốc độ cao." },
+      "coffee": { "label": "Quán cà phê", "desc": "Quán cà phê ngay trong tòa nhà." },
+      "laundry": { "label": "Máy giặt & Sấy", "desc": "Máy giặt riêng với hóa chất làm sạch." },
+      "kitchen": { "label": "Bếp đầy đủ", "desc": "Trang bị đầy đủ để tự nấu ăn." },
+      "smoke": { "label": "Báo động khói", "desc": "Được lắp đặt ở tất cả các phòng." },
+      "co": { "label": "Báo động CO", "desc": "Hệ thống phát hiện khí carbon monoxide." },
+      "wifi": { "label": "Wi-Fi miễn phí", "desc": "Internet tốc độ cao toàn tòa nhà." },
+      "tv": { "label": "Smart TV + Netflix", "desc": "Smart TV 55\" tích hợp Netflix." },
+      "balcony": { "label": "Ban công riêng", "desc": "Mỗi căn hộ đều có ban công riêng." },
+      "ac": { "label": "Điều hòa không khí", "desc": "Kiểm soát nhiệt độ riêng từng phòng." }
+    }
+  },
+  "location": {
+    "eyebrow": "Tìm Chúng Tôi",
+    "title": "Giữa Lòng Sài Gòn",
+    "subtitle": "100 Cô Giang, Cầu Ông Lãnh, TP. Hồ Chí Minh",
+    "description": "Chỉ vài bước từ Chợ Bến Thành, bao quanh bởi những nhà hàng, văn hóa và thương mại tinh tế nhất thành phố. SOHO đặt bạn đúng nơi bạn muốn.",
+    "address": "Địa Chỉ",
+    "addressValue": "100 Cô Giang\nCầu Ông Lãnh, TP. Hồ Chí Minh",
+    "openMaps": "Mở trong Maps",
+    "nearby": "Lân Cận",
+    "checkinNote": "Đến bất cứ giờ nào — đội ngũ của chúng tôi luôn sẵn sàng chào đón bạn.",
+    "checkin247": "Nhận phòng 24/7"
+  },
+  "contact": {
+    "eyebrow": "Liên Hệ",
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn — mọi kênh, mọi lúc.",
+    "email": "Email",
+    "phone": "Điện thoại / Zalo",
+    "whatsapp": "WhatsApp / Viber",
+    "social": "WeChat / Telegram",
+    "address": "Địa chỉ",
+    "emailValue": "booking@sohoresidencehotel.vn",
+    "phoneValue": "(+84) 91 771 9966",
+    "socialValue": "@sohoresidencehotel",
+    "addressValue": "100 Cô Giang, Cầu Ông Lãnh, TP. Hồ Chí Minh",
+    "cta": {
+      "heading": "Sẵn sàng đặt phòng?",
+      "body": "Dùng thanh đặt phòng phía trên để kiểm tra phòng trống ngay lập tức, hoặc liên hệ trực tiếp với chúng tôi để được báo giá nhóm và yêu cầu đặc biệt.",
+      "emailBtn": "Gửi Email",
+      "whatsappBtn": "WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Khách sạn căn hộ sang trọng giữa lòng TP. Hồ Chí Minh.",
+    "residences": "Căn Hộ",
+    "contactHeading": "Liên Hệ",
+    "studioLink": "Căn hộ Studio",
+    "twobedLink": "Căn hộ 2 Phòng Ngủ",
+    "threebedLink": "Căn hộ 3 Phòng Ngủ",
+    "rights": "© 2024 SOHO Residence & Hotel. Bảo lưu mọi quyền.",
+    "links": {
+      "privacy": "Chính Sách Bảo Mật",
+      "terms": "Điều Khoản Dịch Vụ"
+    }
+  }
+}

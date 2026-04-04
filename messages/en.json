@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "amenities": "Amenities",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "booking": {
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "rooms": "Rooms",
+    "adults": "Adults",
+    "children": "Children",
+    "cta": "Check Availability",
+    "errors": {
+      "CHECK_IN_REQUIRED": "Please select a check-in date.",
+      "CHECK_OUT_REQUIRED": "Please select a check-out date.",
+      "CHECK_IN_PAST": "Check-in date cannot be in the past.",
+      "CHECK_OUT_NOT_AFTER_CHECK_IN": "Check-out must be after check-in.",
+      "MIN_ROOMS": "At least 1 room is required.",
+      "MIN_ADULTS": "At least 1 adult is required."
+    }
+  },
+  "hero": {
+    "eyebrow": "District 1, Ho Chi Minh City",
+    "title": "Where Luxury\nMeets the City",
+    "subtitle": "Boutique apartment-hotel in the heart of Saigon, crafted for those who expect more.",
+    "cta": "Explore Rooms",
+    "scroll": "Scroll to discover"
+  },
+  "rooms": {
+    "eyebrow": "Residences",
+    "title": "Our Residences",
+    "subtitle": "Each apartment is a sanctuary of calm, designed with purpose and finished with care.",
+    "from": "From",
+    "perNight": "/ night",
+    "viewDetails": "View Details",
+    "studio": {
+      "name": "Studio",
+      "tagline": "Studio Apartment with Balcony",
+      "price": "950,000 VND",
+      "description": "A contemporary open-plan studio with a private balcony — perfect for solo travellers or couples seeking comfort in the city.",
+      "feat0": "Open-plan layout",
+      "feat1": "Private balcony",
+      "feat2": "Full kitchen",
+      "feat3": "Smart TV + Netflix"
+    },
+    "twobed": {
+      "name": "2-Bedroom",
+      "tagline": "2-Bedroom with City View Balcony",
+      "price": "1,700,000 VND",
+      "description": "Spacious living meets panoramic city views. Ideal for families or business travellers who need room to breathe.",
+      "feat0": "2 separate bedrooms",
+      "feat1": "City view balcony",
+      "feat2": "Spacious living area",
+      "feat3": "Smart TV + Netflix"
+    },
+    "threebed": {
+      "name": "3-Bedroom",
+      "tagline": "3-Bedroom with City View Balcony",
+      "price": "2,600,000 VND",
+      "description": "The ultimate urban retreat. Generous space, sweeping skyline views, and a full kitchen — for those who settle for nothing less.",
+      "feat0": "3 separate bedrooms",
+      "feat1": "Panoramic city view",
+      "feat2": "Full kitchen",
+      "feat3": "Ideal for families"
+    }
+  },
+  "amenities": {
+    "title": "Curated Amenities",
+    "subtitle": "Every detail considered. Every comfort provided.",
+    "items": {
+      "checkin": { "label": "Check-in 24/7", "desc": "Arrive at any hour — we are always ready." },
+      "security": { "label": "Security 24/7", "desc": "Round-the-clock on-site security." },
+      "elevator": { "label": "Elevator", "desc": "High-speed elevator access." },
+      "coffee": { "label": "Coffee Shop", "desc": "In-house café on premises." },
+      "laundry": { "label": "Washer & Dryer", "desc": "In-unit washer with cleaning supplies." },
+      "kitchen": { "label": "Full Kitchen", "desc": "Fully equipped for self-catering." },
+      "smoke": { "label": "Smoke Alarm", "desc": "Installed in all residences." },
+      "co": { "label": "CO Alarm", "desc": "Carbon monoxide detection system." },
+      "wifi": { "label": "Free Wi-Fi", "desc": "High-speed internet throughout." },
+      "tv": { "label": "Smart TV + Netflix", "desc": "55\" Smart TV with Netflix included." },
+      "balcony": { "label": "Private Balcony", "desc": "Every residence has its own balcony." },
+      "ac": { "label": "Air Conditioning", "desc": "Individual climate control per room." }
+    }
+  },
+  "location": {
+    "eyebrow": "Find Us",
+    "title": "In the Heart of Saigon",
+    "subtitle": "100 Cô Giang, Cầu Ông Lãnh, Ho Chi Minh City",
+    "description": "Steps from Ben Thanh Market, surrounded by the city's finest dining, culture, and commerce. SOHO places you exactly where you want to be.",
+    "address": "Address",
+    "addressValue": "100 Cô Giang\nCầu Ông Lãnh, Ho Chi Minh City",
+    "openMaps": "Open in Maps",
+    "nearby": "Nearby",
+    "checkinNote": "Arrive at any hour — our team is always available to welcome you.",
+    "checkin247": "Check-in 24/7"
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "title": "Get in Touch",
+    "subtitle": "Our team is ready to assist you — any channel, any time.",
+    "email": "Email",
+    "phone": "Phone / Zalo",
+    "whatsapp": "WhatsApp / Viber",
+    "social": "WeChat / Telegram",
+    "address": "Address",
+    "emailValue": "booking@sohoresidencehotel.vn",
+    "phoneValue": "(+84) 91 771 9966",
+    "socialValue": "@sohoresidencehotel",
+    "addressValue": "100 Cô Giang, Cầu Ông Lãnh, Ho Chi Minh City",
+    "cta": {
+      "heading": "Ready to book your stay?",
+      "body": "Use our booking bar above to check availability instantly, or contact us directly for group rates and special requests.",
+      "emailBtn": "Email Us",
+      "whatsappBtn": "WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Luxury apartment-hotel in the heart of Ho Chi Minh City.",
+    "residences": "Residences",
+    "contactHeading": "Contact",
+    "studioLink": "Studio Apartment",
+    "twobedLink": "2-Bedroom Apartment",
+    "threebedLink": "3-Bedroom Apartment",
+    "rights": "© 2024 SOHO Residence & Hotel. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}
