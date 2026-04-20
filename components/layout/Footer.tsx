@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
           {/* Col 1 — Brand */}
           <div className="lg:col-span-1">
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Contact */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <h3 className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-[var(--color-gold)] mb-5">
               {t("contactHeading")}
             </h3>

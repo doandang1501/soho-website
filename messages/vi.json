@@ -30,28 +30,53 @@
     "scroll": "Cuộn để khám phá"
   },
   "rooms": {
+    "eyebrow": "Căn Hộ",
     "title": "Căn Hộ Của Chúng Tôi",
     "subtitle": "Mỗi căn hộ là một thánh địa yên bình, được thiết kế có chủ đích và hoàn thiện tỉ mỉ.",
     "from": "Từ",
     "perNight": "/ đêm",
     "viewDetails": "Xem Chi Tiết",
+    "specSize": "Diện Tích",
+    "specGuests": "Khách",
+    "specBeds": "Phòng Ngủ",
     "studio": {
       "name": "Studio",
       "tagline": "Căn Hộ Studio Có Ban Công",
       "price": "950.000 VNĐ",
-      "description": "Studio mặt bằng mở hiện đại với ban công riêng — lý tưởng cho du khách đơn lẻ hoặc cặp đôi muốn tận hưởng sự tiện nghi trong lòng thành phố."
+      "size": "35–40 m²",
+      "guests": "1–2",
+      "beds": "Studio",
+      "description": "Studio mặt bằng mở hiện đại với ban công riêng — lý tưởng cho du khách đơn lẻ hoặc cặp đôi muốn tận hưởng sự tiện nghi trong lòng thành phố.",
+      "feat0": "Mặt bằng mở",
+      "feat1": "Ban công riêng",
+      "feat2": "Bếp đầy đủ",
+      "feat3": "Smart TV + Netflix"
     },
     "twobed": {
       "name": "2 Phòng Ngủ",
       "tagline": "Căn Hộ 2 Phòng Ngủ Nhìn Ra Thành Phố",
       "price": "1.700.000 VNĐ",
-      "description": "Không gian rộng rãi kết hợp với tầm nhìn toàn cảnh thành phố. Lý tưởng cho gia đình hoặc khách công tác cần không gian riêng tư."
+      "size": "65–80 m²",
+      "guests": "2–4",
+      "beds": "2 Phòng Ngủ",
+      "description": "Không gian rộng rãi kết hợp với tầm nhìn toàn cảnh thành phố. Lý tưởng cho gia đình hoặc khách công tác cần không gian riêng tư.",
+      "feat0": "2 phòng ngủ riêng biệt",
+      "feat1": "Ban công nhìn ra thành phố",
+      "feat2": "Phòng khách rộng rãi",
+      "feat3": "Smart TV + Netflix"
     },
     "threebed": {
       "name": "3 Phòng Ngủ",
       "tagline": "Căn Hộ 3 Phòng Ngủ Nhìn Ra Thành Phố",
       "price": "2.600.000 VNĐ",
-      "description": "Khu nghỉ dưỡng đô thị tối thượng. Không gian rộng lớn, tầm nhìn đường chân trời bao quát và bếp đầy đủ — dành cho những ai không chấp nhận điều gì kém hơn tốt nhất."
+      "size": "95–115 m²",
+      "guests": "4–6",
+      "beds": "3 Phòng Ngủ",
+      "description": "Khu nghỉ dưỡng đô thị tối thượng. Không gian rộng lớn, tầm nhìn đường chân trời bao quát và bếp đầy đủ — dành cho những ai không chấp nhận điều gì kém hơn tốt nhất.",
+      "feat0": "3 phòng ngủ riêng biệt",
+      "feat1": "Tầm nhìn toàn cảnh thành phố",
+      "feat2": "Bếp đầy đủ",
+      "feat3": "Lý tưởng cho gia đình"
     }
   },
   "amenities": {

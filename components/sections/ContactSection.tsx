@@ -39,7 +39,7 @@ export default function ContactSection() {
       className="py-24 lg:py-32 bg-[var(--color-charcoal-50)]"
       aria-labelledby="contact-heading"
     >
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+      <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="mb-16 text-center">
@@ -113,8 +113,8 @@ export default function ContactSection() {
             relative overflow-hidden
             border border-[rgba(201,168,76,0.25)]
             bg-gradient-to-br from-[rgba(201,168,76,0.06)] to-[rgba(14,14,14,0.5)]
-            p-10 lg:p-16
-            flex flex-col lg:flex-row items-center justify-between gap-8
+            p-7 sm:p-10 lg:p-16
+            flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8
           ">
             {/* Corner accents */}
             <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-[var(--color-gold)] opacity-60" />
@@ -129,7 +129,7 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 flex-shrink-0 w-full lg:w-auto">
               <a
                 href="mailto:booking@sohoresidencehotel.vn"
                 className="

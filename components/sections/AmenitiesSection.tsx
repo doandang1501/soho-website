@@ -110,7 +110,7 @@ export default function AmenitiesSection() {
   return (
     <section
       id="amenities"
-      className="py-24 lg:py-32 bg-[var(--color-charcoal-50)]"
+      className="py-16 sm:py-24 lg:py-32 bg-[var(--color-charcoal-50)]"
       aria-labelledby="amenities-heading"
     >
       <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
@@ -154,14 +154,14 @@ export default function AmenitiesSection() {
           {AMENITIES.map((key, i) => (
             <AnimateInView key={key} delay={i * 0.05} direction="up" className="h-full">
               <div className="
-                h-full bg-[var(--color-charcoal-50)] p-7
-                flex flex-col gap-4
+                h-full bg-[var(--color-charcoal-50)] p-5 sm:p-7
+                flex flex-col gap-3 sm:gap-4
                 group hover:bg-[rgba(201,168,76,0.05)]
                 transition-colors duration-300
               ">
                 {/* Icon */}
                 <span
-                  className="text-[var(--color-gold)] transition-transform duration-300 group-hover:scale-110 inline-block"
+                  className="text-[var(--color-gold)] transition-transform duration-300 group-hover:scale-110 inline-block w-6 h-6 sm:w-7 sm:h-7"
                   aria-hidden="true"
                 >
                   {Icons[key]}
@@ -170,7 +170,7 @@ export default function AmenitiesSection() {
                 {/* Label */}
                 <div>
                   <h3 className="
-                    font-sans font-semibold text-sm text-[var(--color-ivory)]
+                    font-sans font-semibold text-xs sm:text-sm text-[var(--color-ivory)]
                     group-hover:text-[var(--color-gold)]
                     transition-colors duration-300 mb-1
                   ">

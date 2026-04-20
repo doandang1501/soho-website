@@ -27,7 +27,7 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("contact");
+  const t = await getTranslations({ locale, namespace: "contact" });
 
   return (
     <div className="pt-4 pb-24">

@@ -46,7 +46,7 @@ export default async function ThreeBedPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("rooms");
+  const t = await getTranslations({ locale, namespace: "rooms" });
 
   return (
     <div className="pt-4 pb-24">

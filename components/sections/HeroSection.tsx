@@ -35,6 +35,7 @@ const textVariants = {
 export default function HeroSection() {
   const t      = useTranslations("hero");
   const tRooms = useTranslations("rooms");
+  const tNav   = useTranslations("nav");
   const locale = useLocale();
 
   const [current,  setCurrent]  = useState(0);
@@ -94,7 +95,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(14,14,14,0.5)] via-transparent to-transparent" />
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
 
         {/* Eyebrow */}
         <motion.div
@@ -119,7 +120,7 @@ export default function HeroSection() {
               variants={textVariants}
               initial="hidden"
               animate="visible"
-              className="font-serif text-[clamp(3rem,7vw,6.5rem)] leading-[1.02] text-[var(--color-ivory)] block"
+              className="font-serif text-[clamp(2.4rem,7vw,6.5rem)] leading-[1.02] text-[var(--color-ivory)] block"
             >
               {i === 1 ? (
                 <span className="text-gold-gradient">{line}</span>
@@ -147,7 +148,7 @@ export default function HeroSection() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap gap-4 items-center"
+          className="flex flex-wrap gap-3 sm:gap-4 items-center"
         >
           <a
             href="#rooms"
@@ -186,7 +187,7 @@ export default function HeroSection() {
               active:scale-95
             "
           >
-            Contact Us
+            {tNav("contact")}
           </a>
         </motion.div>
 
@@ -257,9 +258,9 @@ export default function HeroSection() {
         "
       >
         {[
-          { label: tRooms("studio.name"),  price: "from 950K VND" },
-          { label: tRooms("twobed.name"),  price: "from 1.7M VND" },
-          { label: tRooms("threebed.name"),price: "from 2.6M VND" },
+          { label: tRooms("studio.name"),   price: tRooms("from") + " " + tRooms("studio.price")   },
+          { label: tRooms("twobed.name"),   price: tRooms("from") + " " + tRooms("twobed.price")   },
+          { label: tRooms("threebed.name"), price: tRooms("from") + " " + tRooms("threebed.price") },
         ].map(({ label, price }, i) => (
           <a
             key={label}

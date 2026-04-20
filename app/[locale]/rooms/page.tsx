@@ -16,34 +16,22 @@ export const metadata: Metadata = {
 
 const ROOMS = [
   {
-    key:    "studio",
-    image:  "/images/type_1.jpg",
-    href:   "/studio",
-    price:  "950,000 VND",
-    beds:   "Studio",
-    size:   "35–40 m²",
-    guests: "1–2",
-    gallery:["/images/studio-1.jpg", "/images/studio-2.jpg", "/images/studio-3.jpg", "/images/studio-4.jpg"],
+    key:     "studio",
+    image:   "/images/type_1.jpg",
+    href:    "/studio",
+    gallery: ["/images/studio-1.jpg", "/images/studio-2.jpg", "/images/studio-3.jpg", "/images/studio-4.jpg"],
   },
   {
-    key:    "twobed",
-    image:  "/images/type_2.jpg",
-    href:   "/2-bedroom",
-    price:  "1,700,000 VND",
-    beds:   "2 Bedrooms",
-    size:   "65–80 m²",
-    guests: "2–4",
-    gallery:["/images/2bed-1.jpg", "/images/2bed-2.jpg", "/images/2bed-3.jpg", "/images/2bed-4.jpg"],
+    key:     "twobed",
+    image:   "/images/type_2.jpg",
+    href:    "/2-bedroom",
+    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.jpg", "/images/2bed-3.jpg", "/images/2bed-4.jpg"],
   },
   {
-    key:    "threebed",
-    image:  "/images/type_3.jpg",
-    href:   "/3-bedroom",
-    price:  "2,600,000 VND",
-    beds:   "3 Bedrooms",
-    size:   "95–115 m²",
-    guests: "4–6",
-    gallery:["/images/img_1.jpg", "/images/img_2.jpg", "/images/img_3.jpg"],
+    key:     "threebed",
+    image:   "/images/type_3.jpg",
+    href:    "/3-bedroom",
+    gallery: ["/images/img_1.jpg", "/images/img_2.jpg", "/images/img_3.jpg"],
   },
 ] as const;
 
@@ -54,16 +42,16 @@ export default async function RoomsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t      = await getTranslations("rooms");
-
+  const t = await getTranslations({ locale, namespace: "rooms" });
 
   const localePath = (href: string) =>
     locale === "en" ? href : `/${locale}${href}`;
 
   return (
     <div className="pt-4 pb-24">
-      {/* ── Page header ──────────────────────────────────────────────────── */}
-      <div className="relative h-56 md:h-72 overflow-hidden mb-16">
+
+      {/* ── Page header ─────────────────────────────────────────────────── */}
+      <div className="relative h-48 sm:h-56 md:h-72 overflow-hidden mb-10 md:mb-16">
         <Image
           src="/images/hero_2.png"
           alt="SOHO Rooms"
@@ -73,114 +61,122 @@ export default async function RoomsPage({
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(14,14,14,0.5)] to-[rgba(14,14,14,0.9)]" />
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full pb-10">
+        <div className="absolute inset-0 flex flex-col justify-end px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full pb-8 md:pb-10">
           <AnimateInView direction="up">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-2 md:mb-3">
               <span className="block w-7 h-px bg-[var(--color-gold)]" />
               <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[var(--color-gold)]">
-                Residences
+                {t("eyebrow")}
               </span>
             </div>
           </AnimateInView>
           <AnimateInView delay={0.1} direction="up">
-            <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] text-[var(--color-ivory)]">
+            <h1 className="font-serif text-[clamp(1.8rem,5vw,4rem)] text-[var(--color-ivory)]">
               {t("title")}
             </h1>
           </AnimateInView>
         </div>
       </div>
 
-      {/* ── Room cards ───────────────────────────────────────────────────── */}
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full flex flex-col gap-20">
+      {/* ── Room cards ──────────────────────────────────────────────────── */}
+      <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full flex flex-col gap-10 md:gap-20">
         {ROOMS.map((room, i) => (
           <AnimateInView key={room.key} delay={i * 0.08} direction="up">
-            <article className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-[var(--color-border)] group">
 
-              {/* Image */}
-              <div className={`relative aspect-[4/3] overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                <Image
-                  src={room.image}
-                  alt={t(`${room.key}.tagline`)}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,14,14,0.4)] to-transparent" />
+            {/* Entire card links to room detail */}
+            <Link
+              href={localePath(room.href)}
+              className="block group border border-[var(--color-border)] hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300"
+              aria-label={t(`${room.key}.tagline`)}
+            >
+              <article className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
-                {/* Thumbnail previews */}
-                <div className="absolute bottom-4 left-4 flex gap-1.5">
-                  {room.gallery.slice(1, 4).map((src, j) => (
-                    <div key={j} className="relative w-12 h-12 overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
-                      <Image src={src} alt="" fill className="object-cover" sizes="48px" />
+                {/* Image side */}
+                <div className={`relative aspect-[4/3] overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <Image
+                    src={room.image}
+                    alt={t(`${room.key}.tagline`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,14,14,0.4)] to-transparent" />
+
+                  {/* Thumbnail strip */}
+                  <div className="absolute bottom-3 left-3 flex gap-1.5">
+                    {room.gallery.slice(1, 4).map((src, j) => (
+                      <div key={j} className="relative w-10 h-10 sm:w-12 sm:h-12 overflow-hidden opacity-70 group-hover:opacity-90 transition-opacity">
+                        <Image src={src} alt="" fill className="object-cover" sizes="48px" />
+                      </div>
+                    ))}
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(14,14,14,0.7)] flex items-center justify-center">
+                      <span className="font-sans text-[9px] text-[var(--color-ivory-dim)]">+{room.gallery.length}</span>
                     </div>
-                  ))}
-                  <div className="w-12 h-12 bg-[rgba(14,14,14,0.7)] flex items-center justify-center">
-                    <span className="font-sans text-[9px] text-[var(--color-ivory-dim)]">+{room.gallery.length}</span>
                   </div>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className={`flex flex-col justify-center p-8 lg:p-12 bg-[var(--color-charcoal-50)] ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="block w-5 h-px bg-[var(--color-gold)]" />
-                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)]">
-                    {room.beds}
-                  </span>
-                </div>
+                {/* Content side */}
+                <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-12 bg-[var(--color-charcoal-50)] ${i % 2 === 1 ? "lg:order-1" : ""}`}>
 
-                <h2 className="font-serif text-2xl lg:text-3xl text-[var(--color-ivory)] mb-4 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
-                  {t(`${room.key}.tagline`)}
-                </h2>
-
-                <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-8">
-                  {t(`${room.key}.description`)}
-                </p>
-
-                {/* Quick specs */}
-                <div className="flex gap-6 mb-8">
-                  {[
-                    { label: "Size",   value: room.size   },
-                    { label: "Guests", value: room.guests },
-                    { label: "Beds",   value: room.beds   },
-                  ].map(({ label, value }) => (
-                    <div key={label}>
-                      <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)] mb-0.5">{label}</span>
-                      <span className="block font-sans text-sm font-medium text-[var(--color-ivory)]">{value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Price + CTA */}
-                <div className="flex items-center justify-between border-t border-[var(--color-border)] pt-6">
-                  <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--color-ivory-dim)] mb-0.5">
-                      {t("from")}
-                    </span>
-                    <span className="font-serif text-xl text-[var(--color-gold)]">
-                      {t(`${room.key}.price`)}
-                      <span className="font-sans text-xs text-[var(--color-ivory-dim)] ml-1">{t("perNight")}</span>
+                  <div className="flex items-center gap-2 mb-3 md:mb-4">
+                    <span className="block w-5 h-px bg-[var(--color-gold)]" />
+                    <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)]">
+                      {t(`${room.key}.name`)}
                     </span>
                   </div>
 
-                  <Link
-                    href={localePath(room.href)}
-                    className="
-                      inline-flex items-center gap-2
+                  <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[var(--color-ivory)] mb-3 md:mb-4 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
+                    {t(`${room.key}.tagline`)}
+                  </h2>
+
+                  <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-5 md:mb-8">
+                    {t(`${room.key}.description`)}
+                  </p>
+
+                  {/* Specs row — translated labels & values */}
+                  <div className="flex flex-wrap gap-4 sm:gap-6 mb-5 md:mb-8">
+                    {[
+                      { label: t("specSize"),   value: t(`${room.key}.size`)   },
+                      { label: t("specGuests"), value: t(`${room.key}.guests`) },
+                      { label: t("specBeds"),   value: t(`${room.key}.beds`)   },
+                    ].map(({ label, value }) => (
+                      <div key={label}>
+                        <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)] mb-0.5">{label}</span>
+                        <span className="block font-sans text-sm font-medium text-[var(--color-ivory)]">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Price + CTA */}
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-[var(--color-border)] pt-5 md:pt-6">
+                    <div>
+                      <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--color-ivory-dim)] mb-0.5">
+                        {t("from")}
+                      </span>
+                      <span className="font-serif text-lg sm:text-xl text-[var(--color-gold)]">
+                        {t(`${room.key}.price`)}
+                        <span className="font-sans text-xs text-[var(--color-ivory-dim)] ml-1">{t("perNight")}</span>
+                      </span>
+                    </div>
+
+                    {/* VIEW DETAILS button — styled via parent group-hover */}
+                    <span className="
+                      inline-flex items-center gap-2 self-start sm:self-auto
                       border border-[var(--color-gold)] text-[var(--color-gold)]
                       font-sans font-medium text-xs tracking-[0.15em] uppercase
-                      px-6 py-3
-                      hover:bg-[var(--color-gold)] hover:text-[var(--color-charcoal)]
-                      transition-all duration-300 group/btn
-                    "
-                  >
-                    {t("viewDetails")}
-                    <span className="transition-transform duration-200 group-hover/btn:translate-x-0.5">→</span>
-                  </Link>
-                </div>
-              </div>
+                      px-5 sm:px-6 py-3
+                      group-hover:bg-[var(--color-gold)] group-hover:text-[var(--color-charcoal)]
+                      transition-all duration-300
+                    ">
+                      {t("viewDetails")}
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                    </span>
+                  </div>
 
-            </article>
+                </div>
+              </article>
+            </Link>
+
           </AnimateInView>
         ))}
       </div>

@@ -21,7 +21,7 @@ export default function LocationSection() {
       className="py-24 lg:py-32"
       aria-labelledby="location-heading"
     >
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+      <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
 
         {/* Section header */}
         <div className="mb-14">
@@ -61,7 +61,7 @@ export default function LocationSection() {
 
           {/* Map embed — col-span-2 */}
           <AnimateInView delay={0.1} direction="left" className="lg:col-span-2">
-            <div className="relative w-full aspect-[16/9] lg:aspect-[4/3] overflow-hidden border border-[var(--color-border)]">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden border border-[var(--color-border)]">
               {/* Gold corner accent */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[var(--color-gold)] z-10 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[var(--color-gold)] z-10 pointer-events-none" />
