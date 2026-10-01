@@ -6,7 +6,7 @@ import AnimateInView  from "@/components/ui/AnimateInView";
 export const metadata: Metadata = {
   title: "3-Bedroom Apartment with City View",
   description:
-    "Premium 3-bedroom apartment with panoramic city view balcony at SOHO Residence & Hotel, District 1. From 2,600,000 VND/night. Perfect for families and groups.",
+    "Premium 3-bedroom apartment with panoramic city view balcony at SOHO Residence & Hotel, District 1. From 2,700,000 VND/night. Perfect for families and groups.",
   openGraph: {
     title: "3-Bedroom Apartment | SOHO Residence & Hotel",
     images: [{ url: "/images/img_1.jpg" }],

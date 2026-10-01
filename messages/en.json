@@ -42,7 +42,7 @@
     "studio": {
       "name": "Studio",
       "tagline": "Studio Apartment with Balcony",
-      "price": "950,000 VND",
+      "price": "1,000,000 VND",
       "size": "35–40 m²",
       "guests": "1–2",
       "beds": "Studio",
@@ -68,7 +68,7 @@
     "threebed": {
       "name": "3-Bedroom",
       "tagline": "3-Bedroom with City View Balcony",
-      "price": "2,600,000 VND",
+      "price": "2,700,000 VND",
       "size": "95–115 m²",
       "guests": "4–6",
       "beds": "3 Bedrooms",

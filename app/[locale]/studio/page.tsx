@@ -6,7 +6,7 @@ import AnimateInView  from "@/components/ui/AnimateInView";
 export const metadata: Metadata = {
   title: "Studio Apartment with Balcony",
   description:
-    "Modern open-plan studio with private balcony at SOHO Residence & Hotel, District 1. From 950,000 VND/night. Free Wi-Fi, Smart TV, full kitchen included.",
+    "Modern open-plan studio with private balcony at SOHO Residence & Hotel, District 1. From 1,000,000 VND/night. Free Wi-Fi, Smart TV, full kitchen included.",
   openGraph: {
     title: "Studio Apartment | SOHO Residence & Hotel",
     images: [{ url: "/images/studio-1.jpg" }],

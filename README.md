@@ -142,9 +142,9 @@ The booking bar constructs a parameterized URL to the **EZ CMS** property manage
 
 | Room | Starting price | Sleeps |
 |---|---|---|
-| Studio with Balcony | 950,000 VND / night | 1–2 |
+| Studio with Balcony | 1,000,000 VND / night | 1–2 |
 | 2-Bedroom Apartment | 1,700,000 VND / night | 2–4 |
-| 3-Bedroom Apartment | 2,600,000 VND / night | 4–6 |
+| 3-Bedroom Apartment | 2,700,000 VND / night | 4–6 |
 
 ---
 
