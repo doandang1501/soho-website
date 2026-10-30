@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const IMAGES   = ["/images/2bed-1.jpg","/images/2bed-2.jpg","/images/2bed-3.jpg","/images/2bed-4.jpg"];
 const FEATURES = ["2 separate bedrooms","City view balcony","Spacious living room","Full kitchen","Smart TV + Netflix","Free Wi-Fi","Air conditioning in all rooms","Washing machine"];
 const SPECS    = [
-  { label: "Room size",  value: "65 – 80 m²"     },
+  { label: "Room size",  value: "55 – 60 m²"     },
   { label: "Guests",     value: "2 – 4"            },
   { label: "Bedrooms",   value: "2"                },
   { label: "Balcony",    value: "City view"        },
@@ -58,6 +58,7 @@ export default async function TwoBedPage({
         images={IMAGES}
         features={FEATURES}
         specs={SPECS}
+        roomKey="twobed"
       />
 
       {/* ── What's included ────────────────────────────────────────────── */}

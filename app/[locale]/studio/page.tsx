@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const IMAGES   = ["/images/studio-1.jpg","/images/studio-2.jpg","/images/studio-3.jpg","/images/studio-4.jpg","/images/studio-5.jpg"];
 const FEATURES = ["Private balcony","Open-plan layout","Full kitchen","Smart TV + Netflix","Free Wi-Fi","Air conditioning","Washing machine","Smoke & CO alarm"];
 const SPECS    = [
-  { label: "Room size",  value: "35 – 40 m²" },
+  { label: "Room size",  value: "30 – 35 m²" },
   { label: "Guests",     value: "1 – 2"       },
   { label: "Bed",        value: "Queen bed"   },
   { label: "Balcony",    value: "Private"     },
@@ -57,6 +57,7 @@ export default async function StudioPage({
         images={IMAGES}
         features={FEATURES}
         specs={SPECS}
+        roomKey="studio"
       />
 
       {/* ── What's included ────────────────────────────────────────────── */}

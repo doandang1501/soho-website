@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const IMAGES   = ["/images/img_1.jpg","/images/img_2.jpg","/images/img_3.jpg","/images/img_4.jpg"];
 const FEATURES = ["3 separate bedrooms","Panoramic city view balcony","Large living & dining room","Full kitchen","Smart TV + Netflix in all rooms","Free Wi-Fi","Air conditioning throughout","Washing machine","Ideal for 4–6 guests"];
 const SPECS    = [
-  { label: "Room size",   value: "95 – 115 m²" },
+  { label: "Room size",   value: "85 – 95 m²" },
   { label: "Guests",      value: "4 – 6"        },
   { label: "Bedrooms",    value: "3"             },
   { label: "Balcony",     value: "Panoramic view"},
@@ -59,6 +59,7 @@ export default async function ThreeBedPage({
         images={IMAGES}
         features={FEATURES}
         specs={SPECS}
+        roomKey="threebed"
       />
 
       {/* ── What's included ────────────────────────────────────────────── */}

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://platform.gohost.vn/docs/api#/ -->
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="color-scheme" content="light">
+    <title>GoHost API Documentation</title>
+
+    <script src="./GoHost API Documentation_files/web-components.min.js.download"></script>
+    <style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="stylesheet" href="./GoHost API Documentation_files/styles.min.css">
+
+    <script>
+        const originalFetch = window.fetch;
+
+        // intercept TryIt requests and add the XSRF-TOKEN header,
+        // which is necessary for Sanctum cookie-based authentication to work correctly
+        window.fetch = (url, options) => {
+            const CSRF_TOKEN_COOKIE_KEY = "XSRF-TOKEN";
+            const CSRF_TOKEN_HEADER_KEY = "X-XSRF-TOKEN";
+            const getCookieValue = (key) => {
+                const cookie = document.cookie.split(';').find((cookie) => cookie.trim().startsWith(key));
+                return cookie?.split("=")[1];
+            };
+
+            const updateFetchHeaders = (
+                headers,
+                headerKey,
+                headerValue,
+            ) => {
+                if (headers instanceof Headers) {
+                    headers.set(headerKey, headerValue);
+                } else if (Array.isArray(headers)) {
+                    headers.push([headerKey, headerValue]);
+                } else if (headers) {
+                    headers[headerKey] = headerValue;
+                }
+            };
+            const csrfToken = getCookieValue(CSRF_TOKEN_COOKIE_KEY);
+            if (csrfToken) {
+                const { headers = new Headers() } = options || {};
+                updateFetchHeaders(headers, CSRF_TOKEN_HEADER_KEY, decodeURIComponent(csrfToken));
+                return originalFetch(url, {
+                    ...options,
+                    headers,
+                });
+            }
+
+            return originalFetch(url, options);
+        };
+    </script>
+
+    <style>
+        html, body { margin:0; height:100%; }
+        body { background-color: var(--color-canvas); }
+        /* issues about the dark theme of stoplight/mosaic-code-viewer using web component:
+         * https://github.com/stoplightio/elements/issues/2188#issuecomment-1485461965
+         */
+        [data-theme="dark"] .token.property {
+            color: rgb(128, 203, 196) !important;
+        }
+        [data-theme="dark"] .token.operator {
+            color: rgb(255, 123, 114) !important;
+        }
+        [data-theme="dark"] .token.number {
+            color: rgb(247, 140, 108) !important;
+        }
+        [data-theme="dark"] .token.string {
+            color: rgb(165, 214, 255) !important;
+        }
+        [data-theme="dark"] .token.boolean {
+            color: rgb(121, 192, 255) !important;
+        }
+        [data-theme="dark"] .token.punctuation {
+            color: #dbdbdb !important;
+        }
+    </style>
+</head>
+<body style="height: 100vh; overflow-y: hidden">
+<elements-api id="docs" tryitcredentialspolicy="include" router="hash" layout="responsive" apidescriptiondocument="[object Object]"><div style="height: 100%;"><div class="" id="mosaic-provider-react-aria-0-1" style="height: 100%;"><div data-overlay-container="true" class="" style="height: 100%;"><div class="sl-elements sl-antialiased sl-h-full sl-text-base sl-font-ui sl-text-body"><div class="sl-elements-api sl-flex sl-inset-0 sl-h-full"><div class="sl-flex" style="max-width: 450px;"><div class="sl-flex sl-overflow-y-auto sl-flex-col sl-sticky sl-inset-y-0 sl-pt-8 sl-bg-canvas-100 sl-border-r" style="padding-left: calc(50% - 900px); width: 300px; min-width: 300px;"><div class="sl-flex sl-items-center sl-mb-5 sl-ml-4"><h4 class="sl-text-paragraph sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading">GoHost API Documentation</h4></div><div class="sl-flex sl-overflow-y-auto sl-flex-col sl-flex-grow sl-flex-shrink"><div class="sl-overflow-y-auto sl-w-full sl-bg-canvas-100"><div class="sl-my-3"><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/"><div id="sl-toc-/" title="Overview" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-primary-tint sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate">Overview</div><div class="sl-flex sl-items-center sl-text-xs"></div></div></a><div class="sl-text-sm sl-leading-relaxed sl-tracking-wide sl-font-bold sl-uppercase sl-mt-6 sl-mb-2 sl-pl-4">Endpoints</div><div title="Property" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Property</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Reference" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Reference</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Booking Source" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Booking Source</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Payment Method" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Payment Method</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Services" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Services</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Room Type" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Room Type</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Booking Rooms" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Booking Rooms</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="Booking" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">Booking</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div title="WebhookEndpoint" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5">WebhookEndpoint</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg></div></div></div><div class="sl-text-sm sl-leading-relaxed sl-tracking-wide sl-font-bold sl-uppercase sl-mt-6 sl-mb-2 sl-pl-4">Schemas</div><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/AddPaymentRequest"><div id="sl-toc-/schemas/AddPaymentRequest" title="AddPaymentRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">AddPaymentRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/BookingCreateRequest"><div id="sl-toc-/schemas/BookingCreateRequest" title="BookingCreateRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">BookingCreateRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/CancelBookingRequest"><div id="sl-toc-/schemas/CancelBookingRequest" title="CancelBookingRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">CancelBookingRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/CancelBookingRoomRequest"><div id="sl-toc-/schemas/CancelBookingRoomRequest" title="CancelBookingRoomRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">CancelBookingRoomRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/ChangeBookingRoomRateRequest"><div id="sl-toc-/schemas/ChangeBookingRoomRateRequest" title="ChangeBookingRoomRateRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">ChangeBookingRoomRateRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/CheckoutBookingRoomRequest"><div id="sl-toc-/schemas/CheckoutBookingRoomRequest" title="CheckoutBookingRoomRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">CheckoutBookingRoomRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/ConfirmBookingRequest"><div id="sl-toc-/schemas/ConfirmBookingRequest" title="ConfirmBookingRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">ConfirmBookingRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/StoreWebhookEndpointRequest"><div id="sl-toc-/schemas/StoreWebhookEndpointRequest" title="StoreWebhookEndpointRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">StoreWebhookEndpointRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/UpdateBookingRequest"><div id="sl-toc-/schemas/UpdateBookingRequest" title="UpdateBookingRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">UpdateBookingRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a><a class="ElementsTableOfContentsItem sl-block sl-no-underline" href="https://platform.gohost.vn/docs/api#/schemas/UpdateWebhookEndpointRequest"><div id="sl-toc-/schemas/UpdateWebhookEndpointRequest" title="UpdateWebhookEndpointRequest" class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube" class="svg-inline--fa fa-cube sl-icon sl-text-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M234.5 5.709C248.4 .7377 263.6 .7377 277.5 5.709L469.5 74.28C494.1 83.38 512 107.5 512 134.6V377.4C512 404.5 494.1 428.6 469.5 437.7L277.5 506.3C263.6 511.3 248.4 511.3 234.5 506.3L42.47 437.7C17 428.6 0 404.5 0 377.4V134.6C0 107.5 17 83.38 42.47 74.28L234.5 5.709zM256 65.98L82.34 128L256 190L429.7 128L256 65.98zM288 434.6L448 377.4V189.4L288 246.6V434.6z"></path></svg><div class="sl-flex-1 sl-items-center sl-text-base sl-truncate sl-mr-1.5 sl-ml-1.5">UpdateWebhookEndpointRequest</div><div class="sl-flex sl-items-center sl-text-xs"><div class="sl-flex sl-items-center"></div></div></div></a></div></div></div><a href="https://stoplight.io/?utm_source=elements&amp;utm_medium=GoHost%20API%20Documentation&amp;utm_campaign=powered_by&amp;utm_content=/" target="_blank" rel="noopener noreferrer" class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bolt" class="svg-inline--fa fa-bolt sl-icon fa-fw sl-mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="color: rgb(144, 97, 249);"><path fill="currentColor" d="M240.5 224H352C365.3 224 377.3 232.3 381.1 244.7C386.6 257.2 383.1 271.3 373.1 280.1L117.1 504.1C105.8 513.9 89.27 514.7 77.19 505.9C65.1 497.1 60.7 481.1 66.59 467.4L143.5 288H31.1C18.67 288 6.733 279.7 2.044 267.3C-2.645 254.8 .8944 240.7 10.93 231.9L266.9 7.918C278.2-1.92 294.7-2.669 306.8 6.114C318.9 14.9 323.3 30.87 317.4 44.61L240.5 224z"></path></svg><div>powered by&nbsp;<strong>Stoplight</strong></div></a></div><div class="sl-flex sl-flex-grow-0 sl-flex-shrink-0 sl-justify-self-end sl-resize-x" style="width: 1em; flex-basis: 6px; cursor: ew-resize;"></div></div><div class="sl-overflow-y-auto sl-flex-1 sl-w-full sl-px-24 sl-bg-canvas"><div class="sl-py-16" style="max-width: 1500px;"><div class="HttpService sl-mb-10"><div class="sl-flex sl-justify-between sl-items-center"><div class="sl-relative"><h1 class="sl-text-5xl sl-leading-tight sl-font-prose sl-font-semibold sl-mb-4 sl-text-heading">GoHost API Documentation</h1></div><div><button type="button" aria-label="Export" aria-haspopup="true" aria-expanded="false" id="react-aria-0-2" class="sl-button sl-form-group-border sl-h-sm sl-text-base sl-font-medium sl-ml-2 sl-px-1.5 sl-bg-canvas hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-rounded sl-border-button sl-border disabled:sl-opacity-60">Export<div class="sl-text-xs sl--mr-0.5 sl-ml-1"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-fw sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path></svg></div></button></div></div><div class="sl-relative sl-mb-5"><span class="sl-badge sl-max-w-full sl-h-xs sl-text-paragraph-tiny sl-whitespace-nowrap sl-px-1.5 sl-py-0.5 sl-bg-canvas-100 sl-text-paragraph sl-rounded-full sl-border-input sl-border-0" style="background-color: rgb(41, 55, 66); color: rgb(255, 255, 255);"><div class="sl-flex sl-justify-items-start sl-items-center sl-w-full"><div class="sl-flex sl-overflow-x-hidden sl-flex-shrink"><div class="sl-overflow-x-hidden sl-w-auto sl-truncate sl-whitespace-nowrap"><span>v1</span></div></div></div></span></div><div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch"><div data-test="servers" class="sl-panel sl-outline-none BaseURLContent sl-inverted sl-w-full sl-rounded-lg"><div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-whitespace-nowrap sl-pr-4 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none"><div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">API Base URL</div></div><div class="sl-panel__content-wrapper sl-bg-canvas-100"><div class="sl-flex sl-flex-col sl-w-full sl-p-4"><div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-col sl-items-stretch"><div data-test="server-row" class="sl-panel sl-outline-none ServerInfo sl-w-full"><div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-whitespace-nowrap sl-pr-4 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none"><div class="sl-flex sl-flex-1 sl-items-center sl-h-lg"><span class="sl-font-bold sl-pr-2 sl-pl-0">Live Server:</span><span aria-label="Live Server" class="sl-whitespace-normal sl-py-2" style="word-break: break-word;"><span class="sl-font-normal">https://platform.gohost.vn/pms/api/public/v1</span></span></div></div><div class="sl-panel__content-wrapper sl-bg-canvas-100"></div></div></div></div></div></div><div data-test="security"><div data-test="security-row" class="sl-panel sl-outline-none sl-w-full sl-rounded-lg"><div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-4 sl-bg-canvas-300 sl-text-body sl-border-input focus:sl-border-primary sl-select-none"><div class="sl-flex sl-flex-1 sl-items-center sl-h-lg"><span role="heading">Security</span></div></div><div class="sl-panel__content-wrapper sl-bg-canvas-100"><div class="sl-panel__content sl-p-0"><div data-test="http-service-security-row"><div class="sl-panel sl-outline-none sl-relative sl-w-full"><div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none"><div class="sl-flex sl-flex-1 sl-items-center sl-h-lg"><span role="heading">Bearer Auth</span></div></div><div class="sl-panel__content-wrapper sl-bg-canvas-100"><div class="sl-panel__content sl-p-4"><div><div class="sl-m-2 sl-p-2 sl-border"><div class="sl-prose sl-markdown-viewer " style="font-size: 12px;"><p>Provide your bearer token in the Authorization header when making requests to protected resources.</p>
+<p>Example: <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">Authorization: Bearer 123</code></p></div></div></div></div></div></div></div></div></div></div></div><div data-test="additional-info"></div></div><div class="sl-relative"><div class="sl-prose sl-markdown-viewer sl-my-5"><h1 id="gohost-pms-public-api" class="sl-text-5xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading">GoHost PMS Public API</h1>
+<h2 id="/#overview" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#overview" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Overview</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<p>RESTful API for third-party partners to integrate with GoHost Property Management System.</p>
+<h2 id="/#base-url" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#base-url" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Base URL</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<ul>
+<li>Production: <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">https://platform.gohost.vn/pms/api/public/v1</code></li>
+</ul>
+<h2 id="/#authentication" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#authentication" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Authentication</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<p>All API requests require Bearer token authentication.</p>
+<p><strong>Token Format:</strong> <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">{api_key}:{api_secret}</code></p>
+<p><strong>Example:</strong></p>
+<pre tabindex="0" class="sl-code-viewer sl-grid sl-inverted sl-overflow-x-hidden sl-overflow-y-hidden sl-relative sl-bg-canvas sl-outline-none sl-rounded-lg focus:sl-ring sl-ring-primary sl-ring-opacity-50 sl-group" role="group"><div class="sl-code-viewer__scroller sl-overflow-x-auto sl-overflow-y-auto" style="max-height: 500px;"><div class="sl-code-highlight prism-code language-bash" style="padding: 12px 15px; font-family: var(--font-code); font-size: var(--fs-code); line-height: var(--lh-code);"><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token function" style="color: rgb(210, 168, 255);">curl</span><span class="token plain"> -H </span><span class="token string" style="color: rgb(165, 214, 255);">"Authorization: Bearer abc123xyz:secret456def"</span><span class="token plain"> </span><span class="token punctuation" style="color: inherit;">\</span><span class="token plain"></span></div></div><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token plain">  https://platform.gohost.vn/pms/api/public/v1/properties</span></div></div></div></div><div data-testid="copy-button" class="sl-absolute sl-right-0 sl-pr-2 sl-invisible group-hover:sl-visible sl-invisible" style="top: 9px;"><button type="button" class="sl-button sl-form-group-border sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70"><div class="sl-mx-0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path></svg></div></button></div></pre>
+<p><strong>How to get API credentials:</strong></p>
+<ol>
+<li>Login to GoHost PMS Admin panel</li>
+<li>Navigate to Settings &gt; Integrations &gt; Public API Keys</li>
+<li>Create a new API key with appropriate scopes</li>
+<li>Copy the API Key and API Secret</li>
+<li>Combine them as <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">{api_key}:{api_secret}</code> for Bearer token</li>
+</ol>
+<h2 id="/#rate-limiting" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#rate-limiting" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Rate Limiting</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<ul>
+<li>Default: <strong>60 requests per 5 minutes</strong> per API key</li>
+<li>Custom limits available for enterprise partners</li>
+</ul>
+<h2 id="/#response-format" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#response-format" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Response Format</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<p>All responses follow standard JSON format:</p>
+<pre tabindex="0" class="sl-code-viewer sl-grid sl-inverted sl-overflow-x-hidden sl-overflow-y-hidden sl-relative sl-bg-canvas sl-outline-none sl-rounded-lg focus:sl-ring sl-ring-primary sl-ring-opacity-50 sl-group" role="group"><div class="sl-code-viewer__scroller sl-overflow-x-auto sl-overflow-y-auto" style="max-height: 500px;"><div class="sl-code-highlight prism-code language-json" style="padding: 12px 15px; font-family: var(--font-code); font-size: var(--fs-code); line-height: var(--lh-code);"><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token punctuation" style="color: inherit;">{</span><span class="token plain"></span></div></div><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token plain">  </span><span class="token property" style="color: rgb(128, 203, 196);">"success"</span><span class="token operator" style="color: rgb(255, 123, 114);">:</span><span class="token plain"> </span><span class="token boolean" style="color: rgb(121, 192, 255);">true</span><span class="token punctuation" style="color: inherit;">,</span><span class="token plain"></span></div></div><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token plain">  </span><span class="token property" style="color: rgb(128, 203, 196);">"data"</span><span class="token operator" style="color: rgb(255, 123, 114);">:</span><span class="token plain"> </span><span class="token punctuation" style="color: inherit;">{</span><span class="token plain">...</span><span class="token punctuation" style="color: inherit;">}</span><span class="token plain"></span></div></div><div class="sl-flex"><div class="sl-flex-1 sl-break-all"><span class="token plain"></span><span class="token punctuation" style="color: inherit;">}</span></div></div></div></div><div data-testid="copy-button" class="sl-absolute sl-right-0 sl-pr-2 sl-invisible group-hover:sl-visible sl-invisible" style="top: 9px;"><button type="button" class="sl-button sl-form-group-border sl-h-sm sl-text-base sl-font-medium sl-px-1.5 hover:sl-bg-canvas-50 active:sl-bg-canvas-100 sl-text-muted hover:sl-text-body focus:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70"><div class="sl-mx-0"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" class="svg-inline--fa fa-copy fa-fw fa-sm sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"></path></svg></div></button></div></pre>
+<h2 id="/#error-codes" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#error-codes" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Error Codes</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody><tr><td>AUTH_001</td><td>Missing or invalid Authorization header</td></tr><tr><td>AUTH_002</td><td>Authentication failed</td></tr><tr><td>AUTH_003</td><td>API key disabled</td></tr><tr><td>AUTH_004</td><td>API key expired</td></tr><tr><td>SCOPE_001</td><td>Insufficient permissions</td></tr><tr><td>RATE_001</td><td>Rate limit exceeded</td></tr><tr><td>BOOKING_001</td><td>Booking operation failed (400, or 500 for an unexpected error)</td></tr><tr><td>BOOKING_002</td><td>Invalid service in Update Booking (<code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">rooms[].services</code>)</td></tr><tr><td>BOOKING_ROOM_INVALID_STATUS</td><td>Booking Rooms endpoints: the room (or booking) status does not allow the operation — body also has <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">checkin_status</code>, <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">booking_status</code> (422)</td></tr><tr><td>BOOKING_CHECKOUT_UNBALANCED</td><td>Check-out Booking Room: the property requires full payment and the room balance is not zero (single-room booking: the booking balance) — body also has numeric <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">balance</code> (&gt; 0 due, &lt; 0 overpaid) (422)</td></tr><tr><td>INVOICE_NO_PRIMARY_GUEST</td><td>Update Booking: invoice info sent but the booking has no primary guest (422)</td></tr></tbody></table>
+<p>Validation errors return HTTP 422 with <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">errors</code> (field → messages).</p>
+<h2 id="/#scopes" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#scopes" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Scopes</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<ul>
+<li><code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">properties:read</code> - Read property, room type, rate plan data</li>
+<li><code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">bookings:read</code> - Read booking data (including services used per room)</li>
+<li><code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="font-size: 0.8125em;">bookings:write</code> - Create and update bookings: confirm, payments, cancel, online check-in, and per-room check-out / cancel / rate change (Booking Rooms)</li>
+</ul>
+<h2 id="/#support" class="sl-link-heading sl-text-4xl sl-leading-tight sl-font-prose sl-font-bold sl-text-heading"><a href="https://platform.gohost.vn/docs/api#/#support" class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current"><div>Support</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link sl-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"></path></svg></div></a></h2>
+<p>For API support, contact: <a href="https://platform.gohost.vn/docs/api#/mailto:support@gohost.vn">support@gohost.vn</a></p></div></div></div></div></div></div></div></div></div></div>
+<script>
+    (async () => {
+        const docs = document.getElementById('docs');
+        docs.apiDescriptionDocument = {"openapi":"3.1.0","info":{"title":"GoHost API Documentation","version":"v1","description":"# GoHost PMS Public API\n\n## Overview\nRESTful API for third-party partners to integrate with GoHost Property Management System.\n\n## Base URL\n- Production: `https:\/\/platform.gohost.vn\/pms\/api\/public\/v1`\n\n## Authentication\nAll API requests require Bearer token authentication.\n\n**Token Format:** `{api_key}:{api_secret}`\n\n**Example:**\n```bash\ncurl -H \u0022Authorization: Bearer abc123xyz:secret456def\u0022 \\\n  https:\/\/platform.gohost.vn\/pms\/api\/public\/v1\/properties\n```\n\n**How to get API credentials:**\n1. Login to GoHost PMS Admin panel\n2. Navigate to Settings \u003E Integrations \u003E Public API Keys\n3. Create a new API key with appropriate scopes\n4. Copy the API Key and API Secret\n5. Combine them as `{api_key}:{api_secret}` for Bearer token\n\n## Rate Limiting\n- Default: **60 requests per 5 minutes** per API key\n- Custom limits available for enterprise partners\n\n## Response Format\nAll responses follow standard JSON format:\n```json\n{\n  \u0022success\u0022: true,\n  \u0022data\u0022: {...}\n}\n```\n\n## Error Codes\n| Code | Description |\n|------|-------------|\n| AUTH_001 | Missing or invalid Authorization header |\n| AUTH_002 | Authentication failed |\n| AUTH_003 | API key disabled |\n| AUTH_004 | API key expired |\n| SCOPE_001 | Insufficient permissions |\n| RATE_001 | Rate limit exceeded |\n| BOOKING_001 | Booking operation failed (400, or 500 for an unexpected error) |\n| BOOKING_002 | Invalid service in Update Booking (`rooms[].services`) |\n| BOOKING_ROOM_INVALID_STATUS | Booking Rooms endpoints: the room (or booking) status does not allow the operation \u2014 body also has `checkin_status`, `booking_status` (422) |\n| BOOKING_CHECKOUT_UNBALANCED | Check-out Booking Room: the property requires full payment and the room balance is not zero (single-room booking: the booking balance) \u2014 body also has numeric `balance` (\u003E 0 due, \u003C 0 overpaid) (422) |\n| INVOICE_NO_PRIMARY_GUEST | Update Booking: invoice info sent but the booking has no primary guest (422) |\n\nValidation errors return HTTP 422 with `errors` (field \u2192 messages).\n\n## Scopes\n- `properties:read` - Read property, room type, rate plan data\n- `bookings:read` - Read booking data (including services used per room)\n- `bookings:write` - Create and update bookings: confirm, payments, cancel, online check-in, and per-room check-out \/ cancel \/ rate change (Booking Rooms)\n\n## Support\nFor API support, contact: support@gohost.vn"},"servers":[{"url":"https:\/\/platform.gohost.vn\/pms\/api\/public\/v1"}],"tags":[{"name":"Property"},{"name":"Reference"},{"name":"Booking Source"},{"name":"Payment Method"},{"name":"Services"},{"name":"Room Type"},{"name":"Booking Rooms"}],"security":[{"http":[]}],"paths":{"\/properties\/{tenant_id}\/bookings\/{booking_id}\/rooms\/{room_id}\/checkout":{"post":{"operationId":"public-api.bookings.rooms.checkout","description":"Check out one room of a booking (status `checked_in` \u2192 `checked_out`). When the last\nactive room is checked out, the booking becomes `finished`.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code. A group booking (master) code is accepted \u2014 the room may belong to one of its child bookings.\n- `room_id` (required): The booking room UUID (`booking_rooms[].id` from Get Booking)\n\n**Body Parameters (JSON):**\n- `departure_hour` (optional): Actual departure time, format `H:i`. Example: `11:30`\n\n**Important Notes:**\n- Only a room with status `checked_in` can be checked out. Other statuses \u2192 HTTP 422 `BOOKING_ROOM_INVALID_STATUS`.\n- Retry-safe: checking out a room that is already `checked_out` returns 200 without changes.\n- Payments are NOT part of this request \u2014 record them first with `POST \/bookings\/{booking_id}\/payments`.\n- If the property requires full payment at check-out and the balance of THIS ROOM is not zero,\n  the request fails with HTTP 422 `BOOKING_CHECKOUT_UNBALANCED` and a numeric `balance`\n  (\u003E 0: amount still due, \u003C 0: overpaid). For a multi-room booking, payments recorded on the booking\n  but not yet assigned to a room are applied to this room automatically (up to its amount due) before the check.\n- Early check-out (before `checkout_date`) keeps the room\u0027s dates and price unchanged.\n- Partner webhook `booking.checked_out` is sent for the booking that owns the room (the child booking for a group booking).\n\n**Response (200):** same shape as Get Booking Detail (`GET \/bookings\/{booking_id}`), for the `booking_id` in the URL \u2014 including `booking_rooms[].guests` and `booking_rooms[].services`. Only the main fields are listed below.\n\n**Error codes:** `BOOKING_ROOM_INVALID_STATUS` (422, with `checkin_status` and `booking_status`), `BOOKING_CHECKOUT_UNBALANCED` (422, with `balance`), `BOOKING_001` (400\/500). Invalid `room_id` (not a UUID, or not in this booking) \u2192 HTTP 422 with `errors.room_id`.","summary":"Check-out Booking Room","tags":["Booking Rooms"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"room_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/CheckoutBookingRoomRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"amount":{"type":"number"},"service_fee":{"type":"number"},"service_discount":{"type":"number"},"service_charge":{"type":"number"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"checkin_status":{"type":"string"},"departure_hour":{"type":"string"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"room_charge":{"type":"number"},"service_fee":{"type":"number"},"service_discount":{"type":"number"},"service_charge":{"type":"number"},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"services":{"type":"array","items":{"type":"object","properties":{"id":{"type":["string","null"]},"name":{"type":"string"},"quantity":{"type":"number"},"price_per_unit":{"type":"number"},"discount":{"type":"number"},"total_price":{"type":"number"},"currency":{"type":["string","null"]},"service_used_date":{"type":["string","null"]}},"required":["id","name","quantity","price_per_unit","discount","total_price","currency","service_used_date"]}}},"required":["id","checkin_status","departure_hour","room_fee","room_discount","room_charge","service_fee","service_discount","service_charge","days_breakdown","services"]}}},"required":["id","status","amount","service_fee","service_discount","service_charge","booking_rooms"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/rooms\/{room_id}\/cancel":{"post":{"operationId":"public-api.bookings.rooms.cancel","description":"Cancel one room of a multi-room booking. The room price is removed from the booking\ntotals; the other rooms are not changed. Cancelling the last paying room (a room that is\nnot cancelled and has `room_fee` \u003E 0) cancels the whole booking, same as in the PMS.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code. A group booking (master) code is accepted.\n- `room_id` (required): The booking room UUID (`booking_rooms[].id` from Get Booking)\n\n**Important Notes:**\n- Allowed room statuses: `reserved`, `confirmed`, `holding`, `no_show`. A `checked_in` or `checked_out` room cannot be cancelled \u2192 HTTP 422 `BOOKING_ROOM_INVALID_STATUS`.\n- If cancelling this room would cancel the whole booking but the booking status does not allow cancellation (e.g. `in_progress`), the request fails with HTTP 422 `BOOKING_ROOM_INVALID_STATUS`.\n- Retry-safe: cancelling a room that is already `cancelled` returns 200 without changes.\n- To cancel the whole booking use `POST \/bookings\/{booking_id}\/cancel`.\n- Bookings from OTA channels are not blocked; the change is not sent back to the OTA reservation itself.\n- Partner webhook: `booking.updated` (or `booking.cancelled` when the whole booking is cancelled) for the booking that owns the room.\n\n**Response (200):** same shape as Get Booking Detail (`GET \/bookings\/{booking_id}`), for the `booking_id` in the URL. Only the main fields are listed below.\n\n**Error codes:** `BOOKING_ROOM_INVALID_STATUS` (422, with `checkin_status` and `booking_status`), `BOOKING_001` (400\/500). Invalid `room_id` \u2192 HTTP 422 with `errors.room_id`.","summary":"Cancel Booking Room","tags":["Booking Rooms"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"room_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/CancelBookingRoomRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"amount":{"type":"number"},"room_fee":{"type":"number"},"room_charge":{"type":"number"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"checkin_status":{"type":"string"},"room_fee":{"type":"number"},"room_charge":{"type":"number"}},"required":["id","checkin_status","room_fee","room_charge"]}}},"required":["id","status","amount","room_fee","room_charge","booking_rooms"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/rooms\/{room_id}\/rate":{"post":{"operationId":"public-api.bookings.rooms.rate","description":"Change the price of one room: per night, the same price for every night, and\/or the room\ndiscount. Room totals, booking totals and accounting line items are recalculated the same\nway as editing the price in the PMS.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code. A group booking (master) code is accepted.\n- `room_id` (required): The booking room UUID (`booking_rooms[].id` from Get Booking)\n\n**Body Parameters (JSON) \u2014 at least one of them:**\n- `days_breakdown` (optional): Array of `{ day: YYYY-MM-DD, price: number \u003E= 0 }`. Send only the nights to change \u2014 the other nights keep their current price. Each `day` must be a night of the room\u0027s stay (`checkin_date` up to the day before `checkout_date`; for a same-day booking the only night is `checkin_date`) and must not repeat.\n- `price_per_night` (optional): Number \u003E= 0 \u2014 the same price for every night. Cannot be combined with `days_breakdown`.\n- `room_discount` (optional): Number \u003E= 0 \u2014 discount amount for this room. The effective discount (the one sent, or the room\u0027s current discount when omitted) must not exceed the new room price (sum of nights) \u2014 lower it in the same request when lowering the price.\n- If the room has no stored nightly prices, send every night in `days_breakdown` (or use `price_per_night`); otherwise 422.\n- `days_breakdown` accepts at most 366 items.\n\n**Important Notes:**\n- Allowed room statuses: `reserved`, `confirmed`, `holding`, `checked_in`. Others \u2192 HTTP 422 `BOOKING_ROOM_INVALID_STATUS`.\n- Bookings from OTA channels are not blocked; the price on the OTA reservation itself is not changed.\n- Partner webhook `booking.updated` is sent for the booking that owns the room.\n\n**Response (200):** same shape as Get Booking Detail (`GET \/bookings\/{booking_id}`), for the `booking_id` in the URL. Only the main fields are listed below.\n\n**Error codes:** `BOOKING_ROOM_INVALID_STATUS` (422, with `checkin_status` and `booking_status`), `BOOKING_001` (400\/500). Validation errors \u2192 HTTP 422 with `errors`.","summary":"Change Booking Room Rate","tags":["Booking Rooms"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"room_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/ChangeBookingRoomRateRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"amount":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"room_charge":{"type":"number"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"room_charge":{"type":"number"},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}}},"required":["id","room_fee","room_discount","room_charge","days_breakdown"]}}},"required":["id","amount","room_fee","room_discount","room_charge","booking_rooms"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/booking-sources":{"get":{"operationId":"public-api.booking-sources.index","description":"Retrieve the list of active booking sources for a specific property,\nfiltered by \u0022direct\u0022 segment. These sources represent direct booking\nchannels (walk-in, website, phone, etc.) and exclude OTA channels\n(Booking.com, Airbnb, etc.).\n\n**Scope Required:** `properties:read`\n\n**Path Parameters:**\n- `tenant_id` (required): Property\/tenant identifier\n\n**Use Cases:**\n- Populate booking source dropdown in booking creation forms\n- Validate booking source values before creating bookings\n- Display available direct booking channels to API consumers\n- Show only booking sources configured for this specific property\n\n**Important Notes:**\n- Only returns active booking sources for the current property\n- Filtered by booking segment = \u0022direct\u0022\n- Each source includes translated name and color code\n- Results are cached for 10 minutes","summary":"Get Booking Sources (Direct Segment Only)","tags":["Booking Source"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"color":{"type":"string"},"translated_name":{"type":"string"}},"required":["name","color","translated_name"]}}},"required":["success","data"]}}}}}}},"\/properties\/{tenant_id}\/payment-methods":{"get":{"operationId":"public-api.payment-methods.index","description":"Retrieve the list of active payment methods for a specific property.\nThese are the payment methods that can be used when creating or confirming bookings.\n\n**Scope Required:** `properties:read`\n\n**Path Parameters:**\n- `tenant_id` (required): Property\/tenant identifier\n\n**Use Cases:**\n- Populate payment method dropdown in booking\/payment forms\n- Validate payment method values before creating bookings or payments\n- Display available payment options to API consumers\n- Show only payment methods configured for this specific property\n\n**Important Notes:**\n- Only returns active payment methods for the current property\n- Each method includes translated name for display\n- Results are cached for 10 minutes\n- The `name` field must be used when creating bookings or adding payments","summary":"Get Payment Methods","tags":["Payment Method"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"translated_name":{"type":"string"}},"required":["name","translated_name"]}}},"required":["success","data"]}}}}}}},"\/properties":{"get":{"operationId":"public-api.properties.index","description":"Retrieve all active properties (tenants) belonging to the organization.\nEach property includes room types with their corresponding rate plans.\n\n**Scope Required:** `properties:read`\n\n**Response Structure:**\n- Returns array of properties with nested room types\n- Each room type contains its corresponding rate plans\n- Each property\/room type\/rate plan identified by UUID `id`\n- Room types include occupancy limits and availability\n- Rate plans include pricing details and restrictions\n- `default_rates`: Array of 7 daily rates (Monday-Sunday)","summary":"Get Properties List","tags":["Property"],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"prefix":{"type":"string"},"title":{"type":"string"},"property_type":{"type":"string"},"currency":{"type":"string"},"timezone":{"type":"string"},"room_types":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"notes":{"type":["string","null"]},"quantity":{"type":"integer"},"room_kind":{"type":"string"},"is_virtual":{"type":"boolean"},"occ_adults":{"type":"integer"},"occ_children":{"type":"integer"},"occ_infants":{"type":"integer"},"rate_plans":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"is_default":{"type":"boolean"},"rate_plan_type":{"type":"string"},"default_rate":{"type":"number"},"default_rates":{"type":"array","items":{"type":"number"}},"min_rate":{"type":["number","null"]},"max_rate":{"type":["number","null"]},"currency":{"type":"string"},"sell_mode":{"type":"string"},"min_stay":{"type":["integer","null"]},"min_stay_arrival":{"type":["integer","null"]},"min_stay_through":{"type":["integer","null"]},"max_stay":{"type":["integer","null"]}},"required":["id","title","is_default","rate_plan_type","default_rate","default_rates","min_rate","max_rate","currency","sell_mode","min_stay","min_stay_arrival","min_stay_through","max_stay"]}}},"required":["id","title","notes","quantity","room_kind","is_virtual","occ_adults","occ_children","occ_infants","rate_plans"]}}},"required":["id","prefix","title","property_type","currency","timezone","room_types"]}}},"required":["success","data"]}}}}}}},"\/properties\/search":{"get":{"operationId":"public-api.properties.search","description":"Search for properties that have available rooms for specific check-in and check-out dates.\nReturns properties with room availability, average daily rate, and total quantity.\n\n**Scope Required:** `properties:read`\n\n**Query Parameters:**\n- `checkin_date` (required): Check-in date in YYYY-MM-DD format\n- `checkout_date` (required): Check-out date in YYYY-MM-DD format\n\n**Important Notes:**\n- Maximum stay period: 30 days\n- For same-day availability queries, checkin and checkout must be different dates\n- Only returns properties with `quantity \u003E 0` (at least one available room)\n- `quantity` is total of all available rooms across all room types in the property\n- `avg_daily_rate` shows the average daily rate for the entire stay period\n- Prices are calculated from direct rate plans only\n- Availability calculation considers:\n  - Existing bookings (confirmed, checked-in)\n  - Room maintenance schedules\n  - Out-of-order rooms","summary":"Search Properties","tags":["Property"],"parameters":[{"name":"checkin_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-19"},{"name":"checkout_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-21"}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"prefix":{"type":"string"},"title":{"type":"string"},"property_type":{"type":"string"},"currency":{"type":"string"},"timezone":{"type":"string"},"quantity":{"type":"integer"},"avg_daily_rate":{"type":"number"}},"required":["id","prefix","title","property_type","currency","timezone","quantity","avg_daily_rate"]}}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/reference\/countries":{"get":{"operationId":"public-api.reference.countries","description":"Retrieve the list of all countries available for address forms.\nUsed to populate the country dropdown when creating or updating guest\/booking records.\n\n**Scope Required:** `properties:read`\n\n**Query Parameters:**\n- `lang` (optional): Language code for country names. Supported: `vi` (default), `en`\n\n**Use Cases:**\n- Populate country select dropdown in guest registration forms\n- Validate country values before submitting booking data\n- Display localized country names in the UI\n\n**Important Notes:**\n- Results are sorted alphabetically by name\n- For Vietnamese guests, use code `VN` \u2014 this triggers city\/ward select dropdowns\n- For non-Vietnamese guests (code \u2260 VN), city and ward fields should be free-text\n- DB stores the city\/ward **name** (not the code)\n- Results are cached permanently (static data)","summary":"Get Countries List","tags":["Reference"],"parameters":[{"name":"lang","in":"query","schema":{"type":"string","default":"vi"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"code":{"type":"string"},"name":{"type":"string"}},"required":["code","name"]}}},"required":["success","data"]}}}}}}},"\/reference\/cities":{"get":{"operationId":"public-api.reference.cities","description":"Retrieve the list of Vietnamese provinces\/cities for address forms.\nOnly applicable when the selected country is Vietnam (code = `VN`).\n\n**Scope Required:** `properties:read`\n\n**Use Cases:**\n- Populate the city\/province select dropdown after user selects country = VN\n- Validate city code before fetching wards\n\n**Important Notes:**\n- Vietnam provinces only \u2014 use this endpoint only when country = `VN`\n- Results are sorted alphabetically by name\n- The `code` field (TMSCode) is used to fetch wards via `\/reference\/cities\/{city_code}\/wards`\n- DB stores the province **name** (not the code) in the `city` field\n- Results are cached permanently (static data)","summary":"Get Vietnam Provinces (Cities)","tags":["Reference"],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"code":{"type":"string"},"name":{"type":"string"}},"required":["code","name"]}}},"required":["success","data"]}}}}}}},"\/reference\/cities\/{cityCode}\/wards":{"get":{"operationId":"public-api.reference.wards","description":"Retrieve the list of wards\/communes for a specific Vietnamese province\/city.\nOnly applicable when the selected country is Vietnam (code = `VN`).\n\n**Scope Required:** `properties:read`\n\n**Path Parameters:**\n- `city_code` (required): Province TMSCode from `\/reference\/cities` (e.g., `101` for H\u00e0 N\u1ed9i)\n\n**Use Cases:**\n- Populate the ward select dropdown after user selects a province\n- Validate ward before submitting guest address data\n\n**Important Notes:**\n- Vietnam wards only \u2014 use this endpoint only when country = `VN`\n- Results are sorted alphabetically by name\n- DB stores the ward **name** (not the code) in the `ward` field\n- Results are cached permanently (static data)","summary":"Get Wards for a City","tags":["Reference"],"parameters":[{"name":"cityCode","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"code":{"type":"string"},"name":{"type":"string"}},"required":["code","name"]}}},"required":["success","data"]}}}}}}},"\/properties\/{tenant_id}\/room_types":{"get":{"operationId":"public-api.room-types.index","description":"Returns all active room types including their availability (quantity) for specific check-in and check-out dates.\nUnlike \/room_types\/search endpoint, this returns ALL room types including those with quantity = 0.\n\n**Scope Required:** `properties:read`\n\n**Query Parameters:**\n- `checkin_date` (required): Check-in date in YYYY-MM-DD format\n- `checkout_date` (required): Check-out date in YYYY-MM-DD format\n- `room_type_id` (optional): Specific room type code (UUID) to check (if not provided, returns all room types)\n\n**Important Notes:**\n- Maximum stay period: 30 days\n- checkin_date and checkout_date must be different dates (checkout must be strictly after checkin)\n- Returns ALL active room types including those with 0 available rooms\n- Does NOT filter by occupancy (adults\/children\/infants)\n- Availability calculation considers:\n  - Existing bookings (confirmed, checked-in)\n  - Room maintenance schedules\n  - Out-of-order rooms\n- Rate plans returned are \u0022direct rate plans\u0022 only (not derived\/seasonal)\n- Rate plans include `days_breakdown` with daily rates (uses restrictions data first, then default_rates)\n- Rate plans include `estimated_total_price` (sum of daily rates)\n- Rate plans include `has_breakfast` (boolean flag whether breakfast is included in the rate)","summary":"Get Room Types List","tags":["Room Type"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"room_type_id","in":"query","schema":{"type":["string","null"],"format":"uuid"},"example":"550e8400-e29b-41d4-a716-446655440000"},{"name":"checkin_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-19"},{"name":"checkout_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-21"}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"room_types":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"quantity":{"type":"integer"},"occ_adults":{"type":"integer"},"occ_children":{"type":"integer"},"occ_infants":{"type":"integer"},"rate_plans":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"currency":{"type":"string"},"sell_mode":{"type":"string"},"has_breakfast":{"type":"boolean"},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"estimated_total_price":{"type":"number"}},"required":["id","title","currency","sell_mode","has_breakfast","days_breakdown","estimated_total_price"]}}},"required":["id","title","quantity","occ_adults","occ_children","occ_infants","rate_plans"]}},"required":["room_types"]}}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/room_types\/search":{"get":{"operationId":"public-api.room-types.available","description":"Check which room types are available for specific check-in and check-out dates.\nReturns available room types with quantity and applicable rate plans including pricing breakdown.\n\n**Scope Required:** `properties:read`\n\n**Query Parameters:**\n- `checkin_date` (required): Check-in date in YYYY-MM-DD format\n- `checkout_date` (required): Check-out date in YYYY-MM-DD format\n- `room_type_id` (optional): Specific room type code (UUID) to check (if not provided, checks all room types)\n- `occ_adults` (optional): Number of adults staying (filters room types that can accommodate this many adults)\n- `occ_children` (optional): Number of children staying (filters room types that can accommodate this many children)\n- `occ_infant` (optional): Number of infants staying (filters room types that can accommodate this many infants)\n\n**Important Notes:**\n- Maximum stay period: 30 days\n- checkin_date and checkout_date must be different dates (checkout must be strictly after checkin)\n- Availability calculation considers:\n  - Existing bookings (confirmed, checked-in)\n  - Room maintenance schedules\n  - Out-of-order rooms\n  - Occupancy requirements (when `occ_adults`, `occ_children`, or `occ_infant` are provided)\n- Rate plans returned are \u0022direct rate plans\u0022 only (not derived\/seasonal)\n- Rate plans include `days_breakdown` with daily rates (uses restrictions data first, then default_rates)\n- Rate plans include `estimated_total_price` (sum of daily rates)\n- Rate plans include `has_breakfast` (boolean flag whether breakfast is included in the rate)","summary":"Search Room Type","tags":["Room Type"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"room_type_id","in":"query","schema":{"type":["string","null"],"format":"uuid"},"example":"550e8400-e29b-41d4-a716-446655440000"},{"name":"checkin_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-19"},{"name":"checkout_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-21"},{"name":"occupancy_adults","in":"query","schema":{"type":["integer","null"],"minimum":1}},{"name":"occupancy_children","in":"query","schema":{"type":["integer","null"],"minimum":0}},{"name":"occupancy_infant","in":"query","schema":{"type":["integer","null"],"minimum":0}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"room_types":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"quantity":{"type":"integer"},"occ_adults":{"type":"integer"},"occ_children":{"type":"integer"},"occ_infants":{"type":"integer"},"rate_plans":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"currency":{"type":"string"},"sell_mode":{"type":"string"},"has_breakfast":{"type":"boolean"},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"estimated_total_price":{"type":"number"}},"required":["id","title","currency","sell_mode","has_breakfast","days_breakdown","estimated_total_price"]}}},"required":["id","title","quantity","occ_adults","occ_children","occ_infants","rate_plans"]}},"required":["room_types"]}}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/services":{"get":{"operationId":"public-api.services.index","description":"Retrieve the list of active services for a specific property.\nServices are identified by their unique code (not internal ID).\n\n**Scope Required:** `properties:read`\n\n**Path Parameters:**\n- `tenant_id` (required): Property\/tenant identifier\n\n**Query Parameters:**\n- `category` (optional): Filter by service category name\n\n**Use Cases:**\n- Get available services for booking service additions\n- Display services list in third-party integrations\n- Validate service codes before adding to bookings\n\n**Important Notes:**\n- Only returns active services for the current property\n- Services are identified by `id` field (e.g., SVAB12CD34)\n- Internal IDs are hidden from the response\n- Results are cached for 10 minutes","summary":"Get Services List","tags":["Services"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"price_per_unit":{"type":"number"},"currency":{"type":"string"},"note":{"type":["string","null"]},"category":{"type":["object","null"],"properties":{"name":{"type":"string"},"icon":{"type":["string","null"]}},"required":["name","icon"]}},"required":["id","name","price_per_unit","currency","note","category"]}}},"required":["success","data"]}}}}}}},"\/properties\/{tenant_id}\/bookings":{"get":{"operationId":"public-api.bookings.index","description":"Retrieve a list of bookings within a specified date range.\nQuery bookings based on check-in date falling within the provided range.\n\n**Scope Required:** `bookings:read`\n\n**Query Parameters:**\n- `start_date` (required): Start date in YYYY-MM-DD format\n- `end_date` (required): End date in YYYY-MM-DD format\n- `status` (optional): Filter by booking status (new, confirmed, in_progress, finished, no_show, cancelled)\n- `per_page` (optional): Number of items per page (default: 10, max: 50)\n- `page` (optional): Page number (default: 1)\n\n**Important Notes:**\n- Maximum date range: 30 days\n- Bookings are filtered by `checkin_date` within the range [start_date, end_date]\n- Results are paginated\n- Includes related data: customer, booking source, and occupancy information\n- Each booking room has the same fields as in Get Booking Detail (without `guests`), including `services` (services used) and `service_fee`\/`service_discount`\/`service_charge`; the booking has the same three totals. The `booking_rooms` shape below lists only the service-related fields","summary":"Get Bookings","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"start_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-01"},{"name":"end_date","in":"query","required":true,"schema":{"type":"string","format":"date"},"example":"2025-11-30"},{"name":"status","in":"query","schema":{"type":["string","null"],"enum":["new","confirmed","in_progress","finished","no_show","cancelled","merged"]}},{"name":"per_page","in":"query","schema":{"type":["integer","null"],"minimum":1,"maximum":50}},{"name":"page","in":"query","schema":{"type":["integer","null"],"minimum":1}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"code":{"type":["string","null"]},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"booked_at":{"type":"string"},"service_fee":{"type":"number"},"service_discount":{"type":"number"},"service_charge":{"type":"number"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"checkin_status":{"type":"string"},"service_charge":{"type":"number"},"services":{"type":"array","items":{"type":"object","properties":{"id":{"type":["string","null"]},"name":{"type":"string"},"quantity":{"type":"number"},"price_per_unit":{"type":"number"},"discount":{"type":"number"},"total_price":{"type":"number"},"currency":{"type":["string","null"]},"service_used_date":{"type":["string","null"]}},"required":["id","name","quantity","price_per_unit","discount","total_price","currency","service_used_date"]}}},"required":["id","checkin_status","service_charge","services"]}},"customer":{"type":"object","properties":{"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"name":{"type":"string"},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["email","phone","name","country","identity"]},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]}},"required":["id","status","currency","amount","code","checkin_date","arrival_hour","checkout_date","departure_hour","notes","source_name","source_reservation_code","segment","payment_status","room_charge","room_fee","room_discount","booked_at","service_fee","service_discount","service_charge","booking_rooms","customer","booking_source","payments","occupancy"]}},"pagination":{"type":"object","properties":{"current_page":{"type":"integer"},"from":{"type":["integer","null"]},"last_page":{"type":"integer"},"per_page":{"type":"integer"},"to":{"type":["integer","null"]},"total":{"type":"integer"},"links":{"type":"object","properties":{"first":{"type":["string","null"]},"last":{"type":["string","null"]},"prev":{"type":["string","null"]},"next":{"type":["string","null"]}},"required":["first","last","prev","next"]}},"required":["current_page","from","last_page","per_page","to","total","links"]},"success":{"type":"boolean"}},"required":["data","pagination","success"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}},"post":{"operationId":"public-api.bookings.create","description":"Create a new booking with customer information, room assignments, and optional payments.\nThe booking will be created with status \u0022confirmed\u0022 and assigned a unique booking code.\n\n**Scope Required:** `bookings:write`\n\n**Body Parameters:**\n- \u0022currency\u0022: format: ISO 4217 currency code, example: VND,\n- \u0022checkin_date\u0022: format: YYYY-MM-DD,\n- \u0022arrival_hour\u0022: format: H:i,\n- \u0022checkout_date\u0022: format: YYYY-MM-DD,\n- \u0022departure_hour\u0022: format: H:i,\n- \u0022source_commission\u0022: integer (min 0) or null,\n- \u0022notes\u0022: format: string, max: 500 characters,\n- \u0022source_name\u0022: format: string, example: trip,\n- \u0022occupancy_children\u0022: format: integer, min: 0,\n- \u0022occupancy_adults\u0022: format: integer, min: 1,\n- \u0022occupancy_infants\u0022: format: integer, min: 0,\n- \u0022payment_collect\u0022: string|null, one of: \u0022property\u0022, \u0022ota\u0022, \u0022online\u0022, \u0022\u0022,\n\n**Customer (`customer`) object:**\n- \u0022customer\u0022: object, required, main guest information,\n- \u0022customer.name\u0022: string, required, max: 50 characters,\n- \u0022customer.phone\u0022: string|null,\n- \u0022customer.email\u0022: string|null, valid email format, max: 255 characters,\n- \u0022customer.birthday\u0022: string|null, format: YYYY-MM-DD,\n- \u0022customer.gender\u0022: string|null, one of: \u0022male\u0022, \u0022female\u0022, \u0022unknown\u0022,\n- \u0022customer.company\u0022: string|null,\n- \u0022customer.address\u0022: string|null,\n- \u0022customer.ward\u0022: string|null,\n- \u0022customer.city\u0022: string|null,\n- \u0022customer.country\u0022: string|null, ISO 3166-1 alpha-2 format (2 uppercase letters). Example: `VN`, `US`, `JP`, `KR`\n- \u0022customer.identity\u0022: string|null,\n- \u0022customer.identity_issue_date\u0022: string|null, format: YYYY-MM-DD,\n- \u0022customer.id_type\u0022: string|null, one of: \u0022identity_card\u0022, \u0022passport\u0022, \u0022other\u0022,\n- \u0022customer.is_child\u0022: boolean|null,\n- \u0022customer.notes\u0022: string|null, max: 500 characters,\n\n**Booking rooms (`booking_rooms`) array:**\n- \u0022booking_rooms\u0022: array, required, at least 1 item,\n- \u0022booking_rooms[].room_type_id\u0022: string, required, room type code (must exist and be active),\n- \u0022booking_rooms[].default_rate\u0022: numeric|null, default room rate,\n- \u0022booking_rooms[].room_discount\u0022: numeric, optional discount amount (default 0),\n- \u0022booking_rooms[].days_breakdown\u0022: array|null, custom price per day,\n- \u0022booking_rooms[].days_breakdown[].day\u0022: string, required with `days_breakdown`, format: YYYY-MM-DD,\n- \u0022booking_rooms[].days_breakdown[].price\u0022: numeric, required with `days_breakdown`, daily price,\n\n**Payments (`payments`) array:**\n- \u0022payments\u0022: array|null, list of payment records to attach to booking,\n- \u0022payments[].amount\u0022: numeric, required, min: 0,\n- \u0022payments[].notes\u0022: string|null,\n- \u0022payments[].method\u0022: string|null, one of system payment method (cash, bank_transfer, debt, atm_transfer, credit_card, apple_pay, pos, wechat_pay..v.v),\n- \u0022payments[].paid_at\u0022: string|null, format: YYYY-MM-DD H:i:s,\n\n**Auto-cancel option:**\n- \u0022auto_cancel\u0022: boolean|null, default: true. If true and no payments provided, booking will be auto-cancelled after 16 minutes if unconfirmed.\n\n**Important Notes:**\n- Room availability is checked before booking creation\n- Overlapping bookings for same room will be rejected\n- Payment is optional - can be added later via Payment API\n- For hourly bookings: set `checkin_date` = `checkout_date` and specify `arrival_hour`, `departure_hour`\n- If no payments are provided and `auto_cancel` is true (default), the booking will be automatically cancelled after 16 minutes if it is still unconfirmed.\n- Set `auto_cancel` to false to disable automatic cancellation for partners who manage confirmation externally.","summary":"Create Booking","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/BookingCreateRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"booked_at":{"type":"string"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"amount":{"type":"number"},"checkin_date":{"type":"string"},"checkout_date":{"type":"string"},"room_discount":{"type":"number"},"room_fee":{"type":"number"},"room_charge":{"type":"number"},"nights":{"type":"integer"},"arrival_hour":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"room_type":{"type":"string"},"room_unit":{"type":"string"}},"required":["amount","checkin_date","checkout_date","room_discount","room_fee","room_charge","nights","arrival_hour","departure_hour","notes","days_breakdown","room_type","room_unit"]}},"customer":{"type":"object","properties":{"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"name":{"type":"string"},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["email","phone","name","country","identity"]},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]}},"required":["id","status","currency","amount","checkin_date","arrival_hour","checkout_date","departure_hour","notes","source_name","source_reservation_code","segment","payment_status","room_charge","room_fee","room_discount","booked_at","booking_rooms","customer","booking_source","payments","occupancy"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/confirm":{"post":{"operationId":"public-api.bookings.confirm","description":"Confirm a pending booking, optionally adding payments.\nThe booking status will be updated to \u0022confirmed\u0022.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code to confirm (must exist and be in pending status)\n\n**Body Parameters:**\n- `payments` (optional): Array of payment records to attach during confirmation\n- `payments[].amount` (required): Payment amount (numeric, min: 0)\n- `payments[].method` (optional): Payment method (one of system payment method (cash, bank_transfer, debt, atm_transfer, credit_card, apple_pay, pos, wechat_pay..v.v))\n- `payments[].paid_at` (optional): Payment date (format: Y-m-d H:i:s)\n- `payments[].notes` (optional): Payment notes (max: 500 characters)\n\n**Important Notes:**\n- Only pending bookings can be confirmed\n- Payments are optional - booking can be confirmed without payment\n- Booking status will be updated to \u0022confirmed\u0022 automatically\n- If booking is already confirmed, checked_in, checked_out, or cancelled, the request will fail","summary":"Confirm Booking","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/ConfirmBookingRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"booked_at":{"type":"string"},"departure_hour":{"type":"string"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"customer":{"type":"object","properties":{"email":{"type":"string"},"phone":{"type":"string"},"name":{"type":"string"},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["email","phone","name","country","identity"]},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"amount":{"type":"number"},"checkin_date":{"type":"string"},"checkout_date":{"type":"string"},"room_discount":{"type":"number"},"room_fee":{"type":"number"},"room_charge":{"type":"number"},"nights":{"type":"integer"},"arrival_hour":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"room_type":{"type":"string"},"room_unit":{"type":"string"}},"required":["amount","checkin_date","checkout_date","room_discount","room_fee","room_charge","nights","arrival_hour","departure_hour","notes","days_breakdown","room_type","room_unit"]}},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]}},"required":["id","status","currency","amount","checkin_date","arrival_hour","checkout_date","notes","source_name","source_reservation_code","segment","payment_status","room_charge","booked_at","departure_hour","room_fee","room_discount","customer","booking_rooms","booking_source","payments","occupancy"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/payments":{"post":{"operationId":"public-api.bookings.add-payment","description":"Add one or more payments to an existing booking without changing its status.\nUse this endpoint to record payments for bookings that are already confirmed or in progress.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code to add payments (must exist and not be cancelled)\n\n**Body Parameters:**\n- `payments` (required): Array of payment records, at least one payment is required\n- `payments[].amount` (required): Payment amount (numeric, min: 0)\n- `payments[].method` (optional): Payment method (one of system payment method (cash, bank_transfer, debt, atm_transfer, credit_card, apple_pay, pos, wechat_pay..v.v))\n- `payments[].paid_at` (optional): Payment date (format: Y-m-d H:i:s)\n- `payments[].notes` (optional): Payment notes (max: 500 characters)\n\n**Important Notes:**\n- At least one payment is required\n- Booking status will NOT be changed\n- Cancelled bookings cannot receive payments\n- Payments are added to existing payments (not replaced)\n- If `booking_id` refers to a booking that has since been merged into a\n  group booking (a \u0022\u0111\u01a1n \u0111o\u00e0n\u0022 \u2014 status Merged), the payment is redirected\n  to its master booking instead, because payments always live on the\n  master after a merge. The `data` in the response then describes the\n  MASTER booking, whose `id` may differ from the `booking_id` you sent \u2014\n  this is intentional (see `BookingService::addPayment()`), not a bug.","summary":"Add Payment","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/AddPaymentRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"booked_at":{"type":"string"},"customer":{"type":"object","properties":{"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"name":{"type":"string"},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["email","phone","name","country","identity"]},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]}},"required":["id","status","currency","amount","checkin_date","arrival_hour","checkout_date","departure_hour","notes","source_name","source_reservation_code","segment","payment_status","room_charge","room_fee","room_discount","booked_at","customer","booking_source","payments","occupancy"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/cancel":{"post":{"operationId":"public-api.bookings.cancel","description":"Cancel an existing booking and all its associated booking rooms.\nAll unpaid payments will be marked as cancelled.\nAll booking rooms will have their check-in status set to cancelled.\n\n**Scope Required:** `bookings:write`\n\n**URL Parameters:**\n- `booking_id` (required): The ID of the booking to cancel (must exist and be cancellable)\n\n**Important Notes:**\n- Only bookings with status that allows cancellation can be cancelled\n- The booking must pass the `canCancel` check (see Booking model)\n- All unpaid payments will be automatically cancelled\n- All booking rooms will be marked as cancelled\n- Room charges will be recalculated after cancellation","summary":"Cancel Booking","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/CancelBookingRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"booked_at":{"type":"string"},"customer":{"type":"object","properties":{"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"name":{"type":"string"},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["email","phone","name","country","identity"]},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]}},"required":["id","status","currency","amount","checkin_date","arrival_hour","checkout_date","departure_hour","notes","source_name","source_reservation_code","segment","payment_status","room_charge","room_fee","room_discount","booked_at","customer","booking_source","payments","occupancy"]},"message":{"type":"string"}},"required":["success","data","message"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}":{"get":{"operationId":"public-api.bookings.show","description":"Retrieve detailed information for a specific booking, including rooms and guests.\nUse this endpoint for online check-in flow to get all guest information.\n\n**Scope Required:** `bookings:read`\n\n**URL Parameters:**\n- `booking_id` (required): The booking code. Example: PR00123\n\n**Response includes:**\n- Booking details: dates, status, amount, payment_collect (enum [property, ota, null]), etc.\n- Customer information (primary booker)\n- Booking rooms with room type and unit assignments\n- Guests attached to each room (for online check-in)\n- Payments history\n- Booking source information\n- Note: payment_collect is information about who should collect Payment. Can be \u0027property\u0027 if payment should be collected by property, \u0027ota\u0027 if guest already pay at OTA and null if value is not specified. Usually null mean that property will collect payment.\n- Note: `meals` is the detailed breakfast list per room (serve_date, adults, children) \u2014 empty array `[]` if the room has no breakfast recorded. Internal fields (price, notes, is_included, created_by) are intentionally NOT exposed. This field is shared with the Update Booking (Online Check-in) response since both use the same relation\/resource pipeline.\n- Note: `services` is the list of services used per room: `id` (service code from the Services endpoint, still returned for a service deleted from the catalog; `null` for a line not linked to a catalog service, e.g. from an OTA), `name`, `quantity`, `price_per_unit`, `discount`, `total_price`, `currency`, `service_used_date` (YYYY-MM-DD). Internal staff notes are NOT exposed. Room totals: `service_fee` (sum of `total_price`), `service_discount`, `service_charge` (= fee \u2212 discount); the booking has the same three totals. Also returned by Get Bookings, Update Booking and the Booking Rooms endpoints.\n- Note: `payments` also contains CANCELLED payments (kept for reconciliation, shown struck-through as \u0022Cancelled\u0022 in the PMS). Each payment has `status` (`paid` = money received, `not_pay` = not yet collected, `cancelled` = voided) and `cancel_reason` (reason entered when voiding, `null` otherwise). Only payments with `status = paid` are money received: sum those only (the booking\u0027s `payment_status` is computed the same way). The same `payments` shape is returned by Get Bookings, Create Booking, Confirm Booking, Add Payment, Update Booking and Cancel Booking.\n- Note: `guests[].identity_image_urls` lists signed URLs (valid 60 minutes) only for identity images stored in this property\u0027s own folders; images that cannot be signed are skipped, so the list is continuous and its indexes do NOT match the order of the guest\u0027s stored images.","summary":"Get Booking Detail","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"query","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"code":{"type":"string"},"status":{"type":"string"},"checkin_date":{"type":"string"},"checkout_date":{"type":"string"},"arrival_hour":{"type":"string"},"departure_hour":{"type":"string"},"amount":{"type":"number"},"currency":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"payment_collect":{"type":["string","null"]},"notes":{"type":["string","null"]},"service_fee":{"type":"number"},"service_discount":{"type":"number"},"service_charge":{"type":"number"},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"checkin_status":{"type":"string"},"room_type":{"type":"string"},"room_unit":{"type":["string","null"]},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]},"has_breakfast":{"type":"boolean"},"meals":{"type":"array","items":{"type":"object","properties":{"serve_date":{"type":"string"},"adults":{"type":"integer"},"children":{"type":"integer"}},"required":["serve_date","adults","children"]}},"service_fee":{"type":"number"},"service_discount":{"type":"number"},"service_charge":{"type":"number"},"services":{"type":"array","items":{"type":"object","properties":{"id":{"type":["string","null"]},"name":{"type":"string"},"quantity":{"type":"number"},"price_per_unit":{"type":"number"},"discount":{"type":"number"},"total_price":{"type":"number"},"currency":{"type":["string","null"]},"service_used_date":{"type":["string","null"]}},"required":["id","name","quantity","price_per_unit","discount","total_price","currency","service_used_date"]}},"guests":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"identity":{"type":["string","null"]},"id_type":{"type":["string","null"]},"identity_image_urls":{"type":"array","items":{"type":"string"}},"is_primary_guest":{"type":"boolean"}},"required":["id","name","email","phone","identity","id_type","identity_image_urls","is_primary_guest"]}}},"required":["id","checkin_status","room_type","room_unit","occupancy","has_breakfast","meals","service_fee","service_discount","service_charge","services","guests"]}},"customer":{"type":"object","properties":{"name":{"type":"string"},"email":{"type":["string","null"]},"phone":{"type":["string","null"]}},"required":["name","email","phone"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]}},"required":["id","code","status","checkin_date","checkout_date","arrival_hour","departure_hour","amount","currency","source_reservation_code","payment_collect","notes","service_fee","service_discount","service_charge","booking_rooms","customer","payments","booking_source"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/bookings\/{booking_id}\/update":{"post":{"operationId":"public-api.bookings.update","description":"Update booking with rooms, guests, payments, status, and notes.\nUse this endpoint for online check-in to submit guest information and complete check-in.\n\n**Scope Required:** `bookings:write`\n\n**Content-Type:** `multipart\/form-data` (to support file uploads)\n\n**URL Parameters:**\n- `booking_id` (required): The booking code to update\n\n**Request Format:**\nSend as `multipart\/form-data` with:\n- `data`: JSON string containing the update payload\n- `rooms[{index}][guests][records][{guestIndex}][identity_image]`: Single identity image file (backward compatible)\n- `rooms[{index}][guests][records][{guestIndex}][identity_image][]`: Multiple identity image files (max 3)\n\n**Body Parameters (in `data` JSON):**\n\n**Rooms (`rooms` array) - Updates per booking room:**\n- `rooms[].id` (required): UUID of the booking room\n- `rooms[].status` (optional): \u0022checked_in\u0022 to check in this specific room\n- `rooms[].guests` (optional): Guest updates for this room\n- `rooms[].guests.method` (required with guests): \u0022add\u0022 or \u0022replace\u0022\n  - `add`: Add new guests to existing list\n  - `replace`: Remove all existing guests and replace with new list\n- `rooms[].guests.records[]` (required with guests): Array of guest objects\n  - `id` (optional): ID of the customer\n  - `name` (required): Guest full name\n  - `email` (optional): Email address\n  - `phone` (optional): Phone number\n  - `birthday` (optional): Date of birth (YYYY-MM-DD)\n  - `gender` (optional): male, female, unknown\n  - `identity` (optional): ID\/Passport number\n  - `id_type` (optional): identity_card, passport, other\n  - `identity_issue_date` (optional): ID issue date (YYYY-MM-DD)\n  - `identity_image` (optional): File upload(s) - single file or array of files (JPEG\/PNG, max 5MB each, max 3 files)\n  - `address` (optional): Street address\n  - `ward` (optional): Ward\/District\n  - `city` (optional): City\n  - `country` (optional): Country, ISO 3166-1 alpha-2 format (2 uppercase letters). Example: `VN`, `US`, `JP`, `KR`\n  - `is_primary_guest` (optional): Boolean, primary guest for room\n  - `accommodation_type` (optional): permanent, temporary, other\n  - `travel_purpose` (optional): business, tourism, other\n  - `guest_category` (optional): solo, couple, family, small_group, large_group\n\n**Services (`rooms[].services` object) - Per room:**\n- `rooms[].services.method` (required with services): Only \u0022add\u0022 is supported\n  - `add`: Add new services to existing list (no replace functionality)\n- `rooms[].services.records[]` (required with services): Array of service objects\n  - `id` (required): Service ID (e.g., SVAB12CD34 - get from \/services endpoint)\n  - `quantity` (required): Quantity of service (must be \u003E 0)\n  - `price_per_unit` (optional): Override default price per unit\n  - `service_used_date` (optional): Date service was used (YYYY-MM-DD)\n  - `notes` (optional): Service notes\n\n**Payments (`payments` object) - Booking level:**\n- `payments.method` (required with payments): \u0022add\u0022 or \u0022replace\u0022\n  - `add`: Add new payments to existing list\n  - `replace`: Cancel existing payments (kept as `cancelled`, never deleted), then add the new list\n- `payments.records[]` (required with payments): Array of payment objects\n  - `amount` (required): Payment amount\n  - `method` (optional): Payment method (cash, bank_transfer, credit_card, etc.)\n  - `paid_at` (optional): Payment timestamp (YYYY-MM-DD HH:mm:ss)\n  - `notes` (optional): Payment notes\/reference\n\n**Notes (`notes` string) - Booking level:**\n- `notes` (optional): Booking notes\n\n**Invoice (`invoice` object) - Booking level:**\nOptional invoice\/billing info collected at online check-in (e.g. a guest\nrequesting a VAT invoice for their company). Persisted onto the booking\u0027s\nprimary guest (resolved server-side via the first display room\u0027s primary\nguest).\n- `invoice.company` (optional): Company\/organization name (max 255)\n- `invoice.tax_code` (optional): Tax code \/ MST (max 20)\n- `invoice.address` (optional): Billing address (max 255)\n- `invoice.email` (optional): Email to receive the invoice (max 255)\n\n**Important Notes:**\n- All fields are optional - only provided fields will be updated\n- For file uploads, use multipart\/form-data with JSON data in \u0027data\u0027 field\n- Cannot check in before checkin_date\n- Cannot check in cancelled bookings\n- Sending `invoice` with any value while the booking has no resolvable\n  primary guest fails with HTTP 422 (`INVOICE_NO_PRIMARY_GUEST`)","summary":"Update Booking (Online Check-in)","tags":["Booking"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"booking_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"multipart\/form-data":{"schema":{"$ref":"#\/components\/schemas\/UpdateBookingRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"currency":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"arrival_hour":{"type":"string"},"checkout_date":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"source_name":{"type":"string"},"source_reservation_code":{"type":["string","null"]},"segment":{"type":"string"},"payment_status":{"type":"string"},"room_charge":{"type":"number"},"room_fee":{"type":"number"},"room_discount":{"type":"number"},"booked_at":{"type":"string"},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]},"customer":{"type":"object","properties":{"name":{"type":"string"},"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"country":{"type":["string","null"]},"identity":{"type":["string","null"]}},"required":["name","email","phone","country","identity"]},"booking_rooms":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"amount":{"type":"number"},"checkin_date":{"type":"string"},"checkout_date":{"type":"string"},"room_discount":{"type":"number"},"checkin_status":{"type":"string"},"room_fee":{"type":"number"},"room_charge":{"type":"number"},"nights":{"type":"integer"},"arrival_hour":{"type":"string"},"departure_hour":{"type":"string"},"notes":{"type":["string","null"]},"days_breakdown":{"type":"array","items":{"type":"object","properties":{"day":{"type":"string"},"price":{"type":"number"}},"required":["day","price"]}},"occupancy":{"type":"object","properties":{"adults":{"type":"integer"},"children":{"type":"integer"},"infants":{"type":"integer"}},"required":["adults","children","infants"]},"room_type":{"type":"string"},"room_unit":{"type":["string","null"]},"has_breakfast":{"type":"boolean"},"meals":{"type":"array","items":{"type":"object","properties":{"serve_date":{"type":"string"},"adults":{"type":"integer"},"children":{"type":"integer"}},"required":["serve_date","adults","children"]}},"guests":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"email":{"type":["string","null"]},"phone":{"type":["string","null"]},"birthday":{"type":["string","null"]},"gender":{"type":["string","null"]},"identity":{"type":["string","null"]},"id_type":{"type":["string","null"]},"identity_issue_date":{"type":["string","null"]},"identity_image_urls":{"type":"array","items":{"type":"string"}},"address":{"type":["string","null"]},"ward":{"type":["string","null"]},"city":{"type":["string","null"]},"country":{"type":["string","null"]},"is_child":{"type":"boolean"},"notes":{"type":["string","null"]},"is_primary_guest":{"type":"boolean"},"accommodation_type":{"type":["string","null"]},"travel_purpose":{"type":["string","null"]},"guest_category":{"type":["string","null"]}},"required":["id","name","email","phone","birthday","gender","identity","id_type","identity_issue_date","identity_image_urls","address","ward","city","country","is_child","notes","is_primary_guest","accommodation_type","travel_purpose","guest_category"]}}},"required":["id","amount","checkin_date","checkout_date","room_discount","checkin_status","room_fee","room_charge","nights","arrival_hour","departure_hour","notes","days_breakdown","occupancy","room_type","room_unit","has_breakfast","meals","guests"]}},"booking_source":{"type":["object","null"],"properties":{"name":{"type":"string"},"color":{"type":"string"}},"required":["name","color"]},"payments":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"method":{"type":["string","null"]},"currency":{"type":"string"},"status":{"type":"string","enum":["paid","not_pay","cancelled"]},"amount":{"type":"number"},"notes":{"type":["string","null"]},"paid_at":{"type":["string","null"]},"cancel_reason":{"type":["string","null"]}},"required":["id","method","currency","status","amount","notes","paid_at","cancel_reason"]}}},"required":["id","status","currency","amount","checkin_date","arrival_hour","checkout_date","departure_hour","notes","source_name","source_reservation_code","segment","payment_status","room_charge","room_fee","room_discount","booked_at","occupancy","customer","booking_rooms","booking_source","payments"]}},"required":["success","data"]}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/webhooks":{"get":{"operationId":"public-api.webhooks.index","summary":"GET \/webhooks \u2014 list endpoints c\u1ee7a API key hi\u1ec7n t\u1ea1i","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"array","items":{}}}}}}},"post":{"operationId":"public-api.webhooks.store","summary":"POST \/webhooks \u2014 \u0111\u0103ng k\u00fd endpoint m\u1edbi. Tr\u1ea3 `secret` plaintext \u0111\u00fang m\u1ed9t l\u1ea7n","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/StoreWebhookEndpointRequest"}}}},"responses":{"201":{"description":"","content":{"application\/json":{"schema":{"type":"array","items":{}}}}},"200":{"description":"","content":{"application\/json":{"schema":{"type":"string"}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}}},"\/properties\/{tenant_id}\/webhooks\/{code}":{"get":{"operationId":"public-api.webhooks.show","summary":"GET \/webhooks\/{code} \u2014 chi ti\u1ebft endpoint (kh\u00f4ng c\u00f3 secret)","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object"}}}}}},"patch":{"operationId":"public-api.webhooks.update","summary":"PATCH \/webhooks\/{code} \u2014 \u0111\u1ed5i url\/events\/description\/is_active","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"content":{"application\/json":{"schema":{"$ref":"#\/components\/schemas\/UpdateWebhookEndpointRequest"}}}},"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"type":"object"}}}},"422":{"$ref":"#\/components\/responses\/ValidationException"}}},"delete":{"operationId":"public-api.webhooks.destroy","summary":"DELETE \/webhooks\/{code} \u2014 xo\u00e1 endpoint (cascade events + deliveries)","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"204":{"description":"No content","content":{"application\/json":{"schema":{"type":"array","items":{"type":"string"},"minItems":0,"maxItems":0,"additionalItems":false}}}},"200":{"description":"","content":{"application\/json":{"schema":{"type":"string"}}}}}}},"\/properties\/{tenant_id}\/webhooks\/{code}\/rotate-secret":{"post":{"operationId":"public-api.webhooks.rotate-secret","summary":"POST \/webhooks\/{code}\/rotate-secret \u2014 secret m\u1edbi, tr\u1ea3 plaintext m\u1ed9t l\u1ea7n","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"anyOf":[{"type":"array","items":{}},{"type":"string"}]}}}}}}},"\/properties\/{tenant_id}\/webhooks\/{code}\/ping":{"post":{"operationId":"public-api.webhooks.ping","summary":"POST \/webhooks\/{code}\/ping \u2014 g\u1eedi `webhook.ping` test delivery","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"202":{"description":"","content":{"application\/json":{"schema":{"type":"array","items":{}}}}},"200":{"description":"","content":{"application\/json":{"schema":{"type":"string"}}}}}}},"\/properties\/{tenant_id}\/webhooks\/{code}\/deliveries":{"get":{"operationId":"public-api.webhooks.deliveries","summary":"GET \/webhooks\/{code}\/deliveries \u2014 delivery log c\u1ee7a endpoint","tags":["WebhookEndpoint"],"parameters":[{"name":"tenant_id","in":"path","required":true,"schema":{"type":"string"}},{"name":"code","in":"path","required":true,"schema":{"type":"string"}},{"name":"status","in":"query","schema":{"type":"string"}},{"name":"event_type","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"","content":{"application\/json":{"schema":{"anyOf":[{"type":"object","properties":{"data":{"anyOf":[{"type":"string"},{"type":"array","items":{"type":"string"},"minItems":0,"maxItems":0,"additionalItems":false}]},"pagination":{"type":"object","properties":{"current_page":{"anyOf":[{"type":"string"},{"type":"integer","enum":[1]}]},"from":{"type":["string","null"]},"last_page":{"anyOf":[{"type":"string"},{"type":"integer","enum":[1]}]},"per_page":{"type":"string"},"to":{"type":["string","null"]},"total":{"anyOf":[{"type":"string"},{"type":"integer","enum":[0]}]},"links":{"type":"object","properties":{"first":{"type":["string","null"]},"last":{"type":["string","null"]},"prev":{"type":["string","null"]},"next":{"type":["string","null"]}},"required":["first","last","prev","next"]}},"required":["current_page","from","last_page","per_page","to","total","links"]},"success":{"type":"boolean"}},"required":["data","pagination","success"]},{"type":"string"}]}}}}}}}},"components":{"securitySchemes":{"http":{"type":"http","scheme":"bearer","bearerFormat":"Bearer"}},"schemas":{"AddPaymentRequest":{"type":"object","properties":{"booking_id":{"type":"string"},"payments":{"type":"array","items":{"type":"object","properties":{"amount":{"type":"number","minimum":0},"method":{"type":["string","null"]},"paid_at":{"type":["string","null"],"format":"date-time","example":"2025-11-19 16:54:00"},"notes":{"type":["string","null"],"maxLength":500}},"required":["amount"]},"minItems":1}},"required":["booking_id","payments"],"title":"AddPaymentRequest"},"BookingCreateRequest":{"type":"object","properties":{"currency":{"type":["string","null"],"maxLength":3},"checkin_date":{"type":"string","format":"date","example":"2025-11-19"},"checkout_date":{"type":"string","format":"date","example":"2025-11-21"},"arrival_hour":{"type":["string","null"]},"departure_hour":{"type":["string","null"]},"source_commission":{"type":["integer","null"],"minimum":0},"notes":{"type":["string","null"],"maxLength":500},"discount_reason":{"type":["string","null"],"description":"L\u00fd do gi\u1ea3m gi\u00e1 \u2014 t\u00f9y ch\u1ecdn.","maxLength":255},"payment_collect":{"type":["string","null"],"enum":["property","ota","online",""]},"occupancy_children":{"type":["integer","null"],"minimum":0},"occupancy_adults":{"type":["integer","null"],"minimum":1},"occupancy_infants":{"type":["integer","null"],"minimum":0},"source_name":{"type":"string"},"auto_cancel":{"type":["boolean","null"],"description":"Auto-cancel option"},"customer":{"type":"object","properties":{"name":{"type":"string","description":"Customer validate","maxLength":50},"phone":{"type":["string","null"]},"email":{"type":["string","null"],"format":"email","maxLength":255},"birthday":{"type":["string","null"],"format":"date","example":"1990-05-15"},"gender":{"type":["string","null"],"enum":["male","female","unknown"]},"company":{"type":["string","null"]},"address":{"type":["string","null"]},"city":{"type":["string","null"]},"country":{"type":["string","null"]},"identity":{"type":["string","null"]},"identity_issue_date":{"type":["string","null"],"format":"date","example":"2020-01-15"},"id_type":{"type":["string","null"],"enum":["identity_card","passport","other"]},"is_child":{"type":["boolean","null"]},"ward":{"type":["string","null"],"maxLength":255},"notes":{"type":["string","null"],"maxLength":500}},"required":["name"]},"booking_rooms":{"type":"array","description":"Booking room validate","items":{"type":"object","properties":{"room_type_id":{"type":"string"},"rate_plan_id":{"type":["string","null"]},"default_rate":{"type":["number","null"]},"room_discount":{"type":"number"},"days_breakdown":{"type":["array","null"],"items":{"type":"object","properties":{"day":{"type":"string","format":"date"},"price":{"type":"number"}}}}},"required":["room_type_id"]},"minItems":1},"payments":{"type":["array","null"],"description":"Payment validate","items":{"type":"object","properties":{"method":{"type":["string","null"]},"amount":{"type":"number","minimum":0},"paid_at":{"type":["string","null"],"format":"date-time","example":"2025-11-19 16:54:00"},"notes":{"type":["string","null"]}},"required":["amount"]}}},"required":["checkin_date","checkout_date","source_name","customer","booking_rooms"],"title":"BookingCreateRequest"},"CancelBookingRequest":{"type":"object","properties":{"booking_id":{"type":"string","maxLength":32}},"required":["booking_id"],"title":"CancelBookingRequest"},"CancelBookingRoomRequest":{"type":"object","description":"Hu\u1ef7 m\u1ed9t ph\u00f2ng trong \u0111\u01a1n \u2014 `POST \/bookings\/{booking_id}\/rooms\/{room_id}\/cancel`. Kh\u00f4ng c\u00f3 body.","properties":{"booking_id":{"type":"string","description":"M\u00e3 \u0111\u01a1n = prefix + ph\u1ea7n tu\u1ea7n t\u1ef1\/ng\u1eabu nhi\u00ean, \u0111\u1ed9 d\u00e0i thay \u0111\u1ed5i \u2014 max:32 ch\u1ec9 ch\u1eb7n input r\u00e1c (go-helmmetry#1093).","maxLength":32},"room_id":{"type":"string","format":"uuid"}},"required":["booking_id","room_id"],"title":"CancelBookingRoomRequest"},"ChangeBookingRoomRateRequest":{"type":"object","description":"\u0110\u1ed5i gi\u00e1 m\u1ed9t ph\u00f2ng \u2014 `POST \/bookings\/{booking_id}\/rooms\/{room_id}\/rate`.\n\nG\u1eedi `days_breakdown` (ch\u1ec9 c\u00e1c \u0111\u00eam c\u1ea7n \u0111\u1ed5i \u2014 \u0111\u00eam c\u00f2n l\u1ea1i gi\u1eef gi\u00e1 hi\u1ec7n t\u1ea1i) HO\u1eb6C\n`price_per_night` (c\u00f9ng gi\u00e1 cho m\u1ecdi \u0111\u00eam), c\u00f3 th\u1ec3 k\u00e8m `room_discount`. \u00cdt nh\u1ea5t m\u1ed9t tr\u01b0\u1eddng.","properties":{"booking_id":{"type":"string","description":"M\u00e3 \u0111\u01a1n = prefix + ph\u1ea7n tu\u1ea7n t\u1ef1\/ng\u1eabu nhi\u00ean, \u0111\u1ed9 d\u00e0i thay \u0111\u1ed5i \u2014 max:32 ch\u1ec9 ch\u1eb7n input r\u00e1c (go-helmmetry#1093).","maxLength":32},"room_id":{"type":"string","format":"uuid"},"price_per_night":{"type":["number","null"],"minimum":0,"maximum":999999999999},"room_discount":{"type":["number","null"],"minimum":0,"maximum":999999999999},"days_breakdown":{"type":["array","null"],"items":{"type":"object","properties":{"day":{"type":"string","format":"date"},"price":{"type":"number","minimum":0,"maximum":999999999999}},"required":["day","price"]},"minItems":1,"maxItems":366}},"required":["booking_id","room_id"],"title":"ChangeBookingRoomRateRequest"},"CheckoutBookingRoomRequest":{"type":"object","description":"Check-out m\u1ed9t ph\u00f2ng \u2014 `POST \/bookings\/{booking_id}\/rooms\/{room_id}\/checkout`.","properties":{"booking_id":{"type":"string","description":"M\u00e3 \u0111\u01a1n = prefix + ph\u1ea7n tu\u1ea7n t\u1ef1\/ng\u1eabu nhi\u00ean, \u0111\u1ed9 d\u00e0i thay \u0111\u1ed5i \u2014 max:32 ch\u1ec9 ch\u1eb7n input r\u00e1c (go-helmmetry#1093).","maxLength":32},"room_id":{"type":"string","format":"uuid"},"departure_hour":{"type":["string","null"],"description":"Gi\u1edd tr\u1ea3 ph\u00f2ng th\u1ef1c t\u1ebf (tu\u1ef3 ch\u1ecdn), \u0111\u1ecbnh d\u1ea1ng H:i. Example: 11:30"}},"required":["booking_id","room_id"],"title":"CheckoutBookingRoomRequest"},"ConfirmBookingRequest":{"type":"object","properties":{"booking_id":{"type":"string"},"payments":{"type":["array","null"],"items":{"type":"object","properties":{"amount":{"type":"number","minimum":0},"method":{"type":["string","null"]},"paid_at":{"type":["string","null"],"format":"date-time","example":"2025-11-19 16:54:00"},"notes":{"type":["string","null"],"maxLength":500}},"required":["amount"]}}},"required":["booking_id"],"title":"ConfirmBookingRequest"},"StoreWebhookEndpointRequest":{"type":"object","properties":{"url":{"type":"string","example":"https:\/\/partner.example\/hooks\/gohost","maxLength":2048},"description":{"type":["string","null"],"maxLength":255},"events":{"type":"array","items":{"type":"string","enum":["booking.created","booking.updated","booking.cancelled","booking.confirmed","booking.checked_in","booking.checked_out"]},"minItems":1}},"required":["url","events"],"title":"StoreWebhookEndpointRequest"},"UpdateBookingRequest":{"type":"object","description":"Update Booking Request (Online Check-in)\n\nUpdate a booking with rooms, guests, payments, status, and notes.\nThis endpoint uses `multipart\/form-data` to support file uploads for guest identity images.\n\n## Request Format\n\nSend data as `multipart\/form-data` with:\n- `data`: JSON string containing the booking update payload\n- `rooms[{index}][guests][records][{guestIndex}][identity_image]`: Optional identity image files\n\n## Data Payload Structure\n\n```json\n{\n  \u0022rooms\u0022: [\n    {\n      \u0022id\u0022: \u0022uuid-of-booking-room\u0022,\n      \u0022status\u0022: \u0022checked_in\u0022,\n      \u0022guests\u0022: {\n        \u0022method\u0022: \u0022add|replace\u0022,\n        \u0022records\u0022: [\n          {\n            \u0022id\u0022: \u0022123\u0022,\n            \u0022name\u0022: \u0022John Doe\u0022,\n            \u0022email\u0022: \u0022john@example.com\u0022,\n            \u0022phone\u0022: \u0022+84123456789\u0022,\n            \u0022birthday\u0022: \u00221990-05-15\u0022,\n            \u0022gender\u0022: \u0022male\u0022,\n            \u0022identity\u0022: \u0022123456789012\u0022,\n            \u0022id_type\u0022: \u0022identity_card\u0022,\n            \u0022identity_issue_date\u0022: \u00222020-01-15\u0022,\n            \u0022address\u0022: \u0022123 Nguyen Hue Street\u0022,\n            \u0022ward\u0022: \u0022Ben Nghe\u0022,\n            \u0022city\u0022: \u0022Ho Chi Minh\u0022,\n            \u0022country\u0022: \u0022VN\u0022,\n            \u0022is_primary_guest\u0022: true,\n            \u0022accommodation_type\u0022: \u0022temporary\u0022,\n            \u0022travel_purpose\u0022: \u0022tourism\u0022,\n            \u0022guest_category\u0022: \u0022couple\u0022\n          }\n        ]\n      }\n    }\n  ],\n  \u0022invoice\u0022: {\n    \u0022company\u0022: \u0022GoHost Co Ltd\u0022,\n    \u0022tax_code\u0022: \u00220312345678\u0022,\n    \u0022address\u0022: \u0022123 Nguyen Hue Street, Q1, HCMC\u0022,\n    \u0022email\u0022: \u0022invoice@gohostco.com\u0022\n  },\n  \u0022payments\u0022: {\n    \u0022method\u0022: \u0022add|replace\u0022,\n    \u0022records\u0022: [\n      {\n        \u0022amount\u0022: 1500000,\n        \u0022method\u0022: \u0022cash\u0022,\n        \u0022paid_at\u0022: \u00222026-01-12 14:30:00\u0022,\n        \u0022notes\u0022: \u0022Check-in payment\u0022\n      }\n    ]\n  },\n  \u0022notes\u0022: \u0022Online check-in completed\u0022\n}\n```\n\n## Services (per room)\nServices can be added to each room using the `services` field.\nOnly `method: \u0022add\u0022` is supported (no replace).\n\n```json\n{\n  \u0022rooms\u0022: [\n    {\n      \u0022id\u0022: \u0022uuid-of-booking-room\u0022,\n      \u0022services\u0022: {\n        \u0022method\u0022: \u0022add\u0022,\n        \u0022records\u0022: [\n          {\n            \u0022id\u0022: \u0022SVAB12CD34\u0022,\n            \u0022quantity\u0022: 2,\n            \u0022price_per_unit\u0022: 50000,\n            \u0022service_used_date\u0022: \u00222026-01-22\u0022,\n            \u0022notes\u0022: \u0022Mini bar consumption\u0022\n          }\n        ]\n      }\n    }\n  ]\n}\n```\n\n## Guest Methods\n- `add`: Add new guests to the room without removing existing guests\n- `replace`: Remove all existing guests and replace with new guest list \u2014 EXCEPT guests still filling in the\n  Guest Portal (hidden from the API): they stay attached and their identity images are kept. Such guests appear\n  in GET \/ webhooks once they finish the declaration or front-desk staff save\/approve them.\n\n## Invoice Info (booking level)\nOptional top-level `invoice` block \u2014 `company`, `tax_code`, `address`, `email`.\nThe server resolves the booking\u0027s primary guest (`displayBookingRooms()-\u003Efirst()-\u003EgetPrimaryGuest()`)\nand persists the values into that customer\u0027s dedicated `customers.invoice_*` columns \u2014\nnever overwrites the guest\u0027s own `company`\/`address`\/`email`. If no primary guest can be\nresolved, the update fails with 422 `INVOICE_NO_PRIMARY_GUEST`.\n\n## Payment Methods\n- `add`: Add new payments without removing existing payments\n- `replace`: Cancel every existing non-cancelled payment (status `cancelled`, record and history kept \u2014 never\n  deleted; split parents are left as-is, their children are cancelled), then add the new payment list\n\n## Room Status\n- `checked_in`: Check in the room (only allowed on or after checkin_date)","properties":{"booking_id":{"type":"string"},"notes":{"type":["string","null"],"description":"Notes (booking level)","maxLength":1000},"invoice":{"type":"object","description":"Invoice info (booking level) \u2014 saved onto the booking\u0027s\nprimary guest.","properties":{"company":{"type":["string","null"],"maxLength":255},"tax_code":{"type":["string","null"],"maxLength":20},"address":{"type":["string","null"],"maxLength":255},"email":{"type":["string","null"],"format":"email","maxLength":255}}},"payments":{"type":"object","description":"Payments (booking level)","properties":{"method":{"type":"string","enum":["add","replace"]},"records":{"type":"array","items":{"type":"object","properties":{"amount":{"type":"number","minimum":0},"method":{"type":["string","null"]},"paid_at":{"type":["string","null"],"format":"date-time"},"notes":{"type":["string","null"],"maxLength":500}},"required":["amount"]},"minItems":1}}},"rooms":{"type":["array","null"],"description":"Rooms - grouped by booking room with guests and status","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"status":{"type":["string","null"],"enum":["checked_in"]},"guests":{"type":["object","null"],"description":"Guests within each room","properties":{"method":{"type":"string","enum":["add","replace"]},"records":{"type":"array","items":{"type":"object","properties":{"id":{"type":["integer","null"]},"name":{"type":"string","maxLength":255},"email":{"type":["string","null"],"format":"email","maxLength":255},"phone":{"type":["string","null"]},"birthday":{"type":["string","null"],"format":"date-time"},"gender":{"type":["string","null"],"enum":["male","female","unknown"]},"identity":{"type":["string","null"],"maxLength":50},"id_type":{"type":["string","null"],"enum":["identity_card","passport","other"]},"identity_issue_date":{"type":["string","null"],"format":"date-time"},"identity_image":{"type":["array","null"],"description":"Identity images (always array format, max 3 files)","items":{"type":"string","format":"binary","contentMediaType":"application\/octet-stream","maxLength":5120},"maxItems":3},"address":{"type":["string","null"],"description":"5MB each","maxLength":500},"ward":{"type":["string","null"],"maxLength":100},"city":{"type":["string","null"],"maxLength":100},"country":{"type":["string","null"],"maxLength":100},"is_primary_guest":{"type":["boolean","null"]},"accommodation_type":{"type":["string","null"],"enum":["permanent","temporary","other"]},"travel_purpose":{"type":["string","null"],"enum":["business","tourism","other"]},"guest_category":{"type":["string","null"],"enum":["solo","couple","family","small_group","large_group"]}},"required":["name"]}}}},"services":{"type":["object","null"],"description":"Services within each room","properties":{"method":{"type":"string","enum":["add"]},"records":{"type":"array","description":"Only \u0027add\u0027 is supported","items":{"type":"object","properties":{"id":{"type":"string","maxLength":10},"quantity":{"type":"number","description":"Service code as ID (10 chars: SV + 8 hex)"},"price_per_unit":{"type":["number","null"]},"service_used_date":{"type":["string","null"],"format":"date"},"notes":{"type":["string","null"],"maxLength":500}},"required":["id","quantity"]},"minItems":1}}}},"required":["id"]}}},"required":["booking_id","payments"],"title":"UpdateBookingRequest"},"UpdateWebhookEndpointRequest":{"type":"object","properties":{"url":{"type":"string","maxLength":2048},"description":{"type":["string","null"],"maxLength":255},"is_active":{"type":"boolean"},"events":{"type":"array","items":{"type":"string","enum":["booking.created","booking.updated","booking.cancelled","booking.confirmed","booking.checked_in","booking.checked_out"]},"minItems":1}},"title":"UpdateWebhookEndpointRequest"}},"responses":{"ValidationException":{"description":"Validation error","content":{"application\/json":{"schema":{"type":"object","properties":{"message":{"type":"string","description":"Errors overview."},"errors":{"type":"object","description":"A detailed description of each field that failed validation.","additionalProperties":{"type":"array","items":{"type":"string"}}}},"required":["message","errors"]}}}}}}};
+    })();
+</script>
+
+
+
+</elements-api></body></html>

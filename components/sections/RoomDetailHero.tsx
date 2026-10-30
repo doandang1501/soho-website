@@ -18,6 +18,7 @@ interface RoomDetailHeroProps {
   images:      string[];
   features:    string[];
   specs: { label: string; value: string }[];
+  roomKey?: "studio" | "twobed" | "threebed";
 }
 
 export default function RoomDetailHero({
@@ -29,6 +30,7 @@ export default function RoomDetailHero({
   images,
   features,
   specs,
+  roomKey,
 }: RoomDetailHeroProps) {
   const locale  = useLocale();
   const [active, setActive] = useState(0);
@@ -167,11 +169,14 @@ export default function RoomDetailHero({
                   </div>
                 </div>
 
-                <a
-                  href="/#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = localePath("/") + "#contact";
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.dispatchEvent(
+                      new CustomEvent("open-booking-modal", {
+                        detail: { preselectedRoomKey: roomKey },
+                      })
+                    );
                   }}
                   className="
                     inline-flex items-center gap-3
@@ -180,12 +185,12 @@ export default function RoomDetailHero({
                     px-8 py-4 transition-all duration-300
                     hover:bg-[var(--color-gold-light)]
                     hover:shadow-[0_0_30px_rgba(201,168,76,0.25)]
-                    active:scale-95 group
+                    active:scale-95 group cursor-pointer
                   "
                 >
                   Book This Room
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </a>
+                </button>
               </div>
             </AnimateInView>
           </div>

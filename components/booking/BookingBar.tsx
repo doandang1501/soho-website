@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { redirectToBooking, type BookingValidationError } from "@/lib/booking";
+import { validateBooking, type BookingValidationError } from "@/lib/booking";
 import DatePicker from "@/components/ui/DatePicker";
+import BookingModal from "@/components/booking/BookingModal";
 
 const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
@@ -77,6 +78,41 @@ export default function BookingBar() {
   const [error,    setError]    = useState<BookingValidationError | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState(false);
 
+  // Booking modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [preselectedRoomKey, setPreselectedRoomKey] = useState<string | undefined>(undefined);
+
+  // Listen to open-booking-modal event from room detail pages / room cards
+  useEffect(() => {
+    const handleOpenModal = (e: any) => {
+      const detail = e.detail;
+      const formatIso = (d: Date) => d.toISOString().split("T")[0];
+
+      if (!checkIn) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        setCheckIn(formatIso(tomorrow));
+      }
+      if (!checkOut) {
+        const dayAfter = new Date();
+        dayAfter.setDate(dayAfter.getDate() + 3);
+        setCheckOut(formatIso(dayAfter));
+      }
+
+      if (detail?.preselectedRoomKey) {
+        setPreselectedRoomKey(detail.preselectedRoomKey);
+      } else {
+        setPreselectedRoomKey(undefined);
+      }
+
+      setError(null);
+      setModalOpen(true);
+    };
+
+    window.addEventListener("open-booking-modal", handleOpenModal);
+    return () => window.removeEventListener("open-booking-modal", handleOpenModal);
+  }, [checkIn, checkOut]);
+
   const handleCheckIn = (v: string) => {
     setCheckIn(v);
     if (checkOut && checkOut <= v) setCheckOut("");
@@ -84,8 +120,14 @@ export default function BookingBar() {
   };
 
   const handleSubmit = () => {
-    const err = redirectToBooking({ checkIn, checkOut, rooms, adults, children });
-    if (err) setError(err);
+    const err = validateBooking({ checkIn, checkOut, rooms, adults, children });
+    if (err) {
+      setError(err);
+      return;
+    }
+    setError(null);
+    setPreselectedRoomKey(undefined);
+    setModalOpen(true);
   };
 
   const minCheckOutDate = checkIn
@@ -248,6 +290,20 @@ export default function BookingBar() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* ── Direct Booking Modal ────────────────────────────────────────── */}
+      <BookingModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        searchParams={{
+          checkIn,
+          checkOut,
+          rooms,
+          adults,
+          children,
+          preselectedRoomKey,
+        }}
+      />
     </>
   );
 }
