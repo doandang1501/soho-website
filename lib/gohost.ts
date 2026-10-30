@@ -106,6 +106,7 @@ export interface CreateBookingParams {
   notes?: string;
   estimatedPrice?: number;
   daysBreakdown?: DayBreakdown[];
+  autoCancel?: boolean;
 }
 
 function getAuthHeader(): string {
@@ -185,6 +186,7 @@ export async function createGoHostBooking(params: CreateBookingParams) {
     notes,
     estimatedPrice,
     daysBreakdown,
+    autoCancel = false,
   } = params;
 
   const url = `${GOHOST_CONFIG.baseUrl}/properties/${GOHOST_CONFIG.propertyId}/bookings`;
@@ -216,7 +218,7 @@ export async function createGoHostBooking(params: CreateBookingParams) {
     occupancy_adults: adults,
     occupancy_children: children,
     payment_collect: "property",
-    auto_cancel: true,
+    auto_cancel: autoCancel,
     currency: "VND",
     notes: notes ? notes.trim() : "Đặt phòng trực tiếp từ website SOHO (Thanh toán tại quầy)",
   };

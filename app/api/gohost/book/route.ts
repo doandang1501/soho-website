@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
       notes,
       estimatedPrice,
       daysBreakdown,
+      autoCancel,
     } = body;
 
     if (!checkIn || !checkOut) {
@@ -56,6 +57,7 @@ export async function POST(request: NextRequest) {
       notes,
       estimatedPrice,
       daysBreakdown,
+      autoCancel: autoCancel ?? false,
     });
 
     return NextResponse.json({
