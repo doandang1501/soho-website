@@ -38,6 +38,10 @@
     "paymentMethod": "支付方式",
     "payAtProperty": "到店直接付款",
     "payAtPropertyNotice": "您可以在前台办理入住时使用现金、银行卡或转账支付。预订将在系统中为您保留。",
+    "payWise": "Wise 国际汇款转账",
+    "payWiseNotice": "扫描 Wise 二维码或按对应币种（SGD, GBP, CAD, PHP, NZD, EUR）直接银行转账。",
+    "payZelle": "Zelle 美元支付 (USD)",
+    "payZelleNotice": "适用于持有美国银行账户的住客直接通过 Zelle 转账付款。",
     "confirmBooking": "确认预订",
     "processing": "正在提交预订...",
     "bookingSuccess": "预订成功！",
@@ -60,7 +64,7 @@
   "hero": {
     "eyebrow": "SOHO Residence & Hotel • 胡志明市第一郡",
     "title": "位于西贡市中心的\n舒适便利旅居空间",
-    "subtitle": "探索 SOHO Residence & Hotel——位于胡志明市第一郡的服务式公寓酒店，临近范五老步行街（Bùi Viện）与滨城市场（Chợ Bến Thành）。提供从开间单间到两居室、三居室的多种选择，为商务差旅、家庭出游及度假旅客打造私密、舒适的住宿体验。每间公寓均配备厨房区域、冰箱、独立阳台及专属洗衣机，让您在市中心尊享惬意旅程。",
+    "subtitle": "临近范五老步行街与滨城市场的精品公寓酒店。提供配有独立厨房、专属阳台及洗衣机的开间、两居室和三居室客房，让您尽享私密惬意的入住体验。",
     "cta": "探索公寓房型",
     "checkAvailability": "查看空房",
     "scroll": "向下滚动探索"

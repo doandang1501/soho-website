@@ -35,9 +35,13 @@
     "emailPlaceholder": "email@example.com",
     "notes": "Yêu cầu đặc biệt",
     "notesPlaceholder": "Giờ đến dự kiến, yêu cầu đón tiếp...",
-    "paymentMethod": "Hình thức thanh toán",
+    "paymentMethod": "Phương thức thanh toán",
     "payAtProperty": "Thanh toán trực tiếp khi nhận phòng",
     "payAtPropertyNotice": "Quý khách thanh toán tại quầy lễ tân bằng Tiền mặt, Thẻ ngân hàng hoặc Chuyển khoản QR. Đơn đặt phòng sẽ được giữ trên hệ thống.",
+    "payWise": "Chuyển khoản quốc tế qua Wise",
+    "payWiseNotice": "Quét mã QR Wise hoặc chuyển khoản ngân hàng theo loại tiền tệ (SGD, GBP, CAD, PHP, NZD, EUR).",
+    "payZelle": "Thanh toán qua Zelle (USD)",
+    "payZelleNotice": "Chuyển khoản trực tiếp qua Zelle cho khách hàng sử dụng ngân hàng Mỹ.",
     "confirmBooking": "Xác Nhận Đặt Phòng",
     "processing": "Đang xử lý đặt phòng...",
     "bookingSuccess": "Đặt Phòng Thành Công!",
@@ -60,7 +64,7 @@
   "hero": {
     "eyebrow": "SOHO Residence & Hotel • Quận 1, TP. Hồ Chí Minh",
     "title": "Không gian lưu trú tiện nghi\ngiữa trung tâm Sài Gòn",
-    "subtitle": "Khám phá SOHO Residence & Hotel – khách sạn căn hộ tại Quận 1, TP. Hồ Chí Minh, gần phố đi bộ Bùi Viện và Chợ Bến Thành. Với các lựa chọn từ Studio đến căn hộ 2 và 3 phòng ngủ, SOHO mang đến không gian lưu trú riêng tư, tiện nghi cho khách du lịch, công tác và gia đình. Mỗi căn hộ đều có khu vực bếp, tủ lạnh, ban công và máy giặt riêng, giúp quý khách tận hưởng kỳ nghỉ thoải mái ngay giữa trung tâm thành phố.",
+    "subtitle": "Khách sạn căn hộ dịch vụ cao cấp gần phố Bùi Viện và Chợ Bến Thành. Căn hộ Studio, 2–3 phòng ngủ tiện nghi với bếp, ban công và máy giặt riêng, mang đến kỳ nghỉ riêng tư và thoải mái.",
     "cta": "Khám Phá Căn Hộ",
     "checkAvailability": "Kiểm Tra Phòng Trống",
     "scroll": "Cuộn để khám phá"

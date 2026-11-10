@@ -38,6 +38,10 @@
     "paymentMethod": "Payment Method",
     "payAtProperty": "Pay at Property upon Check-in",
     "payAtPropertyNotice": "You will pay at the reception counter with Cash, Credit Card, or Bank Transfer QR. Your reservation will be placed on hold.",
+    "payWise": "International Transfer via Wise",
+    "payWiseNotice": "Scan Wise QR code or transfer directly to local currency bank accounts (SGD, GBP, CAD, PHP, NZD, EUR).",
+    "payZelle": "Pay via Zelle (USD)",
+    "payZelleNotice": "Direct Zelle transfer for guests banking in the United States.",
     "confirmBooking": "Confirm Reservation",
     "processing": "Processing your booking...",
     "bookingSuccess": "Reservation Confirmed!",
@@ -60,7 +64,7 @@
   "hero": {
     "eyebrow": "SOHO Residence & Hotel • District 1, Ho Chi Minh City",
     "title": "Comfortable living space\nin the heart of Saigon",
-    "subtitle": "Discover SOHO Residence & Hotel – serviced apartment hotel in District 1, Ho Chi Minh City, close to Bui Vien Walking Street and Ben Thanh Market. With options from Studio to 2 and 3-bedroom residences, SOHO provides private, well-appointed accommodations for travellers, business trips, and families. Each apartment features a kitchen area, refrigerator, private balcony, and washing machine, ensuring a restful and comfortable stay right in the center of the city.",
+    "subtitle": "Premium serviced apartment-hotel near Bui Vien Street and Ben Thanh Market. Modern Studio, 2 & 3-bedroom residences with private kitchen, balcony, and washing machine for a restful stay.",
     "cta": "Explore Residences",
     "checkAvailability": "Check Availability",
     "scroll": "Scroll to discover"

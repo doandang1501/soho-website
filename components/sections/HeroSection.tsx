@@ -80,8 +80,8 @@ export default function HeroSection() {
       </AnimatePresence>
 
       {/* ── Gradient overlays ────────────────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(14,14,14,0.6)] via-[rgba(14,14,14,0.4)] to-[rgba(14,14,14,0.92)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(14,14,14,0.65)] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(22,23,27,0.38)] via-[rgba(22,23,27,0.18)] to-[rgba(22,23,27,0.78)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(22,23,27,0.4)] via-transparent to-transparent" />
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
       <div className="relative z-10 w-full pb-8 sm:pb-12 md:pb-16 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto">
