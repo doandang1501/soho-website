@@ -19,11 +19,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of locales) {
     for (const { path, priority, changeFrequency } of ROUTES) {
       const prefix = locale === "en" ? "" : `/${locale}`;
+      const url = `${BASE_URL}${prefix}${path}`;
+
       entries.push({
-        url:             `${BASE_URL}${prefix}${path}`,
-        lastModified:    new Date(),
+        url,
+        lastModified: new Date(),
         changeFrequency,
         priority,
+        alternates: {
+          languages: {
+            vi: `${BASE_URL}/vi${path}`,
+            en: `${BASE_URL}${path}`,
+            "zh-CN": `${BASE_URL}/zh${path}`,
+          },
+        },
       });
     }
   }

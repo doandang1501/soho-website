@@ -43,7 +43,6 @@ function RoomCard({
   const [hovered, setHovered] = useState(false);
   const [imgIdx,  setImgIdx]  = useState(0);
 
-  // Locale-aware path: en has no prefix, vi/zh get /{locale} prefix
   const localePath = locale === "en"
     ? room.detailHref
     : `/${locale}${room.detailHref}`;
@@ -73,10 +72,9 @@ function RoomCard({
 
   return (
     <AnimateInView delay={index * 0.13} direction="up">
-      {/* Entire card is a Link to room detail page */}
       <Link
         href={localePath}
-        className="block group relative overflow-hidden bg-[var(--color-charcoal-50)] cursor-pointer"
+        className="block group relative overflow-hidden bg-[var(--color-charcoal-50)] border border-[var(--color-border)] hover:border-[rgba(201,168,76,0.5)] transition-all duration-300"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         aria-label={t(`${room.key}.tagline`)}
@@ -100,7 +98,7 @@ function RoomCard({
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,14,14,0.92)] via-[rgba(14,14,14,0.2)] to-transparent" />
 
           {/* Price badge */}
-          <div className="absolute top-4 right-4 bg-[rgba(14,14,14,0.85)] backdrop-blur-sm px-3 py-1.5">
+          <div className="absolute top-4 right-4 bg-[rgba(14,14,14,0.85)] backdrop-blur-sm px-3 py-1.5 border border-[var(--color-border)]">
             <span className="font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)]">{t("from")}</span>
             <span className="ml-1.5 font-sans text-xs font-semibold text-[var(--color-gold)]">{t(`${room.key}.price`)}</span>
             <span className="font-sans text-[10px] text-[var(--color-ivory-dim)]">{" "}{t("perNight")}</span>
@@ -125,6 +123,7 @@ function RoomCard({
             </span>
           </div>
 
+          {/* H3 Heading */}
           <h3 className="font-serif text-xl md:text-2xl text-[var(--color-ivory)] mb-3 leading-snug group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
             {t(`${room.key}.tagline`)}
           </h3>
@@ -136,13 +135,13 @@ function RoomCard({
           {/* Feature pills */}
           <ul className="flex flex-wrap gap-2 mb-6">
             {features.map((f) => (
-              <li key={f} className="font-sans text-[10px] tracking-[0.1em] border border-[var(--color-border)] px-2.5 py-1 text-[var(--color-ivory-dim)] group-hover:border-[rgba(201,168,76,0.3)] transition-colors duration-300">
+              <li key={f} className="font-sans text-[10px] tracking-[0.08em] border border-[var(--color-border)] px-2.5 py-1 text-[var(--color-ivory-dim)] group-hover:border-[rgba(201,168,76,0.3)] transition-colors duration-300">
                 {f}
               </li>
             ))}
           </ul>
 
-          {/* VIEW DETAILS — visual only, parent Link handles navigation */}
+          {/* VIEW DETAILS */}
           <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-[var(--color-gold)] border-b border-[var(--color-gold-muted)] group-hover:border-[var(--color-gold)] pb-0.5 transition-all duration-200">
             {t("viewDetails")}
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -168,10 +167,10 @@ export default function RoomsSection() {
   return (
     <section
       id="rooms"
-      className="py-16 sm:py-20 lg:py-32 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full"
+      className="py-16 sm:py-20 lg:py-28 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full"
       aria-labelledby="rooms-heading"
     >
-      <div className="mb-16">
+      <div className="mb-14">
         <AnimateInView direction="up">
           <div className="flex items-center gap-3 mb-4">
             <span className="block w-8 h-px bg-[var(--color-gold)]" />
@@ -182,19 +181,23 @@ export default function RoomsSection() {
         </AnimateInView>
 
         <AnimateInView delay={0.1} direction="up">
-          <h2 id="rooms-heading" className="font-serif text-[clamp(2rem,4vw,3.5rem)] text-[var(--color-ivory)] mb-4">
+          {/* H2 Title */}
+          <h2 id="rooms-heading" className="font-serif text-[clamp(1.8rem,3.8vw,3.2rem)] text-[var(--color-ivory)] mb-4">
             {t("title")}
           </h2>
         </AnimateInView>
 
         <AnimateInView delay={0.2} direction="up">
-          <p className="font-sans text-sm text-[var(--color-ivory-dim)] max-w-xl leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] max-w-2xl leading-relaxed mb-4">
             {t("subtitle")}
+          </p>
+          <p className="font-sans text-xs text-[var(--color-ivory-dim)] italic">
+            * {t("imageDisclaimer")}
           </p>
         </AnimateInView>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
         {ROOMS.map((room, i) => (
           <RoomCard key={room.key} room={room} index={i} />
         ))}

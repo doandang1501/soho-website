@@ -24,29 +24,23 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
-// ── Metadata ───────────────────────────────────────────────────────────────────
+// ── Root Layout Metadata with hreflang & OpenGraph ────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://sohoresidencehotel.vn"),
   title: {
-    default: "SOHO Residence & Hotel | District 1 | Ho Chi Minh City",
+    default: "SOHO Residence & Hotel",
     template: "%s | SOHO Residence & Hotel",
   },
-  description:
-    "Luxury boutique apartment-hotel in the heart of District 1, Ho Chi Minh City. Studio, 2-bedroom & 3-bedroom serviced apartments with city views, full kitchen, and 24/7 check-in.",
-  keywords: [
-    "SOHO Residence Hotel",
-    "luxury apartment hotel HCMC",
-    "serviced apartment District 1",
-    "hotel Ben Thanh",
-    "boutique hotel Saigon",
-    "Co Giang hotel",
-  ],
+  alternates: {
+    languages: {
+      vi: "https://sohoresidencehotel.vn/vi",
+      en: "https://sohoresidencehotel.vn",
+      "zh-CN": "https://sohoresidencehotel.vn/zh",
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "SOHO Residence & Hotel",
-    title: "SOHO Residence & Hotel | Luxury Apartments in District 1",
-    description:
-      "Boutique apartment-hotel in the heart of Saigon. Studio, 2-bed & 3-bed residences with city views.",
     images: [
       {
         url: "/images/hero_1.jpeg",
@@ -58,9 +52,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOHO Residence & Hotel",
-    description:
-      "Luxury boutique apartment-hotel in District 1, Ho Chi Minh City.",
     images: ["/images/hero_1.jpeg"],
   },
   robots: {
@@ -86,14 +77,13 @@ export default async function LocaleLayout({
 
   if (!locales.includes(locale as Locale)) notFound();
 
-  // Must be called before any next-intl server functions (enables static rendering)
   setRequestLocale(locale);
 
   const messages = await getMessages({ locale });
 
   return (
     <html
-      lang={locale}
+      lang={locale === "zh" ? "zh-CN" : locale}
       className={`${playfair.variable} ${inter.variable} h-full`}
       suppressHydrationWarning
     >

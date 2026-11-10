@@ -3,13 +3,12 @@
 import { useTranslations } from "next-intl";
 import AnimateInView from "@/components/ui/AnimateInView";
 
-// Landmark names are proper nouns — universally understood, kept as-is
-const NEARBY = [
-  { label: "Ben Thanh Market",       dist: "300m" },
-  { label: "Nguyen Hue Walking St.", dist: "600m" },
-  { label: "Bitexco Tower",          dist: "700m" },
-  { label: "Notre-Dame Cathedral",   dist: "1.2km" },
-  { label: "Tan Son Nhat Airport",   dist: "6km"  },
+const LANDMARK_KEYS = [
+  "buivien",
+  "benthanh",
+  "nguyenhue",
+  "bitexco",
+  "notredame",
 ] as const;
 
 export default function LocationSection() {
@@ -18,7 +17,7 @@ export default function LocationSection() {
   return (
     <section
       id="location"
-      className="py-24 lg:py-32"
+      className="py-16 sm:py-20 lg:py-28"
       aria-labelledby="location-heading"
     >
       <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
@@ -35,9 +34,10 @@ export default function LocationSection() {
           </AnimateInView>
 
           <AnimateInView delay={0.1} direction="up">
+            {/* H2 Title */}
             <h2
               id="location-heading"
-              className="font-serif text-[clamp(2rem,4vw,3.5rem)] text-[var(--color-ivory)] mb-3"
+              className="font-serif text-[clamp(1.8rem,3.8vw,3.2rem)] text-[var(--color-ivory)] mb-3"
             >
               {t("title")}
             </h2>
@@ -50,7 +50,7 @@ export default function LocationSection() {
           </AnimateInView>
 
           <AnimateInView delay={0.26} direction="up">
-            <p className="font-sans text-sm text-[var(--color-ivory-dim)] max-w-xl leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] max-w-2xl leading-relaxed">
               {t("description")}
             </p>
           </AnimateInView>
@@ -67,11 +67,11 @@ export default function LocationSection() {
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[var(--color-gold)] z-10 pointer-events-none" />
 
               <iframe
-                title="SOHO Residence & Hotel location"
+                title="SOHO Residence & Hotel location map"
                 src="https://maps.google.com/maps?q=100+C%C3%B4+Giang%2C+C%E1%BA%A7u+%C3%94ng+L%C3%A3nh%2C+H%E1%BB%93+Ch%C3%AD+Minh+700000%2C+Vietnam&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "grayscale(0.4) invert(0.15) contrast(1.1)" }}
+                style={{ border: 0, filter: "grayscale(0.3) invert(0.12) contrast(1.1)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -86,9 +86,9 @@ export default function LocationSection() {
 
               {/* Address card */}
               <div className="border border-[var(--color-border)] p-6 bg-[var(--color-charcoal-50)]">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">📍</span>
-                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)]">
+                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] font-medium">
                     {t("address")}
                   </span>
                 </div>
@@ -96,7 +96,7 @@ export default function LocationSection() {
                   {t("addressValue")}
                 </address>
                 <a
-                  href="https://maps.google.com/?q=QM7V%2BFR+Cau+Ong+Lanh,+Ho+Chi+Minh,+Vietnam"
+                  href="https://maps.google.com/?q=100+Co+Giang,+Cau+Ong+Lanh,+District+1,+Ho+Chi+Minh+City,+Vietnam"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -112,29 +112,28 @@ export default function LocationSection() {
                 </a>
               </div>
 
-              {/* Nearby places */}
+              {/* Destinations list */}
               <div className="border border-[var(--color-border)] p-6 bg-[var(--color-charcoal-50)]">
-                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] block mb-5">
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] block mb-4 font-medium">
                   {t("nearby")}
                 </span>
-                <ul className="space-y-3">
-                  {NEARBY.map(({ label, dist }) => (
-                    <li key={label} className="flex items-center justify-between font-sans text-sm">
-                      <span className="text-[var(--color-ivory-dim)] flex items-center gap-2">
-                        <span className="block w-1 h-1 rounded-full bg-[var(--color-gold)] flex-shrink-0" />
-                        {label}
-                      </span>
-                      <span className="text-[var(--color-gold)] font-medium text-xs">{dist}</span>
+                <ul className="space-y-2.5">
+                  {LANDMARK_KEYS.map((key) => (
+                    <li key={key} className="flex items-center font-sans text-sm text-[var(--color-ivory-dim)]">
+                      <span className="block w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] mr-2.5 flex-shrink-0" />
+                      {t(`landmarks.${key}`)}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Check-in info */}
-              <div className="border border-[rgba(201,168,76,0.3)] p-5 bg-[rgba(201,168,76,0.04)]">
+              {/* H2 Sub-section: Hỗ trợ nhận phòng và gửi hành lý */}
+              <div className="border border-[rgba(201,168,76,0.3)] p-6 bg-[rgba(201,168,76,0.04)]">
+                <h3 className="font-serif text-base text-[var(--color-gold)] mb-2">
+                  {t("checkinTitle")}
+                </h3>
                 <p className="font-sans text-xs text-[var(--color-ivory-dim)] leading-relaxed">
-                  <span className="text-[var(--color-gold)] font-semibold">{t("checkin247")}</span>
-                  {" — "}{t("checkinNote")}
+                  {t("checkinNote")}
                 </p>
               </div>
 

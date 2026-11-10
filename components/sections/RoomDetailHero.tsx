@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimateInView from "@/components/ui/AnimateInView";
 
@@ -33,6 +33,8 @@ export default function RoomDetailHero({
   roomKey,
 }: RoomDetailHeroProps) {
   const locale  = useLocale();
+  const tNav    = useTranslations("nav");
+  const tRooms  = useTranslations("rooms");
   const [active, setActive] = useState(0);
 
   const localePath = (href: string) =>
@@ -43,22 +45,26 @@ export default function RoomDetailHero({
       {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
       <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full pt-10 pb-4">
         <nav className="flex items-center gap-2 font-sans text-xs text-[var(--color-ivory-dim)]" aria-label="Breadcrumb">
-          <Link href={localePath("/")} className="hover:text-[var(--color-gold)] transition-colors duration-200">Home</Link>
+          <Link href={localePath("/")} className="hover:text-[var(--color-gold)] transition-colors duration-200">
+            {tNav("home")}
+          </Link>
           <span className="opacity-40">/</span>
-          <Link href={localePath("/rooms")} className="hover:text-[var(--color-gold)] transition-colors duration-200">Rooms</Link>
+          <Link href={localePath("/rooms")} className="hover:text-[var(--color-gold)] transition-colors duration-200">
+            {tNav("rooms")}
+          </Link>
           <span className="opacity-40">/</span>
-          <span className="text-[var(--color-gold)]">{name}</span>
+          <span className="text-[var(--color-gold)]">{tagline}</span>
         </nav>
       </div>
 
       {/* ── Main layout ─────────────────────────────────────────────────── */}
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full py-6 sm:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left — Gallery */}
           <div className="flex flex-col gap-3">
             {/* Main image */}
-            <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-charcoal-50)]">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-charcoal-50)] border border-[var(--color-border)]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -69,12 +75,12 @@ export default function RoomDetailHero({
                 >
                   <Image
                     src={images[active]}
-                    alt={`${name} — photo ${active + 1}`}
+                    alt={`${name} — hình ảnh ${active + 1}`}
                     fill
                     priority={active === 0}
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    quality={88}
+                    quality={90}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -91,15 +97,20 @@ export default function RoomDetailHero({
                   key={i}
                   onClick={() => setActive(i)}
                   className={`
-                    relative aspect-[4/3] overflow-hidden transition-all duration-300
-                    ${i === active ? "ring-1 ring-[var(--color-gold)]" : "opacity-60 hover:opacity-85"}
+                    relative aspect-[4/3] overflow-hidden transition-all duration-300 border border-[var(--color-border)]
+                    ${i === active ? "ring-1 ring-[var(--color-gold)] opacity-100" : "opacity-60 hover:opacity-90"}
                   `}
-                  aria-label={`View photo ${i + 1}`}
+                  aria-label={`Xem ảnh ${i + 1}`}
                 >
-                  <Image src={src} alt={`Thumbnail ${i + 1}`} fill className="object-cover" sizes="15vw" />
+                  <Image src={src} alt={`Ảnh thu nhỏ ${i + 1}`} fill className="object-cover" sizes="15vw" />
                 </button>
               ))}
             </div>
+
+            {/* Image Disclaimer */}
+            <p className="font-sans text-[11px] text-[var(--color-ivory-dim)] italic mt-2">
+              * {tRooms("imageDisclaimer")}
+            </p>
           </div>
 
           {/* Right — Info */}
@@ -107,29 +118,30 @@ export default function RoomDetailHero({
             <AnimateInView direction="right" delay={0.05}>
               <div className="flex items-center gap-3 mb-3">
                 <span className="block w-6 h-px bg-[var(--color-gold)]" />
-                <span className="font-sans text-[10px] tracking-[0.22em] uppercase text-[var(--color-gold)]">
+                <span className="font-sans text-[10px] tracking-[0.22em] uppercase text-[var(--color-gold)] font-medium">
                   {tagline}
                 </span>
               </div>
             </AnimateInView>
 
             <AnimateInView direction="right" delay={0.1}>
+              {/* Single H1 per room page */}
               <h1 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] text-[var(--color-ivory)] mb-5 leading-tight">
                 {name}
               </h1>
             </AnimateInView>
 
             <AnimateInView direction="right" delay={0.15}>
-              <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-8">
+              <p className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] leading-relaxed mb-8">
                 {description}
               </p>
             </AnimateInView>
 
             {/* Specs grid */}
             <AnimateInView direction="right" delay={0.2}>
-              <div className="grid grid-cols-2 gap-px bg-[var(--color-border)] mb-8">
+              <div className="grid grid-cols-3 gap-px bg-[var(--color-border)] mb-8 border border-[var(--color-border)]">
                 {specs.map(({ label, value }) => (
-                  <div key={label} className="bg-[var(--color-charcoal-50)] px-4 py-4">
+                  <div key={label} className="bg-[var(--color-charcoal-50)] px-4 py-4 text-center">
                     <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[var(--color-ivory-dim)] mb-1">
                       {label}
                     </span>
@@ -143,11 +155,11 @@ export default function RoomDetailHero({
 
             {/* Features */}
             <AnimateInView direction="right" delay={0.25}>
-              <ul className="flex flex-wrap gap-2 mb-10">
+              <ul className="flex flex-wrap gap-2 mb-8">
                 {features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-center gap-1.5 font-sans text-xs text-[var(--color-ivory-dim)] border border-[var(--color-border)] px-3 py-1.5"
+                    className="flex items-center gap-1.5 font-sans text-xs text-[var(--color-ivory-dim)] border border-[var(--color-border)] px-3 py-1.5 bg-[var(--color-charcoal-50)]"
                   >
                     <span className="text-[var(--color-gold)] text-[10px]">✦</span>
                     {f}
@@ -161,7 +173,7 @@ export default function RoomDetailHero({
               <div className="border-t border-[var(--color-border)] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
                   <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[var(--color-ivory-dim)] mb-1">
-                    Starting from
+                    {tRooms("from")}
                   </span>
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-serif text-3xl text-[var(--color-gold)]">{price}</span>
@@ -188,7 +200,7 @@ export default function RoomDetailHero({
                     active:scale-95 group cursor-pointer
                   "
                 >
-                  Book This Room
+                  {tRooms("bookNow")}
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </button>
               </div>

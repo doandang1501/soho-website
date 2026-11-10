@@ -5,31 +5,12 @@ import AnimateInView from "@/components/ui/AnimateInView";
 
 // ── Luxury line-art SVG icons ─────────────────────────────────────────────────
 const Icons: Record<string, React.ReactNode> = {
-  checkin: (
+  kitchen: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <circle cx="12" cy="12" r="9"/>
-      <polyline points="12 7 12 12 15 15"/>
-    </svg>
-  ),
-  security: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
-  ),
-  elevator: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <rect x="3" y="3" width="18" height="18" rx="1"/>
-      <path d="M8 10l4-4 4 4"/>
-      <path d="M8 14l4 4 4-4"/>
-    </svg>
-  ),
-  coffee: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M17 8h1a3 3 0 010 6h-1"/>
-      <path d="M3 8h14v8a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>
-      <line x1="6" y1="3" x2="6" y2="5"/>
-      <line x1="10" y1="3" x2="10" y2="5"/>
-      <line x1="14" y1="3" x2="14" y2="5"/>
+      <path d="M3 2v7c0 1.1.9 2 2 2 1.1 0 2-.9 2-2V2"/>
+      <line x1="5" y1="11" x2="5" y2="22"/>
+      <line x1="3" y1="6" x2="7" y2="6"/>
+      <path d="M21 2c0 0 0 8-4 9v11"/>
     </svg>
   ),
   laundry: (
@@ -40,25 +21,12 @@ const Icons: Record<string, React.ReactNode> = {
       <circle cx="10.5" cy="7" r="1" fill="currentColor" strokeWidth="0"/>
     </svg>
   ),
-  kitchen: (
+  dryer: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M3 2v7c0 1.1.9 2 2 2 1.1 0 2-.9 2-2V2"/>
-      <line x1="5" y1="11" x2="5" y2="22"/>
-      <line x1="3" y1="6" x2="7" y2="6"/>
-      <path d="M21 2c0 0 0 8-4 9v11"/>
-    </svg>
-  ),
-  smoke: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-      <path d="M13.73 21a2 2 0 01-3.46 0"/>
-    </svg>
-  ),
-  co: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-      <line x1="12" y1="9" x2="12" y2="13"/>
-      <line x1="12" y1="17" x2="12.01" y2="17"/>
+      <rect x="2" y="2" width="20" height="20" rx="2"/>
+      <circle cx="12" cy="12" r="6"/>
+      <path d="M12 8a4 4 0 0 1 4 4"/>
+      <line x1="6" y1="5" x2="6.01" y2="5"/>
     </svg>
   ),
   wifi: (
@@ -75,6 +43,16 @@ const Icons: Record<string, React.ReactNode> = {
       <polyline points="17 2 12 7 7 2"/>
     </svg>
   ),
+  ac: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <line x1="12" y1="2" x2="12" y2="22"/>
+      <path d="M17 7l-5-5-5 5"/>
+      <path d="M17 17l-5 5-5-5"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M7 7l-5 5 5 5"/>
+      <path d="M17 7l5 5-5 5"/>
+    </svg>
+  ),
   balcony: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
       <path d="M17 18a5 5 0 00-10 0"/>
@@ -86,22 +64,54 @@ const Icons: Record<string, React.ReactNode> = {
       <line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
   ),
-  ac: (
+  elevator: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <line x1="12" y1="2" x2="12" y2="22"/>
-      <path d="M17 7l-5-5-5 5"/>
-      <path d="M17 17l-5 5-5-5"/>
-      <line x1="2" y1="12" x2="22" y2="12"/>
-      <path d="M7 7l-5 5 5 5"/>
-      <path d="M17 7l5 5-5 5"/>
+      <rect x="3" y="3" width="18" height="18" rx="1"/>
+      <path d="M8 10l4-4 4 4"/>
+      <path d="M8 14l4 4 4-4"/>
+    </svg>
+  ),
+  security: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  ),
+  alarms: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+  ),
+  luggage: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <rect x="6" y="7" width="12" height="14" rx="2"/>
+      <path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/>
+      <line x1="9" y1="12" x2="15" y2="12"/>
+      <line x1="9" y1="16" x2="15" y2="16"/>
+    </svg>
+  ),
+  checkin: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <circle cx="12" cy="12" r="9"/>
+      <polyline points="12 7 12 12 15 15"/>
     </svg>
   ),
 };
 
-const AMENITIES = [
-  "checkin", "security", "elevator", "coffee",
-  "laundry", "kitchen", "smoke", "co",
-  "wifi", "tv", "balcony", "ac",
+const AMENITY_KEYS = [
+  "kitchen",
+  "laundry",
+  "dryer",
+  "wifi",
+  "tv",
+  "ac",
+  "balcony",
+  "elevator",
+  "security",
+  "alarms",
+  "luggage",
+  "checkin",
 ] as const;
 
 export default function AmenitiesSection() {
@@ -110,96 +120,65 @@ export default function AmenitiesSection() {
   return (
     <section
       id="amenities"
-      className="py-16 sm:py-24 lg:py-32 bg-[var(--color-charcoal-50)]"
+      className="py-16 sm:py-20 lg:py-28 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full"
       aria-labelledby="amenities-heading"
     >
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-
-        {/* Header */}
-        <div className="mb-16 lg:flex lg:items-end lg:justify-between">
-          <div>
-            <AnimateInView direction="up">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="block w-8 h-px bg-[var(--color-gold)]" />
-                <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[var(--color-gold)]">
-                  Facilities
-                </span>
-              </div>
-            </AnimateInView>
-
-            <AnimateInView delay={0.1} direction="up">
-              <h2
-                id="amenities-heading"
-                className="font-serif text-[clamp(2rem,4vw,3.5rem)] text-[var(--color-ivory)]"
-              >
-                {t("title")}
-              </h2>
-            </AnimateInView>
+      <div className="mb-14">
+        <AnimateInView direction="up">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="block w-8 h-px bg-[var(--color-gold)]" />
+            <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[var(--color-gold)]">
+              SOHO Residence & Hotel
+            </span>
           </div>
-
-          <AnimateInView delay={0.2} direction="up">
-            <p className="font-sans text-sm text-[var(--color-ivory-dim)] max-w-sm leading-relaxed mt-4 lg:mt-0 lg:text-right italic">
-              {t("subtitle")}
-            </p>
-          </AnimateInView>
-        </div>
-
-        {/* Gold divider */}
-        <AnimateInView direction="none">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent mb-16 opacity-40" />
         </AnimateInView>
 
-        {/* Amenities grid — gap-px creates 1px dividers via background bleed */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-[var(--color-border)]">
-          {AMENITIES.map((key, i) => (
-            <AnimateInView key={key} delay={i * 0.05} direction="up" className="h-full">
-              <div className="
-                h-full bg-[var(--color-charcoal-50)] p-5 sm:p-7
-                flex flex-col gap-3 sm:gap-4
-                group hover:bg-[rgba(201,168,76,0.05)]
-                transition-colors duration-300
-              ">
-                {/* Icon */}
-                <span
-                  className="text-[var(--color-gold)] transition-transform duration-300 group-hover:scale-110 inline-block w-6 h-6 sm:w-7 sm:h-7"
-                  aria-hidden="true"
-                >
-                  {Icons[key]}
-                </span>
+        <AnimateInView delay={0.1} direction="up">
+          {/* H2 Title */}
+          <h2
+            id="amenities-heading"
+            className="font-serif text-[clamp(1.8rem,3.8vw,3.2rem)] text-[var(--color-ivory)] mb-4"
+          >
+            {t("title")}
+          </h2>
+        </AnimateInView>
 
-                {/* Label */}
-                <div>
-                  <h3 className="
-                    font-sans font-semibold text-xs sm:text-sm text-[var(--color-ivory)]
-                    group-hover:text-[var(--color-gold)]
-                    transition-colors duration-300 mb-1
-                  ">
-                    {t(`items.${key}.label`)}
-                  </h3>
-                  <p className="font-sans text-xs text-[var(--color-ivory-dim)] leading-relaxed">
-                    {t(`items.${key}.desc`)}
-                  </p>
-                </div>
-
-                {/* Gold underline on hover */}
-                <div className="
-                  w-0 h-px bg-[var(--color-gold)]
-                  group-hover:w-8
-                  transition-all duration-400
-                " />
-              </div>
-            </AnimateInView>
-          ))}
-        </div>
-
-        {/* Bottom note */}
-        <AnimateInView delay={0.3} direction="up">
-          <p className="mt-10 text-center font-sans text-xs text-[var(--color-ivory-dim)] tracking-wide">
-            All amenities included in every residence type &nbsp;·&nbsp; No hidden fees
+        <AnimateInView delay={0.18} direction="up">
+          <p className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] max-w-2xl leading-relaxed">
+            {t("subtitle")}
           </p>
         </AnimateInView>
-
       </div>
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+        {AMENITY_KEYS.map((key, i) => (
+          <AnimateInView key={key} delay={i * 0.04} direction="up">
+            <div className="p-6 border border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[rgba(201,168,76,0.4)] transition-all duration-300 h-full flex flex-col justify-between">
+              <div>
+                <div className="text-[var(--color-gold)] mb-4">
+                  {Icons[key]}
+                </div>
+                <h3 className="font-serif text-lg text-[var(--color-ivory)] mb-2">
+                  {t(`items.${key}.label`)}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+                  {t(`items.${key}.desc`)}
+                </p>
+              </div>
+            </div>
+          </AnimateInView>
+        ))}
+      </div>
+
+      {/* Dryer footnote */}
+      <AnimateInView delay={0.3} direction="up">
+        <div className="border border-[rgba(201,168,76,0.25)] p-4 bg-[rgba(201,168,76,0.03)]">
+          <p className="font-sans text-xs text-[var(--color-ivory-dim)] leading-relaxed">
+            {t("dryerNotice")}
+          </p>
+        </div>
+      </AnimateInView>
     </section>
   );
 }
