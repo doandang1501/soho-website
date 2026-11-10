@@ -313,6 +313,7 @@ export default function BookingModal({
                                 alt={room.title}
                                 fill
                                 className="object-cover"
+                                sizes="(max-width: 640px) 96px, 112px"
                               />
                             </div>
                             <div>

@@ -252,6 +252,7 @@ export default function BookingBar() {
                     minDate={todayDate}
                     onChange={handleCheckIn}
                     placeholder="DD Mon YYYY"
+                    align="left"
                   />
                   <DatePicker
                     label={t("checkOut")}
@@ -260,6 +261,7 @@ export default function BookingBar() {
                     minDate={minCheckOutDate}
                     onChange={(v) => { setCheckOut(v); setError(null); }}
                     placeholder="DD Mon YYYY"
+                    align="right"
                   />
                 </div>
 
