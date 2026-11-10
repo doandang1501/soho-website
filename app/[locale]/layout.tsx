@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -24,9 +25,12 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
-// ── Root Layout Metadata with hreflang & OpenGraph ────────────────────────────
+// ── Root Layout Metadata with Verification, hreflang & OpenGraph ───────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://sohoresidencehotel.vn"),
+  verification: {
+    google: "asdughxL5e5BcG7BTvYtbq-E_H-qHebq6b5dtyDpiwo",
+  },
   title: {
     default: "SOHO Residence & Hotel",
     template: "%s | SOHO Residence & Hotel",
@@ -97,6 +101,26 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--color-charcoal)] text-[var(--color-ivory)] antialiased">
+        {/* Google Analytics 4 (GA4) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XB5PH0L00Q"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XB5PH0L00Q', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           {/* Sticky header */}
           <Header />

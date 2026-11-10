@@ -176,6 +176,29 @@
       "contactDirect": "联系 SOHO"
     }
   },
+  "faq": {
+    "eyebrow": "常见解答",
+    "title": "常见问题解答 (FAQ)",
+    "subtitle": "实用信息助您为入住 SOHO 做好充分准备。",
+    "items": {
+      "family": {
+        "question": "SOHO 是否提供适合家庭入住的公寓？",
+        "answer": "是的。SOHO 提供 55 m² 的两居室公寓（适合 3–4 人）以及 95 m² 的三居室公寓（适合 5–6 人）。两种房型均设有宽敞的客厅、厨房设施以及设于独立阳台的专属洗衣机。"
+      },
+      "laundry": {
+        "question": "SOHO 是否配备洗衣机和烘干机？",
+        "answer": "SOHO 的每套公寓都在独立阳台配备了专属洗衣机。如需烘干衣物，公共洗衣区设有烘干机，我们的工作人员随时乐意为您提供协助。"
+      },
+      "location": {
+        "question": "SOHO 是否靠近范五老街和滨城市场？",
+        "answer": "SOHO Residence & Hotel 位于胡志明市第一郡 Cau Ong Lanh 坊 Cô Giang 街100号。前往范五老步行街（Bùi Viện）、滨城市场（Chợ Bến Thành）和阮惠步行街均十分便捷快速。"
+      },
+      "checkin": {
+        "question": "在 SOHO 如何办理入住？",
+        "answer": "抵达大楼大堂时，请直接拨打服务热线 +84 91 771 9966。SOHO 工作人员将在数分钟内下楼热情接待并协助办理入住。22:00 之后抵达的客人请提前告知。SOHO 不实行自助入住；大楼物业保安非酒店服务人员。"
+      }
+    }
+  },
   "footer": {
     "tagline": "位于胡志明市第一郡的便利舒适服务式公寓酒店。",
     "residences": "客房房型",

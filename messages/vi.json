@@ -176,6 +176,29 @@
       "contactDirect": "Liên Hệ SOHO"
     }
   },
+  "faq": {
+    "eyebrow": "Giải Đáp Thắc Mắc",
+    "title": "Câu Hỏi Thường Gặp",
+    "subtitle": "Những thông tin hữu ích giúp quý khách chuẩn bị tốt nhất cho kỳ lưu trú tại SOHO.",
+    "items": {
+      "family": {
+        "question": "SOHO có căn hộ cho gia đình không?",
+        "answer": "Có. SOHO có căn 2 phòng ngủ diện tích 55 m² (phù hợp 3–4 người) và căn 3 phòng ngủ diện tích 95 m² (phù hợp 5–6 người). Cả hai loại căn hộ đều có phòng khách rộng rãi, khu vực bếp nấu nướng và máy giặt riêng tại ban công."
+      },
+      "laundry": {
+        "question": "SOHO có máy giặt và máy sấy không?",
+        "answer": "Mỗi căn hộ tại SOHO đều được trang bị máy giặt riêng đặt tại ban công. Đối với nhu cầu sấy khô quần áo, khách sạn có máy sấy dùng chung tại khu giặt ủi và nhân viên SOHO luôn sẵn sàng hỗ trợ quý khách khi liên hệ."
+      },
+      "location": {
+        "question": "SOHO gần phố Bùi Viện và Chợ Bến Thành không?",
+        "answer": "SOHO Residence & Hotel tọa lạc tại 100 Cô Giang, phường Cầu Ông Lãnh, Quận 1. Vị trí rất thuận tiện và nhanh chóng để di chuyển đến phố đi bộ Bùi Viện, Chợ Bến Thành, phố đi bộ Nguyễn Huệ và các điểm tham quan trung tâm."
+      },
+      "checkin": {
+        "question": "Quy trình nhận phòng tại SOHO diễn ra như thế nào?",
+        "answer": "Khi đến sảnh tòa nhà, quý khách vui lòng gọi trực tiếp hotline +84 91 771 9966. Nhân viên SOHO sẽ xuống sảnh đón và hỗ trợ nhận phòng tận tình trong vài phút. Khách đến sau 22:00 vui lòng thông báo trước. SOHO không áp dụng tự nhận phòng; bảo vệ tòa nhà không phải nhân viên khách sạn."
+      }
+    }
+  },
   "footer": {
     "tagline": "Khách sạn căn hộ dịch vụ tiện nghi tại Quận 1, TP. Hồ Chí Minh.",
     "residences": "Căn Hộ",

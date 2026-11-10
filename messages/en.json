@@ -176,6 +176,29 @@
       "contactDirect": "Contact SOHO"
     }
   },
+  "faq": {
+    "eyebrow": "Help & Questions",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Essential information to help you prepare for your stay at SOHO.",
+    "items": {
+      "family": {
+        "question": "Does SOHO offer apartments for families?",
+        "answer": "Yes. SOHO offers 2-bedroom apartments (55 m², suitable for 3–4 guests) and 3-bedroom apartments (95 m², suitable for 5–6 guests). Both feature spacious living rooms, kitchen facilities, and an individual washing machine on the private balcony."
+      },
+      "laundry": {
+        "question": "Does SOHO have washing machines and dryers?",
+        "answer": "Every apartment at SOHO is equipped with an individual washing machine on its private balcony. For clothes drying, shared dryers are located in the laundry area, and our staff is always happy to assist upon request."
+      },
+      "location": {
+        "question": "Is SOHO close to Bui Vien Street and Ben Thanh Market?",
+        "answer": "SOHO Residence & Hotel is centrally located at 100 Co Giang Street, Cau Ong Lanh Ward, District 1. It provides quick and easy access to Bui Vien Walking Street, Ben Thanh Market, Nguyen Hue Walking Street, and major city attractions."
+      },
+      "checkin": {
+        "question": "How does check-in work at SOHO?",
+        "answer": "Upon arriving at the building lobby, please call our hotline directly at +84 91 771 9966. SOHO staff will come down to welcome you and assist your check-in within minutes. Guests arriving after 22:00 should inform us in advance. SOHO does not operate self-check-in; building security guards are not hotel personnel."
+      }
+    }
+  },
   "footer": {
     "tagline": "Comfortable serviced apartment-hotel in District 1, Ho Chi Minh City.",
     "residences": "Residences",
