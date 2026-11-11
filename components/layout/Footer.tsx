@@ -5,19 +5,19 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const t  = useTranslations("footer");
+  const t = useTranslations("footer");
   const tc = useTranslations("contact");
 
   const CONTACT_ROWS = [
-    { icon: "✉",  labelKey: "email",    value: tc("emailValue"),  href: "mailto:booking@sohoresidencehotel.vn" },
-    { icon: "📞", labelKey: "phone",    value: tc("phoneValue"),  href: "tel:+84917719966"                    },
-    { icon: "💬", labelKey: "whatsapp", value: tc("phoneValue"),  href: "https://wa.me/84917719966"           },
-    { icon: "🌐", labelKey: "social",   value: tc("socialValue"), href: "https://t.me/sohoresidencehotel"    },
+    { icon: "✉", labelKey: "email", value: tc("emailValue"), href: "mailto:booking@sohoresidencehotel.vn" },
+    { icon: "📞", labelKey: "phone", value: tc("phoneValue"), href: "tel:+84917719966" },
+    { icon: "💬", labelKey: "whatsapp", value: tc("phoneValue"), href: "https://wa.me/84917719966" },
+    { icon: "🌐", labelKey: "social", value: tc("socialValue"), href: "https://t.me/sohoresidencehotel" },
   ] as const;
 
   const ROOM_LINKS = [
-    { labelKey: "studioLink",   href: "/studio" },
-    { labelKey: "twobedLink",   href: "/2-bedroom" },
+    { labelKey: "studioLink", href: "/studio" },
+    { labelKey: "twobedLink", href: "/2-bedroom" },
     { labelKey: "threebedLink", href: "/3-bedroom" },
   ] as const;
 

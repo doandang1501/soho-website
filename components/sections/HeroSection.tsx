@@ -16,9 +16,9 @@ const SLIDE_DURATION = 5500;
 const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 const imgVariants: Variants = {
-  enter:  { opacity: 0, scale: 1.06 },
-  active: { opacity: 1, scale: 1,    transition: { duration: 1.4, ease: EASE } },
-  exit:   { opacity: 0, scale: 0.97, transition: { duration: 0.9, ease: EASE } },
+  enter: { opacity: 0, scale: 1.06 },
+  active: { opacity: 1, scale: 1, transition: { duration: 1.4, ease: EASE } },
+  exit: { opacity: 0, scale: 0.97, transition: { duration: 0.9, ease: EASE } },
 };
 
 const textVariants = {
@@ -33,7 +33,7 @@ const textVariants = {
 export default function HeroSection() {
   const t = useTranslations("hero");
 
-  const [current,  setCurrent]  = useState(0);
+  const [current, setCurrent] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -215,18 +215,17 @@ export default function HeroSection() {
               className="p-2.5 flex items-center justify-center cursor-pointer group"
               aria-label={`Go to slide ${i + 1}`}
             >
-              <span
-                className={`block h-1 transition-all duration-500 rounded-full ${
-                  i === current
-                    ? "w-8 bg-[var(--color-gold)]"
-                    : "w-4 bg-[rgba(245,240,232,0.35)] group-hover:bg-[rgba(245,240,232,0.7)]"
+            <span
+              className={`block h-1 transition-all duration-500 rounded-full ${i === current
+                  ? "w-8 bg-[var(--color-gold)]"
+                  : "w-4 bg-[rgba(245,240,232,0.35)] group-hover:bg-[rgba(245,240,232,0.7)]"
                 }`}
-              />
+            />
             </button>
           ))}
-        </motion.div>
+      </motion.div>
 
-      </div>
-    </section>
+    </div>
+    </section >
   );
 }
