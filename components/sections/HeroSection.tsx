@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const SLIDES = [
-  { src: "/images/hero_1.jpeg", alt: "SOHO Residence & Hotel - Không gian lưu trú tiện nghi giữa trung tâm Sài Gòn" },
-  { src: "/images/hero_2.png", alt: "SOHO Residence & Hotel - Căn hộ phòng ngủ tiện nghi" },
-  { src: "/images/hero_3.jpeg", alt: "SOHO Residence & Hotel - Khách sạn căn hộ Quận 1" },
+  { src: "/images/hero_1.jpg", alt: "SOHO Residence & Hotel - Không gian lưu trú tiện nghi giữa trung tâm Sài Gòn" },
+  { src: "/images/hero_2.jpg", alt: "SOHO Residence & Hotel - Căn hộ phòng ngủ tiện nghi" },
+  { src: "/images/hero_3.jpg", alt: "SOHO Residence & Hotel - Khách sạn căn hộ Quận 1" },
 ];
 
 const SLIDE_DURATION = 5500;
@@ -16,9 +16,9 @@ const SLIDE_DURATION = 5500;
 const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 const imgVariants: Variants = {
-  enter:  { opacity: 0, scale: 1.06 },
-  active: { opacity: 1, scale: 1,    transition: { duration: 1.4, ease: EASE } },
-  exit:   { opacity: 0, scale: 0.97, transition: { duration: 0.9, ease: EASE } },
+  enter: { opacity: 0, scale: 1.06 },
+  active: { opacity: 1, scale: 1, transition: { duration: 1.4, ease: EASE } },
+  exit: { opacity: 0, scale: 0.97, transition: { duration: 0.9, ease: EASE } },
 };
 
 const textVariants = {
@@ -33,7 +33,7 @@ const textVariants = {
 export default function HeroSection() {
   const t = useTranslations("hero");
 
-  const [current,  setCurrent]  = useState(0);
+  const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   const next = useCallback(
@@ -192,9 +192,8 @@ export default function HeroSection() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-0.5 transition-all duration-500 ${
-                i === current ? "w-8 bg-[var(--color-gold)]" : "w-3 bg-[rgba(245,240,232,0.3)] hover:bg-[rgba(245,240,232,0.6)]"
-              }`}
+              className={`h-0.5 transition-all duration-500 ${i === current ? "w-8 bg-[var(--color-gold)]" : "w-3 bg-[rgba(245,240,232,0.3)] hover:bg-[rgba(245,240,232,0.6)]"
+                }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
