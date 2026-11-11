@@ -101,8 +101,8 @@ export default function HeroSection() {
       )}
 
       {/* ── Gradient overlays ────────────────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(22,23,27,0.38)] via-[rgba(22,23,27,0.18)] to-[rgba(22,23,27,0.78)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(22,23,27,0.4)] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,12,16,0.4)] via-[rgba(10,12,16,0.2)] to-[rgba(10,12,16,0.7)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,12,16,0.45)] via-transparent to-transparent" />
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
       <div className="relative z-10 w-full pb-8 sm:pb-12 md:pb-16 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto">
@@ -116,7 +116,7 @@ export default function HeroSection() {
           className="flex items-center gap-3 mb-4"
         >
           <span className="block w-8 h-px bg-[var(--color-gold)]" />
-          <span className="font-sans text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[var(--color-gold)] font-medium">
+          <span className="font-sans text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[var(--color-gold-light)] font-semibold">
             {t("eyebrow")}
           </span>
         </motion.div>
@@ -128,11 +128,11 @@ export default function HeroSection() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-serif text-[clamp(2rem,5.5vw,4.8rem)] leading-[1.1] text-[var(--color-ivory)] block"
+            className="font-serif text-[clamp(2rem,5.5vw,4.8rem)] leading-[1.1] text-white block drop-shadow-sm"
           >
             {titleLines.map((line, i) => (
               <span key={i} className="block">
-                {i === 1 ? <span className="text-gold-gradient">{line}</span> : line}
+                {i === 1 ? <span className="text-[#f1c964]">{line}</span> : line}
                 {i < titleLines.length - 1 ? " " : ""}
               </span>
             ))}
@@ -145,7 +145,7 @@ export default function HeroSection() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] max-w-2xl leading-relaxed mb-8"
+          className="font-sans text-sm sm:text-base text-white/90 max-w-2xl leading-relaxed mb-8 drop-shadow-sm"
         >
           {t("subtitle")}
         </motion.p>
@@ -167,11 +167,10 @@ export default function HeroSection() {
             }}
             className="
               inline-flex items-center gap-3
-              bg-[#d4a836] text-[#000000]
-              font-sans font-bold text-xs tracking-[0.18em] uppercase
-              px-8 py-4
+              bg-[var(--color-gold)] text-white font-sans font-bold text-xs tracking-[0.18em] uppercase
+              px-8 py-4 rounded-sm
               transition-all duration-300
-              hover:bg-[var(--color-gold-light)] hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]
+              hover:bg-[var(--color-gold-dark)] hover:shadow-lg
               active:scale-95
               group
             "
@@ -188,11 +187,11 @@ export default function HeroSection() {
             }}
             className="
               inline-flex items-center gap-3
-              border border-[rgba(245,240,232,0.45)] text-[var(--color-ivory)]
-              font-sans font-medium text-xs tracking-[0.18em] uppercase
-              px-8 py-4
+              border border-white/60 text-white bg-white/10 backdrop-blur-sm
+              font-sans font-semibold text-xs tracking-[0.18em] uppercase
+              px-8 py-4 rounded-sm
               transition-all duration-300
-              hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]
+              hover:bg-white hover:text-[#1e2022] hover:border-white
               active:scale-95 cursor-pointer
             "
           >

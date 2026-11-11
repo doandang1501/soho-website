@@ -43,12 +43,12 @@ export default async function ContactPage({
           </div>
         </AnimateInView>
         <AnimateInView delay={0.1} direction="up">
-          <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] text-[var(--color-ivory)] mb-4">
+          <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] text-[#1e2022] mb-4">
             {t("title")}
           </h1>
         </AnimateInView>
         <AnimateInView delay={0.18} direction="up">
-          <p className="font-sans text-sm text-[var(--color-ivory-dim)] max-w-lg leading-relaxed">
+          <p className="font-sans text-sm text-[#6c757d] max-w-lg leading-relaxed">
             {t("subtitle")}
           </p>
         </AnimateInView>
@@ -67,7 +67,7 @@ export default async function ContactPage({
                   rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="
                     group flex items-start gap-5 p-6
-                    border border-[var(--color-border)] bg-[var(--color-charcoal-50)]
+                    border border-[#e9ecef] bg-[#f8f9fa]
                     hover:border-[rgba(201,168,76,0.45)] hover:bg-[rgba(201,168,76,0.04)]
                     transition-all duration-300
                   "
@@ -76,10 +76,10 @@ export default async function ContactPage({
                     {icon}
                   </span>
                   <div>
-                    <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[var(--color-ivory-dim)] mb-1">
+                    <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[#6c757d] mb-1">
                       {label}
                     </span>
-                    <span className="block font-sans text-sm text-[var(--color-ivory)] group-hover:text-[var(--color-gold)] transition-colors duration-300">
+                    <span className="block font-sans text-sm text-[#1e2022] group-hover:text-[var(--color-gold)] transition-colors duration-300">
                       {value}
                     </span>
                   </div>
@@ -93,7 +93,7 @@ export default async function ContactPage({
 
           {/* ── Map (col-span-3) ──────────────────────────────────────── */}
           <AnimateInView direction="right" delay={0.15} className="lg:col-span-3">
-            <div className="relative w-full h-full min-h-[420px] border border-[var(--color-border)] overflow-hidden">
+            <div className="relative w-full h-full min-h-[420px] border border-[#e9ecef] overflow-hidden">
               <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-[var(--color-gold)] z-10 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-[var(--color-gold)] z-10 pointer-events-none" />
               <iframe
@@ -116,7 +116,7 @@ export default async function ContactPage({
           <AnimateInView direction="up">
             <div className="flex items-center gap-3 mb-10">
               <span className="block w-7 h-px bg-[var(--color-gold)]" />
-              <h2 className="font-serif text-2xl text-[var(--color-ivory)]">Frequently Asked</h2>
+              <h2 className="font-serif text-2xl text-[#1e2022]">Frequently Asked</h2>
             </div>
           </AnimateInView>
 
@@ -130,12 +130,12 @@ export default async function ContactPage({
               { q: "How do I pay for my booking?",         a: "Payment can be made via bank transfer, credit card, or cash on arrival. Contact us for details after booking." },
             ].map(({ q, a }, i) => (
               <AnimateInView key={q} delay={i * 0.07} direction="up">
-                <div className="border border-[var(--color-border)] bg-[var(--color-charcoal-50)] p-6">
-                  <h3 className="font-sans font-semibold text-sm text-[var(--color-ivory)] mb-3 flex items-start gap-2">
+                <div className="border border-[#e9ecef] bg-[#f8f9fa] p-6">
+                  <h3 className="font-sans font-semibold text-sm text-[#1e2022] mb-3 flex items-start gap-2">
                     <span className="text-[var(--color-gold)] flex-shrink-0">Q.</span>
                     {q}
                   </h3>
-                  <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed pl-5">{a}</p>
+                  <p className="font-sans text-sm text-[#6c757d] leading-relaxed pl-5">{a}</p>
                 </div>
               </AnimateInView>
             ))}

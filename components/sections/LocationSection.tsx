@@ -64,21 +64,17 @@ export default function LocationSection() {
           {/* Map embed — col-span-2 with Interactive/Scroll Lazy-load */}
           <AnimateInView delay={0.1} direction="left" className="lg:col-span-2">
             <div 
-              className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden border border-[var(--color-border)] bg-[var(--color-charcoal-50)] flex items-center justify-center cursor-pointer"
+              className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden rounded-xl border border-[#e9ecef] bg-[#f8f9fa] shadow-sm flex items-center justify-center cursor-pointer"
               onMouseEnter={() => setLoadMap(true)}
               onTouchStart={() => setLoadMap(true)}
             >
-              {/* Gold corner accent */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[var(--color-gold)] z-10 pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[var(--color-gold)] z-10 pointer-events-none" />
-
               {loadMap ? (
                 <iframe
                   title="SOHO Residence & Hotel location map"
                   src="https://maps.google.com/maps?q=100+C%C3%B4+Giang%2C+C%E1%BA%A7u+%C3%94ng+L%C3%A3nh%2C+H%E1%BB%93+Ch%C3%AD+Minh+700000%2C+Vietnam&output=embed"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "grayscale(0.3) invert(0.12) contrast(1.1)" }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -87,16 +83,16 @@ export default function LocationSection() {
               ) : (
                 <div 
                   onClick={() => setLoadMap(true)}
-                  className="flex flex-col items-center justify-center p-6 text-center gap-3 z-10 w-full h-full group hover:bg-[var(--color-gold)]/5 transition-colors"
+                  className="flex flex-col items-center justify-center p-6 text-center gap-3 z-10 w-full h-full group hover:bg-[#fff9eb] transition-colors"
                 >
-                  <div className="w-14 h-14 rounded-full border border-[var(--color-gold)] flex items-center justify-center text-2xl text-[var(--color-gold)] group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-full bg-white shadow-md border border-[#e9ecef] flex items-center justify-center text-2xl text-[var(--color-gold)] group-hover:scale-110 transition-transform">
                     📍
                   </div>
                   <div>
-                    <span className="font-serif text-lg text-[var(--color-ivory)] block mb-1">
+                    <span className="font-serif text-lg text-[#1e2022] font-medium block mb-1">
                       100 Cô Giang, Phường Cầu Ông Lãnh, Quận 1
                     </span>
-                    <span className="font-sans text-xs text-[var(--color-gold)] uppercase tracking-widest border-b border-[var(--color-gold)]/40 pb-0.5">
+                    <span className="font-sans text-xs text-[#c99a2c] font-semibold uppercase tracking-widest border-b border-[#c99a2c]/40 pb-0.5">
                       Bấm để tải bản đồ trực tiếp
                     </span>
                   </div>
@@ -110,14 +106,14 @@ export default function LocationSection() {
             <div className="flex flex-col gap-6">
 
               {/* Address card */}
-              <div className="border border-[var(--color-border)] p-6 bg-[var(--color-charcoal-50)]">
+              <div className="rounded-xl border border-[#e9ecef] p-6 bg-white shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">📍</span>
-                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] font-medium">
+                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#c99a2c] font-bold">
                     {t("address")}
                   </span>
                 </div>
-                <address className="font-sans text-sm text-[var(--color-ivory)] not-italic leading-relaxed whitespace-pre-line">
+                <address className="font-sans text-sm text-[#495057] not-italic leading-relaxed whitespace-pre-line">
                   {t("addressValue")}
                 </address>
                 <a
@@ -126,9 +122,9 @@ export default function LocationSection() {
                   rel="noopener noreferrer"
                   className="
                     inline-flex items-center gap-2 mt-4
-                    font-sans text-xs tracking-[0.12em] uppercase
-                    text-[var(--color-gold)] hover:text-[var(--color-gold-light)]
-                    border-b border-[var(--color-gold-muted)] hover:border-[var(--color-gold)]
+                    font-sans text-xs font-semibold tracking-[0.12em] uppercase
+                    text-[#c99a2c] hover:text-[#a77b1b]
+                    border-b border-[#c99a2c]/40 hover:border-[#c99a2c]
                     pb-0.5 transition-all duration-200 group
                   "
                 >
@@ -138,8 +134,8 @@ export default function LocationSection() {
               </div>
 
               {/* Destinations list */}
-              <div className="border border-[var(--color-border)] p-6 bg-[var(--color-charcoal-50)]">
-                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] block mb-4 font-medium">
+              <div className="rounded-xl border border-[#e9ecef] p-6 bg-white shadow-sm">
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#c99a2c] block mb-4 font-bold">
                   {t("nearby")}
                 </span>
                 <ul className="space-y-2.5">

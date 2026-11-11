@@ -36,8 +36,8 @@ function Counter({
           type="button"
           onClick={() => onChange(Math.max(min, value - 1))}
           className="
-            w-7 h-7 rounded-full border border-[var(--color-border)]
-            text-[var(--color-ivory)] text-sm font-medium
+            w-7 h-7 rounded-full border border-[#dee2e6]
+            text-[#1e2022] text-sm font-medium
             hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]
             transition-all duration-200 flex items-center justify-center
             active:scale-95
@@ -46,15 +46,15 @@ function Counter({
         >
           −
         </button>
-        <span className="w-6 text-center text-[var(--color-ivory)] font-sans font-medium text-sm">
+        <span className="w-6 text-center text-[#1e2022] font-sans font-semibold text-sm">
           {value}
         </span>
         <button
           type="button"
           onClick={() => onChange(value + 1)}
           className="
-            w-7 h-7 rounded-full border border-[var(--color-border)]
-            text-[var(--color-ivory)] text-sm font-medium
+            w-7 h-7 rounded-full border border-[#dee2e6]
+            text-[#1e2022] text-sm font-medium
             hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]
             transition-all duration-200 flex items-center justify-center
             active:scale-95
@@ -145,9 +145,9 @@ export default function BookingBar() {
       <div className="
         hidden lg:block
         sticky top-20 z-40
-        bg-[rgba(10,10,10,0.88)] backdrop-blur-lg
-        border-b border-[var(--color-border)]
-        shadow-luxury
+        bg-white/95 backdrop-blur-lg
+        border-b border-[#e9ecef]
+        shadow-[0_4px_20px_rgba(0,0,0,0.06)]
       ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-end gap-6 flex-wrap">
@@ -217,20 +217,20 @@ export default function BookingBar() {
         <button
           onClick={() => setMobileExpanded((v) => !v)}
           className="
-            w-full flex items-center justify-between px-5 py-3
-            bg-[rgba(10,10,10,0.92)] backdrop-blur-lg
-            border-b border-[var(--color-border)]
-            text-[var(--color-ivory)] font-sans text-sm
+            w-full flex items-center justify-between px-5 py-3.5
+            bg-white/95 backdrop-blur-lg
+            border-b border-[#e9ecef]
+            text-[#1e2022] font-sans text-sm shadow-sm
           "
           aria-expanded={mobileExpanded}
         >
-          <span className="text-xs tracking-[0.15em] uppercase text-[var(--color-ivory-dim)]">
+          <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[#1e2022]">
             {t("cta")}
           </span>
           <motion.span
             animate={{ rotate: mobileExpanded ? 180 : 0 }}
             transition={{ duration: 0.25 }}
-            className="text-[var(--color-gold)]"
+            className="text-[var(--color-gold)] font-bold"
           >
             ▾
           </motion.span>
@@ -245,7 +245,7 @@ export default function BookingBar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: EASE }}
-              className="overflow-hidden bg-[rgba(10,10,10,0.96)] border-b border-[var(--color-border)]"
+              className="overflow-hidden bg-white border-b border-[#e9ecef] shadow-lg"
             >
               <div className="px-5 py-5 flex flex-col gap-5">
 

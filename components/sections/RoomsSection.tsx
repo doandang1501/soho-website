@@ -74,7 +74,7 @@ function RoomCard({
     <AnimateInView delay={index * 0.13} direction="up">
       <Link
         href={localePath}
-        className="block group relative overflow-hidden bg-[var(--color-charcoal-50)] border border-[var(--color-border)] hover:border-[rgba(201,168,76,0.5)] transition-all duration-300"
+        className="block group relative overflow-hidden bg-white rounded-xl border border-[#e9ecef] shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.1)] hover:border-[var(--color-gold)] transition-all duration-300"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         aria-label={t(`${room.key}.tagline`)}
@@ -95,20 +95,25 @@ function RoomCard({
             className={`object-cover transition-all duration-700 ${hovered ? "scale-100 opacity-100" : "scale-110 opacity-0"}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,14,14,0.92)] via-[rgba(14,14,14,0.2)] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
           {/* Price badge */}
-          <div className="absolute top-4 right-4 bg-[rgba(14,14,14,0.85)] backdrop-blur-sm px-3 py-1.5 border border-[var(--color-border)]">
-            <span className="font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)]">{t("from")}</span>
-            <span className="ml-1.5 font-sans text-xs font-semibold text-[var(--color-gold)]">{t(`${room.key}.price`)}</span>
-            <span className="font-sans text-[10px] text-[var(--color-ivory-dim)]">{" "}{t("perNight")}</span>
+          <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md border border-white/40">
+            <span className="font-sans text-[10px] tracking-[0.12em] uppercase text-[#6c757d]">{t("from")}</span>
+            <span className="ml-1.5 font-sans text-xs font-bold text-[#c99a2c]">{t(`${room.key}.price`)}</span>
+            <span className="font-sans text-[10px] text-[#6c757d]">{" "}{t("perNight")}</span>
+          </div>
+
+          {/* Direct booking perk badge (Bear House style) */}
+          <div className="absolute top-4 left-4 bg-[#c99a2c] text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-sm">
+            Tiết kiệm 15%
           </div>
 
           {/* Gallery dots */}
           {hovered && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
               {room.gallery.map((_, i) => (
-                <span key={i} className={`block rounded-full transition-all duration-300 ${i === imgIdx ? "w-4 h-1 bg-[var(--color-gold)]" : "w-1 h-1 bg-[rgba(245,240,232,0.4)]"}`} />
+                <span key={i} className={`block rounded-full transition-all duration-300 ${i === imgIdx ? "w-4 h-1 bg-[var(--color-gold)]" : "w-1 h-1 bg-white/70"}`} />
               ))}
             </div>
           )}
@@ -116,45 +121,45 @@ function RoomCard({
 
         {/* Content */}
         <div className="p-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="block w-5 h-px bg-[var(--color-gold)]" />
-            <span className="font-sans text-[10px] tracking-[0.18em] uppercase text-[var(--color-gold)]">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="block w-4 h-px bg-[var(--color-gold)]" />
+            <span className="font-sans text-[11px] font-bold tracking-[0.15em] uppercase text-[#c99a2c]">
               {t(`${room.key}.name`)}
             </span>
           </div>
 
           {/* H3 Heading */}
-          <h3 className="font-serif text-xl md:text-2xl text-[var(--color-ivory)] mb-3 leading-snug group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
+          <h3 className="font-serif text-xl md:text-2xl text-[#1e2022] mb-3 leading-snug group-hover:text-[#c99a2c] transition-colors duration-300">
             {t(`${room.key}.tagline`)}
           </h3>
 
-          <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-5">
+          <p className="font-sans text-sm text-[#495057] leading-relaxed mb-5 line-clamp-2">
             {t(`${room.key}.description`)}
           </p>
 
           {/* Feature pills */}
           <ul className="flex flex-wrap gap-2 mb-6">
             {features.map((f) => (
-              <li key={f} className="font-sans text-[10px] tracking-[0.08em] border border-[var(--color-border)] px-2.5 py-1 text-[var(--color-ivory-dim)] group-hover:border-[rgba(201,168,76,0.3)] transition-colors duration-300">
+              <li key={f} className="font-sans text-[11px] font-medium tracking-[0.04em] bg-[#f8f9fa] border border-[#e9ecef] rounded-md px-2.5 py-1 text-[#495057]">
                 {f}
               </li>
             ))}
           </ul>
 
-          {/* VIEW DETAILS */}
-          <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-[var(--color-gold)] border-b border-[var(--color-gold-muted)] group-hover:border-[var(--color-gold)] pb-0.5 transition-all duration-200">
-            {t("viewDetails")}
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </span>
+          {/* Bottom Action Bar */}
+          <div className="flex items-center justify-between pt-4 border-t border-[#f1f3f5]">
+            <span className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold tracking-[0.12em] uppercase text-[#c99a2c] group-hover:text-[#a77b1b] transition-all duration-200">
+              {t("viewDetails")}
+              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </span>
+            <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              ✓ Đặt trực tiếp
+            </span>
+          </div>
         </div>
 
-        {/* Gold left border on hover */}
-        <motion.div
-          className="absolute left-0 top-0 bottom-0 w-0.5 bg-[var(--color-gold)]"
-          initial={{ scaleY: 0, originY: 0 }}
-          animate={{ scaleY: hovered ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: EASE }}
-        />
+        {/* Top accent line on hover */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
     </AnimateInView>
   );

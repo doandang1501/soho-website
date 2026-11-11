@@ -22,10 +22,10 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-[var(--color-charcoal-50)] border-t border-[var(--color-border)] mt-auto">
+    <footer className="bg-[#f8f9fa] border-t border-[#e9ecef] mt-auto">
 
       {/* Gold top accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent" />
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#c99a2c] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -39,19 +39,19 @@ export default function Footer() {
               height={44}
               className="h-10 w-auto object-contain mb-5"
             />
-            <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-6">
+            <p className="font-sans text-sm text-[#6c757d] leading-relaxed mb-6">
               {t("tagline")}
             </p>
             {/* Social / contact icons */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="tel:+84917719966"
                 aria-label="Call us"
                 className="
-                  w-9 h-9 rounded-full border border-[var(--color-border)]
+                  w-9 h-9 rounded-full border border-[#dee2e6] bg-white
                   flex items-center justify-center
-                  text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)]
-                  hover:border-[var(--color-gold)]
+                  text-[#495057] hover:text-[#c99a2c]
+                  hover:border-[#c99a2c] shadow-sm
                   transition-all duration-300 text-sm
                 "
               >
@@ -63,10 +63,10 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 className="
-                  w-9 h-9 rounded-full border border-[var(--color-border)]
+                  w-9 h-9 rounded-full border border-[#dee2e6] bg-white
                   flex items-center justify-center
-                  text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)]
-                  hover:border-[var(--color-gold)]
+                  text-[#495057] hover:text-[#c99a2c]
+                  hover:border-[#c99a2c] shadow-sm
                   transition-all duration-300 text-sm
                 "
               >
@@ -78,10 +78,10 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Zalo"
                 className="
-                  w-9 h-9 rounded-full border border-[var(--color-border)]
+                  w-9 h-9 rounded-full border border-[#dee2e6] bg-white
                   flex items-center justify-center
-                  text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)]
-                  hover:border-[var(--color-gold)]
+                  text-[#495057] hover:text-[#c99a2c]
+                  hover:border-[#c99a2c] shadow-sm
                   transition-all duration-300 text-xs font-bold
                 "
               >
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Col 2 — Rooms */}
           <div>
-            <h3 className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-[var(--color-gold)] mb-5">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-[#c99a2c] mb-5">
               {t("residences")}
             </h3>
             <ul className="space-y-3">
@@ -101,15 +101,15 @@ export default function Footer() {
                   <Link
                     href={href}
                     className="
-                      font-sans text-sm text-[var(--color-ivory-dim)]
-                      hover:text-[var(--color-gold)]
+                      font-sans text-sm text-[#6c757d]
+                      hover:text-[#c99a2c]
                       transition-colors duration-200
                       flex items-center gap-2 group
                     "
                   >
                     <span className="
-                      block w-4 h-px bg-[var(--color-border)]
-                      group-hover:bg-[var(--color-gold)] group-hover:w-6
+                      block w-3 h-px bg-[#dee2e6]
+                      group-hover:bg-[#c99a2c] group-hover:w-5
                       transition-all duration-300
                     " />
                     {t(labelKey)}
@@ -121,22 +121,22 @@ export default function Footer() {
 
           {/* Col 3 — Contact */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-[var(--color-gold)] mb-5">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-[#c99a2c] mb-5">
               {t("contactHeading")}
             </h3>
             <ul className="space-y-3">
               {CONTACT_ROWS.map(({ icon, labelKey, value, href }) => (
                 <li key={labelKey} className="flex items-start gap-3">
-                  <span className="text-sm mt-0.5 text-[var(--color-ivory-dim)]">{icon}</span>
+                  <span className="text-sm mt-0.5 text-[#6c757d]">{icon}</span>
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--color-ivory-dim)] mb-0.5">
+                    <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[#6c757d] mb-0.5 font-medium">
                       {tc(labelKey)}
                     </span>
                     <a
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
                       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="font-sans text-sm text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors duration-200"
+                      className="font-sans text-sm font-semibold text-[#1e2022] hover:text-[#c99a2c] transition-colors duration-200"
                     >
                       {value}
                     </a>
@@ -146,12 +146,12 @@ export default function Footer() {
 
               {/* Address */}
               <li className="flex items-start gap-3 pt-1">
-                <span className="text-sm mt-0.5 text-[var(--color-ivory-dim)]">📍</span>
+                <span className="text-sm mt-0.5 text-[#6c757d]">📍</span>
                 <div>
-                  <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--color-ivory-dim)] mb-0.5">
+                  <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[#6c757d] mb-0.5 font-medium">
                     {tc("address")}
                   </span>
-                  <span className="font-sans text-sm text-[var(--color-ivory)] leading-relaxed">
+                  <span className="font-sans text-sm font-medium text-[#1e2022] leading-relaxed">
                     {tc("addressValue")}
                   </span>
                 </div>
@@ -163,16 +163,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[var(--color-border)]">
+      <div className="border-t border-[#e9ecef] bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-sans text-xs text-[var(--color-ivory-dim)] tracking-wide">
+          <p className="font-sans text-xs text-[#6c757d] tracking-wide">
             {t("rights")}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="font-sans text-xs text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)] transition-colors duration-200">
+            <a href="#" className="font-sans text-xs text-[#6c757d] hover:text-[#c99a2c] transition-colors duration-200">
               {t("links.privacy")}
             </a>
-            <a href="#" className="font-sans text-xs text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)] transition-colors duration-200">
+            <a href="#" className="font-sans text-xs text-[#6c757d] hover:text-[#c99a2c] transition-colors duration-200">
               {t("links.terms")}
             </a>
           </div>

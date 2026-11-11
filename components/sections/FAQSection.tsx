@@ -58,18 +58,18 @@ export default function FAQSection() {
           const isOpen = openIndex === i;
           return (
             <AnimateInView key={key} delay={i * 0.06} direction="up">
-              <div className="border border-[var(--color-border)] bg-[var(--color-charcoal-50)] transition-colors duration-200 hover:border-[rgba(201,168,76,0.4)]">
+              <div className="rounded-xl border border-[#e9ecef] bg-white transition-all duration-200 hover:border-[#c99a2c] shadow-sm overflow-hidden">
                 <button
                   type="button"
                   onClick={() => toggle(i)}
                   className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-serif text-base sm:text-lg text-[var(--color-ivory)] pr-2">
+                  <span className="font-serif text-base sm:text-lg text-[#1e2022] font-medium pr-2">
                     {t(`items.${key}.question`)}
                   </span>
                   <span
-                    className={`text-[var(--color-gold)] font-mono text-xl transition-transform duration-300 flex-shrink-0 ${
+                    className={`text-[#c99a2c] font-mono text-xl transition-transform duration-300 flex-shrink-0 ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   >
@@ -86,7 +86,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-[var(--color-ivory-dim)] leading-relaxed border-t border-[rgba(245,240,232,0.06)]">
+                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-[#495057] leading-relaxed border-t border-[#f1f3f5]">
                         {t(`items.${key}.answer`)}
                       </div>
                     </motion.div>

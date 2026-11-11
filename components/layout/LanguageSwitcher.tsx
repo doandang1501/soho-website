@@ -49,13 +49,13 @@ export default function LanguageSwitcher() {
           flex items-center gap-1.5
           font-sans text-xs tracking-[0.12em] uppercase py-1 px-1
           transition-colors duration-200
-          text-[var(--color-ivory-dim)] hover:text-[var(--color-ivory)]
+          text-[#495057] hover:text-[#1e2022]
         "
         aria-label="Change language"
         aria-expanded={open}
       >
         <span>{localeFlags[locale]}</span>
-        <span className="hidden sm:inline">{locale.toUpperCase()}</span>
+        <span className="hidden sm:inline font-medium">{locale.toUpperCase()}</span>
         <motion.svg
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -76,9 +76,9 @@ export default function LanguageSwitcher() {
             transition={{ duration: 0.18, ease: "easeOut" }}
             className="
               absolute right-0 top-full mt-2
-              bg-[var(--color-charcoal-50)] border border-[var(--color-border)]
-              shadow-[0_25px_60px_rgba(0,0,0,0.5)]
-              min-w-[148px] overflow-hidden z-50
+              bg-white border border-[#e9ecef]
+              shadow-[0_10px_30px_rgba(0,0,0,0.1)]
+              min-w-[148px] overflow-hidden z-50 rounded-sm
             "
           >
             {LOCALES.map((l) => (
@@ -90,8 +90,8 @@ export default function LanguageSwitcher() {
                   font-sans text-xs tracking-[0.1em]
                   transition-colors duration-150 text-left
                   ${l === locale
-                    ? "text-[var(--color-gold)] bg-[rgba(201,168,76,0.08)]"
-                    : "text-[var(--color-ivory-muted)] hover:text-[var(--color-ivory)] hover:bg-[var(--color-border)]"
+                    ? "text-[var(--color-gold)] font-semibold bg-[rgba(201,154,44,0.08)]"
+                    : "text-[#495057] hover:text-[#1e2022] hover:bg-[#f8f9fa]"
                   }
                 `}
               >

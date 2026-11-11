@@ -6,24 +6,24 @@
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans:  var(--font-inter), system-ui, sans-serif;
 
-  /* Color palette — Refined Warm Charcoal & Radiant Champagne Gold (+10% fresher & brighter) */
-  --color-charcoal:        #18191d;
-  --color-charcoal-50:     #282a30;
-  --color-charcoal-100:    #22242a;
-  --color-charcoal-200:    #1d1e23;
-  --color-charcoal-300:    #18191d;
+  /* Color palette — Clean Light Luxury & Warm Gold (Bear House Style) */
+  --color-charcoal:        #1e2022;
+  --color-charcoal-50:     #f8f9fa;
+  --color-charcoal-100:    #f1f3f5;
+  --color-charcoal-200:    #e9ecef;
+  --color-charcoal-300:    #dee2e6;
 
-  --color-gold:            #dfb742;
-  --color-gold-light:      #f5e5b8;
-  --color-gold-dark:       #be9732;
-  --color-gold-muted:      #aa8635;
+  --color-gold:            #c99a2c;
+  --color-gold-light:      #e8b948;
+  --color-gold-dark:       #a77b1b;
+  --color-gold-muted:      #be8f28;
 
-  --color-ivory:           #ffffff;
-  --color-ivory-muted:     #ede8e1;
-  --color-ivory-dim:       #c8c3ba;
+  --color-ivory:           #1e2022;
+  --color-ivory-muted:     #495057;
+  --color-ivory-dim:       #6c757d;
 
-  --color-surface:         #25272e;
-  --color-border:          #3c3f4a;
+  --color-surface:         #ffffff;
+  --color-border:          #e9ecef;
 
   /* Spacing */
   --spacing-18:  4.5rem;
@@ -64,8 +64,8 @@ html {
 }
 
 body {
-  background-color: var(--color-charcoal);
-  color: var(--color-ivory);
+  background-color: #ffffff;
+  color: #1e2022;
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.7;
@@ -75,14 +75,14 @@ body {
 /* ── Typography ──────────────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.1;
+  font-weight: 500;
+  line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--color-ivory);
+  color: #1e2022;
 }
 
 p {
-  color: var(--color-ivory-dim);
+  color: #495057;
 }
 
 a {
@@ -100,44 +100,44 @@ a:hover {
 .text-gold    { color: var(--color-gold); }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #f5e5b8, #dfb742, #be9732);
+  background: linear-gradient(135deg, #c99a2c, #a77b1b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #f5e5b8 0%, #dfb742 50%, #be9732 100%);
+  background: linear-gradient(135deg, #e8b948 0%, #c99a2c 50%, #a77b1b 100%);
 }
 
 .bg-dark-gradient {
-  background: linear-gradient(180deg, rgba(24,25,29,0) 0%, rgba(24,25,29,0.5) 60%, rgba(24,25,29,0.92) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0.96) 100%);
 }
 
 .bg-hero-overlay {
-  background: linear-gradient(to bottom, rgba(24,25,29,0.2) 0%, rgba(24,25,29,0.55) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
 }
 
-.shadow-gold    { box-shadow: 0 0 45px rgba(223,183,66,0.25); }
-.shadow-gold-sm { box-shadow: 0 0 22px rgba(223,183,66,0.15); }
-.shadow-luxury  { box-shadow: 0 20px 45px rgba(0,0,0,0.28); }
+.shadow-gold    { box-shadow: 0 4px 20px rgba(201,154,44,0.2); }
+.shadow-gold-sm { box-shadow: 0 2px 10px rgba(201,154,44,0.12); }
+.shadow-luxury  { box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
 
 .gold-divider {
   width: 3rem;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
 /* ── Scrollbar ───────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar        { width: 6px; }
-::-webkit-scrollbar-track  { background: var(--color-charcoal); }
-::-webkit-scrollbar-thumb  { background: var(--color-gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-track  { background: #f8f9fa; }
+::-webkit-scrollbar-thumb  { background: #ced4da; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 
 /* ── Selection ───────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(223,183,66,0.32);
-  color: var(--color-gold-light);
+  background: rgba(201,154,44,0.18);
+  color: #1e2022;
 }
 
 /* ── Focus ring ──────────────────────────────────────────────────── */
@@ -147,12 +147,11 @@ a:hover {
   border-radius: 2px;
 }
 
-/* ── Date input (dark calendar icon) ────────────────────────────────────── */
-input[type="date"] { color-scheme: dark; }
+/* ── Date input ──────────────────────────────────────────────────────────── */
+input[type="date"] { color-scheme: light; }
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.75) sepia(1) saturate(2.2) hue-rotate(5deg);
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.6;
   transition: opacity 200ms;
 }
 input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }

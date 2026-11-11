@@ -87,10 +87,10 @@ export default function DatePicker({
           border-b py-1.5 text-left
           font-sans text-xs sm:text-sm transition-colors duration-200
           ${open
-            ? "border-[var(--color-gold)] text-[var(--color-ivory)]"
-            : "border-[var(--color-border)] text-[var(--color-ivory)] hover:border-[rgba(201,168,76,0.5)]"
+            ? "border-[var(--color-gold)] text-[#1e2022]"
+            : "border-[#dee2e6] text-[#1e2022] hover:border-[var(--color-gold)]"
           }
-          ${!value ? "text-[var(--color-ivory-dim)]" : ""}
+          ${!value ? "text-[#6c757d]" : "font-medium"}
           bg-transparent outline-none cursor-pointer
         `}
         aria-haspopup="dialog"
@@ -99,7 +99,7 @@ export default function DatePicker({
         <span className="truncate">{value ? formatDisplay(value) : placeholder}</span>
         <svg
           width="14" height="14" viewBox="0 0 14 14" fill="none"
-          className={`flex-shrink-0 transition-colors duration-200 ${open ? "text-[var(--color-gold)]" : "text-[var(--color-ivory-dim)] group-hover:text-[var(--color-gold)]"}`}
+          className={`flex-shrink-0 transition-colors duration-200 ${open ? "text-[var(--color-gold)]" : "text-[#6c757d] group-hover:text-[var(--color-gold)]"}`}
         >
           <rect x="1" y="2" width="12" height="11" rx="1" stroke="currentColor" strokeWidth="1.2"/>
           <path d="M4 1v2M10 1v2M1 6h12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
@@ -112,7 +112,7 @@ export default function DatePicker({
           <>
             {/* Backdrop on mobile to easily tap outside and prevent background scroll */}
             <div 
-              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-[2px] sm:hidden"
+              className="fixed inset-0 z-[60] bg-black/20 backdrop-blur-[1px] sm:hidden"
               onClick={() => setOpen(false)}
             />
 
@@ -129,27 +129,27 @@ export default function DatePicker({
                 ${align === "right" ? "sm:right-0 sm:left-auto" : "sm:left-0"}
                 z-[70] sm:mt-2
                 w-[90vw] max-w-[320px] sm:w-auto sm:min-w-[280px]
-                bg-[#141414] border border-[var(--color-gold-muted)]
-                shadow-[0_20px_60px_rgba(0,0,0,0.9)]
-                p-3 sm:p-4 rounded-none
+                bg-white border border-[#dee2e6]
+                shadow-[0_15px_40px_rgba(0,0,0,0.12)]
+                p-3 sm:p-4 rounded-xl
               `}
-              style={{ "--rdp-accent-color": "#c9a84c" } as React.CSSProperties}
+              style={{ "--rdp-accent-color": "#c99a2c" } as React.CSSProperties}
             >
               <style>{`
                 .rdp-root {
-                  --rdp-accent-color: #c9a84c;
-                  --rdp-accent-background-color: rgba(201,168,76,0.15);
+                  --rdp-accent-color: #c99a2c;
+                  --rdp-accent-background-color: rgba(201,154,44,0.12);
                   --rdp-day-height: 2.1rem;
                   --rdp-day-width: 2.1rem;
                   --rdp-font-family: var(--font-inter), sans-serif;
-                  color: #f5f0e8;
+                  color: #1e2022;
                   margin: 0 auto;
                 }
                 .rdp-month_caption {
                   font-family: var(--font-playfair), serif;
                   font-size: 1rem;
-                  font-weight: 500;
-                  color: #f5f0e8;
+                  font-weight: 600;
+                  color: #1e2022;
                   letter-spacing: 0.02em;
                   padding-bottom: 0.5rem;
                   display: flex;
@@ -157,51 +157,50 @@ export default function DatePicker({
                 }
                 .rdp-weekday {
                   font-size: 0.65rem;
-                  font-weight: 500;
+                  font-weight: 600;
                   letter-spacing: 0.1em;
                   text-transform: uppercase;
-                  color: #c9a84c;
+                  color: #c99a2c;
                   padding-bottom: 0.25rem;
                 }
                 .rdp-day_button {
                   font-size: 0.8rem;
-                  color: #d4cfc6;
-                  border-radius: 0 !important;
+                  color: #495057;
+                  border-radius: 6px !important;
                   transition: all 0.15s;
                 }
                 .rdp-day_button:hover:not(:disabled) {
-                  background: rgba(201,168,76,0.2) !important;
-                  color: #ffffff !important;
+                  background: rgba(201,154,44,0.15) !important;
+                  color: #1e2022 !important;
                 }
                 .rdp-selected .rdp-day_button {
-                  background: #c9a84c !important;
-                  color: #0e0e0e !important;
+                  background: #c99a2c !important;
+                  color: #ffffff !important;
                   font-weight: 600;
-                  border-radius: 0 !important;
+                  border-radius: 6px !important;
                 }
                 .rdp-today .rdp-day_button {
-                  border: 1px solid rgba(201,168,76,0.6) !important;
-                  color: #c9a84c !important;
-                  border-radius: 0 !important;
+                  border: 1px solid #c99a2c !important;
+                  color: #c99a2c !important;
                 }
-                .rdp-outside .rdp-day_button { color: #333333 !important; }
-                .rdp-disabled .rdp-day_button { color: #333333 !important; cursor: not-allowed; }
+                .rdp-outside .rdp-day_button { color: #adb5bd !important; opacity: 0.5; }
+                .rdp-disabled .rdp-day_button { color: #dee2e6 !important; cursor: not-allowed; }
                 .rdp-nav {
                   display: flex;
                   gap: 0.25rem;
                 }
                 .rdp-nav button {
-                  color: #c9a84c;
-                  border-radius: 0;
+                  color: #c99a2c;
+                  border-radius: 4px;
                   transition: color 0.15s;
                   padding: 4px;
                 }
-                .rdp-nav button:hover { color: #f5f0e8; }
+                .rdp-nav button:hover { color: #a77b1b; }
                 .rdp-caption_label {
                   font-family: var(--font-playfair), serif;
                   font-size: 0.95rem;
-                  font-weight: 500;
-                  color: #f5f0e8;
+                  font-weight: 600;
+                  color: #1e2022;
                   letter-spacing: 0.04em;
                 }
               `}</style>

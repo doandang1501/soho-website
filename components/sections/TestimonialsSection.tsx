@@ -65,31 +65,31 @@ export default function TestimonialsSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {REVIEWS.map((r, i) => (
           <AnimateInView key={i} delay={i * 0.08} direction="up">
-            <div className="p-6 sm:p-7 border border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[var(--color-gold)]/40 transition-all duration-300 flex flex-col justify-between h-full">
+            <div className="p-6 sm:p-7 rounded-xl border border-[#e9ecef] bg-white shadow-sm hover:shadow-md hover:border-[#c99a2c] transition-all duration-300 flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-[var(--color-gold)] text-sm tracking-widest">
+                  <div className="text-[#c99a2c] text-sm tracking-widest">
                     ★★★★★
                   </div>
-                  <span className="font-sans text-[10px] uppercase tracking-wider text-[var(--color-gold)] bg-[var(--color-gold)]/10 px-2 py-0.5 border border-[var(--color-gold)]/20">
+                  <span className="font-sans text-[10px] font-semibold uppercase tracking-wider text-[#c99a2c] bg-[#fff9eb] px-2.5 py-0.5 rounded-full border border-[#f1c964]/40">
                     {r.source}
                   </span>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-[var(--color-ivory-muted)] leading-relaxed italic mb-6">
+                <p className="font-sans text-xs sm:text-sm text-[#495057] leading-relaxed italic mb-6">
                   "{r.commentVi}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--color-border)] flex items-center justify-between">
+              <div className="pt-4 border-t border-[#f1f3f5] flex items-center justify-between">
                 <div>
-                  <span className="font-serif text-sm font-semibold text-[var(--color-ivory)] block">
+                  <span className="font-serif text-sm font-semibold text-[#1e2022] block">
                     {r.name}
                   </span>
-                  <span className="font-sans text-[11px] text-[var(--color-ivory-dim)]">
+                  <span className="font-sans text-[11px] text-[#6c757d]">
                     {r.country}
                   </span>
                 </div>
-                <span className="font-mono text-xs text-[var(--color-gold)] font-bold">
+                <span className="font-mono text-xs text-[#c99a2c] font-bold">
                   {r.rating}
                 </span>
               </div>

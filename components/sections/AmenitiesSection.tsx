@@ -154,15 +154,15 @@ export default function AmenitiesSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
         {AMENITY_KEYS.map((key, i) => (
           <AnimateInView key={key} delay={i * 0.04} direction="up">
-            <div className="p-6 border border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[rgba(201,168,76,0.4)] transition-all duration-300 h-full flex flex-col justify-between">
+            <div className="p-6 rounded-xl border border-[#e9ecef] bg-white hover:border-[var(--color-gold)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.06)] transition-all duration-300 h-full flex flex-col justify-between group">
               <div>
-                <div className="text-[var(--color-gold)] mb-4">
+                <div className="text-[var(--color-gold)] mb-4 p-2.5 bg-[#f8f9fa] rounded-lg inline-block group-hover:bg-[#fff9eb] transition-colors duration-200">
                   {Icons[key]}
                 </div>
-                <h3 className="font-serif text-lg text-[var(--color-ivory)] mb-2">
+                <h3 className="font-serif text-lg text-[#1e2022] mb-2 group-hover:text-[var(--color-gold-dark)] transition-colors duration-200">
                   {t(`items.${key}.label`)}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+                <p className="font-sans text-xs sm:text-sm text-[#6c757d] leading-relaxed">
                   {t(`items.${key}.desc`)}
                 </p>
               </div>
@@ -173,8 +173,8 @@ export default function AmenitiesSection() {
 
       {/* Dryer footnote */}
       <AnimateInView delay={0.3} direction="up">
-        <div className="border border-[rgba(201,168,76,0.25)] p-4 bg-[rgba(201,168,76,0.03)]">
-          <p className="font-sans text-xs text-[var(--color-ivory-dim)] leading-relaxed">
+        <div className="rounded-xl border border-[rgba(201,154,44,0.3)] p-4 bg-[#fffdfa] shadow-sm">
+          <p className="font-sans text-xs text-[#6c757d] leading-relaxed">
             {t("dryerNotice")}
           </p>
         </div>

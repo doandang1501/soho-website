@@ -71,7 +71,7 @@ export default async function RoomsPage({
             </div>
           </AnimateInView>
           <AnimateInView delay={0.1} direction="up">
-            <h1 className="font-serif text-[clamp(1.8rem,5vw,4rem)] text-[var(--color-ivory)]">
+            <h1 className="font-serif text-[clamp(1.8rem,5vw,4rem)] text-[#1e2022]">
               {t("title")}
             </h1>
           </AnimateInView>
@@ -86,7 +86,7 @@ export default async function RoomsPage({
             {/* Entire card links to room detail */}
             <Link
               href={localePath(room.href)}
-              className="block group border border-[var(--color-border)] hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300"
+              className="block group border border-[#e9ecef] hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300"
               aria-label={t(`${room.key}.tagline`)}
             >
               <article className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -110,13 +110,13 @@ export default async function RoomsPage({
                       </div>
                     ))}
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(14,14,14,0.7)] flex items-center justify-center">
-                      <span className="font-sans text-[9px] text-[var(--color-ivory-dim)]">+{room.gallery.length}</span>
+                      <span className="font-sans text-[9px] text-[#6c757d]">+{room.gallery.length}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Content side */}
-                <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-12 bg-[var(--color-charcoal-50)] ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-12 bg-[#f8f9fa] ${i % 2 === 1 ? "lg:order-1" : ""}`}>
 
                   <div className="flex items-center gap-2 mb-3 md:mb-4">
                     <span className="block w-5 h-px bg-[var(--color-gold)]" />
@@ -125,11 +125,11 @@ export default async function RoomsPage({
                     </span>
                   </div>
 
-                  <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[var(--color-ivory)] mb-3 md:mb-4 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
+                  <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#1e2022] mb-3 md:mb-4 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
                     {t(`${room.key}.tagline`)}
                   </h2>
 
-                  <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed mb-5 md:mb-8">
+                  <p className="font-sans text-sm text-[#6c757d] leading-relaxed mb-5 md:mb-8">
                     {t(`${room.key}.description`)}
                   </p>
 
@@ -141,21 +141,21 @@ export default async function RoomsPage({
                       { label: t("specBeds"),   value: t(`${room.key}.beds`)   },
                     ].map(({ label, value }) => (
                       <div key={label}>
-                        <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)] mb-0.5">{label}</span>
-                        <span className="block font-sans text-sm font-medium text-[var(--color-ivory)]">{value}</span>
+                        <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[#6c757d] mb-0.5">{label}</span>
+                        <span className="block font-sans text-sm font-medium text-[#1e2022]">{value}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Price + CTA */}
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-[var(--color-border)] pt-5 md:pt-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-[#e9ecef] pt-5 md:pt-6">
                     <div>
-                      <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--color-ivory-dim)] mb-0.5">
+                      <span className="block font-sans text-[10px] uppercase tracking-[0.12em] text-[#6c757d] mb-0.5">
                         {t("from")}
                       </span>
                       <span className="font-serif text-lg sm:text-xl text-[var(--color-gold)]">
                         {t(`${room.key}.price`)}
-                        <span className="font-sans text-xs text-[var(--color-ivory-dim)] ml-1">{t("perNight")}</span>
+                        <span className="font-sans text-xs text-[#6c757d] ml-1">{t("perNight")}</span>
                       </span>
                     </div>
 

@@ -36,7 +36,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-20 lg:py-28 bg-[var(--color-charcoal-50)]"
+      className="py-16 sm:py-20 lg:py-28 bg-[#f8f9fa] border-t border-[#e9ecef]"
       aria-labelledby="contact-heading"
     >
       <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
@@ -80,28 +80,27 @@ export default function ContactSection() {
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="
                   group flex flex-col justify-between p-6 h-full
-                  border border-[var(--color-border)]
-                  bg-[var(--color-charcoal)]
-                  hover:border-[rgba(201,168,76,0.45)]
-                  hover:bg-[rgba(201,168,76,0.04)]
+                  rounded-xl border border-[#e9ecef]
+                  bg-white shadow-sm
+                  hover:border-[#c99a2c] hover:shadow-md
                   transition-all duration-300
                 "
               >
                 <div>
-                  <span className="text-2xl transition-transform duration-300 group-hover:scale-110 inline-block mb-3">
+                  <span className="text-2xl transition-transform duration-300 group-hover:scale-110 inline-block mb-3 p-2 bg-[#f8f9fa] rounded-lg">
                     {icon}
                   </span>
                   <div>
-                    <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[var(--color-ivory-dim)] mb-1.5">
+                    <span className="block font-sans text-[10px] font-semibold tracking-[0.18em] uppercase text-[#6c757d] mb-1.5">
                       {t(labelKey)}
                     </span>
-                    <span className="block font-sans text-sm font-medium text-[var(--color-ivory)] group-hover:text-[var(--color-gold)] transition-colors duration-300 leading-snug">
+                    <span className="block font-sans text-sm font-semibold text-[#1e2022] group-hover:text-[#c99a2c] transition-colors duration-300 leading-snug">
                       {t(valueKey)}
                     </span>
                   </div>
                 </div>
 
-                <span className="inline-flex items-center gap-1.5 font-sans text-[10px] tracking-[0.15em] uppercase text-[var(--color-gold)] opacity-70 group-hover:opacity-100 transition-opacity duration-200 mt-4">
+                <span className="inline-flex items-center gap-1.5 font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-[#c99a2c] mt-4">
                   Kết nối <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </span>
               </a>
@@ -111,12 +110,12 @@ export default function ContactSection() {
 
         {/* ── Bottom CTA ──────────────────────────────────────────────────── */}
         <AnimateInView delay={0.3} direction="up">
-          <div className="border border-[var(--color-border)] p-8 sm:p-12 bg-[var(--color-charcoal)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="rounded-2xl border border-[#e9ecef] p-8 sm:p-12 bg-white shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl text-center md:text-left">
-              <h3 className="font-serif text-2xl text-[var(--color-ivory)] mb-2">
+              <h3 className="font-serif text-2xl text-[#1e2022] mb-2 font-medium">
                 {t("cta.heading")}
               </h3>
-              <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+              <p className="font-sans text-sm text-[#6c757d] leading-relaxed">
                 {t("cta.body")}
               </p>
             </div>
@@ -129,12 +128,12 @@ export default function ContactSection() {
                 }}
                 className="
                   inline-flex items-center gap-2.5
-                  bg-[var(--color-gold)] text-[var(--color-charcoal)]
-                  font-sans font-semibold text-xs tracking-[0.15em] uppercase
-                  px-7 py-3.5
+                  bg-[#c99a2c] text-white
+                  font-sans font-bold text-xs tracking-[0.15em] uppercase
+                  px-7 py-3.5 rounded-sm
                   transition-all duration-300
-                  hover:bg-[var(--color-gold-light)]
-                  hover:shadow-[0_0_25px_rgba(201,168,76,0.3)]
+                  hover:bg-[#a77b1b]
+                  hover:shadow-[0_4px_15px_rgba(201,154,44,0.3)]
                   active:scale-95 cursor-pointer
                 "
               >
@@ -145,11 +144,11 @@ export default function ContactSection() {
                 href="tel:+84917719966"
                 className="
                   inline-flex items-center gap-2.5
-                  border border-[rgba(245,240,232,0.35)] text-[var(--color-ivory)]
+                  border border-[#dee2e6] text-[#1e2022] bg-[#f8f9fa]
                   font-sans font-medium text-xs tracking-[0.15em] uppercase
-                  px-7 py-3.5
+                  px-7 py-3.5 rounded-sm
                   transition-all duration-300
-                  hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]
+                  hover:border-[#c99a2c] hover:text-[#c99a2c]
                   active:scale-95
                 "
               >

@@ -59,7 +59,7 @@ export default async function AboutPage({
             </div>
           </AnimateInView>
           <AnimateInView delay={0.1} direction="up">
-            <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] text-[var(--color-ivory)]">About SOHO</h1>
+            <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] text-[#1e2022]">About SOHO</h1>
           </AnimateInView>
         </div>
       </div>
@@ -76,28 +76,28 @@ export default async function AboutPage({
                 <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-[var(--color-gold)]" />
               </div>
               {/* Floating stat */}
-              <div className="absolute -bottom-6 -right-6 bg-[var(--color-charcoal-50)] border border-[var(--color-border)] p-6 shadow-luxury">
+              <div className="absolute -bottom-6 -right-6 bg-[#f8f9fa] border border-[#e9ecef] p-6 shadow-luxury">
                 <span className="block font-serif text-4xl text-[var(--color-gold)]">24/7</span>
-                <span className="block font-sans text-xs tracking-[0.15em] uppercase text-[var(--color-ivory-dim)] mt-1">Check-in & Security</span>
+                <span className="block font-sans text-xs tracking-[0.15em] uppercase text-[#6c757d] mt-1">Check-in & Security</span>
               </div>
             </div>
           </AnimateInView>
 
           <div className="flex flex-col gap-6">
             <AnimateInView direction="right" delay={0.05}>
-              <h2 className="font-serif text-[clamp(1.6rem,3vw,2.5rem)] text-[var(--color-ivory)]">
+              <h2 className="font-serif text-[clamp(1.6rem,3vw,2.5rem)] text-[#1e2022]">
                 A Modern Oasis in the Heart of Saigon
               </h2>
             </AnimateInView>
             <AnimateInView direction="right" delay={0.12}>
-              <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+              <p className="font-sans text-sm text-[#6c757d] leading-relaxed">
                 SOHO Residence &amp; Hotel is a luxury boutique apartment-hotel located at
                 100 Co Giang, District 1 — one of Ho Chi Minh City's most vibrant and
                 well-connected neighbourhoods.
               </p>
             </AnimateInView>
             <AnimateInView direction="right" delay={0.18}>
-              <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+              <p className="font-sans text-sm text-[#6c757d] leading-relaxed">
                 We designed SOHO as a place where living and working coexist beautifully.
                 Each residence offers the full comfort of a luxury apartment — spacious
                 layouts, full kitchen, private balcony, smart technology — combined with
@@ -105,7 +105,7 @@ export default async function AboutPage({
               </p>
             </AnimateInView>
             <AnimateInView direction="right" delay={0.24}>
-              <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed">
+              <p className="font-sans text-sm text-[#6c757d] leading-relaxed">
                 Whether you are a solo traveller, a family, a business executive, or a
                 remote worker seeking a productive base in Southeast Asia, SOHO is built
                 for you.
@@ -120,9 +120,9 @@ export default async function AboutPage({
                   { n: "12",   label: "Amenities"  },
                   { n: "D.1",  label: "District 1" },
                 ].map(({ n, label }) => (
-                  <div key={label} className="bg-[var(--color-charcoal-50)] px-5 py-5 text-center">
+                  <div key={label} className="bg-[#f8f9fa] px-5 py-5 text-center">
                     <span className="block font-serif text-3xl text-[var(--color-gold)]">{n}</span>
-                    <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[var(--color-ivory-dim)] mt-1">{label}</span>
+                    <span className="block font-sans text-[10px] tracking-[0.12em] uppercase text-[#6c757d] mt-1">{label}</span>
                   </div>
                 ))}
               </div>
@@ -144,7 +144,7 @@ export default async function AboutPage({
             <span className="block w-7 h-px bg-[var(--color-gold)]" />
             <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[var(--color-gold)]">What We Stand For</span>
           </div>
-          <h2 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] text-[var(--color-ivory)] mb-14">
+          <h2 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] text-[#1e2022] mb-14">
             Our Principles
           </h2>
         </AnimateInView>
@@ -152,12 +152,12 @@ export default async function AboutPage({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {VALUES.map(({ icon, title, body }, i) => (
             <AnimateInView key={title} delay={i * 0.1} direction="up">
-              <div className="border border-[var(--color-border)] bg-[var(--color-charcoal-50)] p-8 group hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300">
+              <div className="border border-[#e9ecef] bg-[#f8f9fa] p-8 group hover:border-[rgba(201,168,76,0.4)] transition-colors duration-300">
                 <span className="block text-[var(--color-gold)] text-lg mb-4">{icon}</span>
-                <h3 className="font-serif text-xl text-[var(--color-ivory)] mb-3 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
+                <h3 className="font-serif text-xl text-[#1e2022] mb-3 group-hover:text-[var(--color-gold-light)] transition-colors duration-300">
                   {title}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-ivory-dim)] leading-relaxed">{body}</p>
+                <p className="font-sans text-sm text-[#6c757d] leading-relaxed">{body}</p>
               </div>
             </AnimateInView>
           ))}

@@ -79,8 +79,8 @@ export default function Header() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-500
           ${scrolled
-            ? "bg-[rgba(14,14,14,0.95)] backdrop-blur-md border-b border-[var(--color-border)] shadow-luxury"
-            : "bg-transparent"
+            ? "bg-white/95 backdrop-blur-md border-b border-[#e9ecef] shadow-[0_2px_16px_rgba(0,0,0,0.06)]"
+            : "bg-white/80 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none"
           }
         `}
       >
@@ -120,7 +120,7 @@ export default function Header() {
                     className={`
                       relative text-xs font-sans font-medium tracking-[0.15em] uppercase
                       transition-colors duration-300 py-1
-                      ${isActive ? "text-[var(--color-gold)]" : "text-[var(--color-ivory-muted)] hover:text-[var(--color-ivory)]"}
+                      ${isActive ? "text-[var(--color-gold)] font-semibold" : "text-[#495057] hover:text-[#1e2022]"}
                     `}
                   >
                     {t(key)}
@@ -148,19 +148,19 @@ export default function Header() {
                 aria-expanded={mobileOpen}
               >
                 <span className={`
-                  block h-px w-6 bg-[var(--color-ivory)] origin-center
+                  block h-0.5 w-6 bg-[#1e2022] origin-center
                   transition-all duration-300
-                  ${mobileOpen ? "rotate-45 translate-y-[3.5px]" : ""}
+                  ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}
                 `} />
                 <span className={`
-                  block h-px w-6 bg-[var(--color-ivory)]
+                  block h-0.5 w-6 bg-[#1e2022]
                   transition-all duration-300
                   ${mobileOpen ? "opacity-0 scale-x-0" : ""}
                 `} />
                 <span className={`
-                  block h-px w-6 bg-[var(--color-ivory)] origin-center
+                  block h-0.5 w-6 bg-[#1e2022] origin-center
                   transition-all duration-300
-                  ${mobileOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}
+                  ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}
                 `} />
               </button>
             </div>
@@ -179,7 +179,7 @@ export default function Header() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.35, ease: EASE }}
             className="
-              fixed inset-0 z-40 bg-[var(--color-charcoal)]
+              fixed inset-0 z-40 bg-white
               flex flex-col justify-center px-10
               lg:hidden
             "
@@ -190,8 +190,8 @@ export default function Header() {
               className="absolute top-6 right-6 p-2"
               aria-label="Close menu"
             >
-              <span className="block h-px w-6 bg-[var(--color-ivory)] rotate-45 translate-y-px" />
-              <span className="block h-px w-6 bg-[var(--color-ivory)] -rotate-45 -translate-y-px" />
+              <span className="block h-0.5 w-6 bg-[#1e2022] rotate-45 translate-y-px" />
+              <span className="block h-0.5 w-6 bg-[#1e2022] -rotate-45 -translate-y-px" />
             </button>
 
             <nav className="flex flex-col gap-8">
@@ -205,7 +205,7 @@ export default function Header() {
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.07, duration: 0.4 }}
-                    className="font-serif text-4xl text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors duration-300"
+                    className="font-serif text-3xl text-[#1e2022] hover:text-[var(--color-gold)] transition-colors duration-300"
                   >
                     {t(key)}
                   </MTag>
@@ -213,7 +213,7 @@ export default function Header() {
               })}
             </nav>
 
-            <div className="mt-16 text-sm text-[var(--color-ivory-dim)] font-sans tracking-widest uppercase">
+            <div className="mt-16 text-sm text-[#6c757d] font-sans tracking-widest uppercase">
               booking@sohoresidencehotel.vn
             </div>
           </motion.div>

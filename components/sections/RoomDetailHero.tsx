@@ -44,7 +44,7 @@ export default function RoomDetailHero({
     <div>
       {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
       <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full pt-10 pb-4">
-        <nav className="flex items-center gap-2 font-sans text-xs text-[var(--color-ivory-dim)]" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 font-sans text-xs text-[#6c757d]" aria-label="Breadcrumb">
           <Link href={localePath("/")} className="hover:text-[var(--color-gold)] transition-colors duration-200">
             {tNav("home")}
           </Link>
@@ -64,7 +64,7 @@ export default function RoomDetailHero({
           {/* Left — Gallery */}
           <div className="flex flex-col gap-3">
             {/* Main image */}
-            <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-charcoal-50)] border border-[var(--color-border)]">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#f8f9fa] border border-[#e9ecef]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -97,7 +97,7 @@ export default function RoomDetailHero({
                   key={i}
                   onClick={() => setActive(i)}
                   className={`
-                    relative aspect-[4/3] overflow-hidden transition-all duration-300 border border-[var(--color-border)]
+                    relative aspect-[4/3] overflow-hidden transition-all duration-300 border border-[#e9ecef]
                     ${i === active ? "ring-1 ring-[var(--color-gold)] opacity-100" : "opacity-60 hover:opacity-90"}
                   `}
                   aria-label={`Xem ảnh ${i + 1}`}
@@ -108,7 +108,7 @@ export default function RoomDetailHero({
             </div>
 
             {/* Image Disclaimer */}
-            <p className="font-sans text-[11px] text-[var(--color-ivory-dim)] italic mt-2">
+            <p className="font-sans text-[11px] text-[#6c757d] italic mt-2">
               * {tRooms("imageDisclaimer")}
             </p>
           </div>
@@ -126,26 +126,26 @@ export default function RoomDetailHero({
 
             <AnimateInView direction="right" delay={0.1}>
               {/* Single H1 per room page */}
-              <h1 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] text-[var(--color-ivory)] mb-5 leading-tight">
+              <h1 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] text-[#1e2022] mb-5 leading-tight">
                 {name}
               </h1>
             </AnimateInView>
 
             <AnimateInView direction="right" delay={0.15}>
-              <p className="font-sans text-sm sm:text-base text-[var(--color-ivory-dim)] leading-relaxed mb-8">
+              <p className="font-sans text-sm sm:text-base text-[#6c757d] leading-relaxed mb-8">
                 {description}
               </p>
             </AnimateInView>
 
             {/* Specs grid */}
             <AnimateInView direction="right" delay={0.2}>
-              <div className="grid grid-cols-3 gap-px bg-[var(--color-border)] mb-8 border border-[var(--color-border)]">
+              <div className="grid grid-cols-3 gap-px bg-[var(--color-border)] mb-8 border border-[#e9ecef]">
                 {specs.map(({ label, value }) => (
-                  <div key={label} className="bg-[var(--color-charcoal-50)] px-4 py-4 text-center">
-                    <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[var(--color-ivory-dim)] mb-1">
+                  <div key={label} className="bg-[#f8f9fa] px-4 py-4 text-center">
+                    <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[#6c757d] mb-1">
                       {label}
                     </span>
-                    <span className="block font-sans text-sm font-medium text-[var(--color-ivory)]">
+                    <span className="block font-sans text-sm font-medium text-[#1e2022]">
                       {value}
                     </span>
                   </div>
@@ -159,7 +159,7 @@ export default function RoomDetailHero({
                 {features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-center gap-1.5 font-sans text-xs text-[var(--color-ivory-dim)] border border-[var(--color-border)] px-3 py-1.5 bg-[var(--color-charcoal-50)]"
+                    className="flex items-center gap-1.5 font-sans text-xs text-[#6c757d] border border-[#e9ecef] px-3 py-1.5 bg-[#f8f9fa]"
                   >
                     <span className="text-[var(--color-gold)] text-[10px]">✦</span>
                     {f}
@@ -170,14 +170,14 @@ export default function RoomDetailHero({
 
             {/* Price + CTA */}
             <AnimateInView direction="right" delay={0.3}>
-              <div className="border-t border-[var(--color-border)] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="border-t border-[#e9ecef] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
-                  <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[var(--color-ivory-dim)] mb-1">
+                  <span className="block font-sans text-[10px] tracking-[0.15em] uppercase text-[#6c757d] mb-1">
                     {tRooms("from")}
                   </span>
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-serif text-3xl text-[var(--color-gold)]">{price}</span>
-                    <span className="font-sans text-xs text-[var(--color-ivory-dim)]">{perNight}</span>
+                    <span className="font-sans text-xs text-[#6c757d]">{perNight}</span>
                   </div>
                 </div>
 

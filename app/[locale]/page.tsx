@@ -231,10 +231,41 @@ export default async function HomePage({
       {/* 2 — Room types with gallery hover */}
       <RoomsSection />
 
-      {/* Thin gold rule between sections */}
-      <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent" />
-      </div>
+      {/* Trust & Direct Booking Banner (Bear House Style) */}
+      <section className="py-10 bg-[#f8f9fa] border-y border-[#e9ecef]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            <div className="flex items-center gap-3.5 justify-center md:justify-start">
+              <span className="text-2xl p-2.5 bg-white rounded-xl shadow-sm border border-[#e9ecef]">🏷️</span>
+              <div>
+                <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#1e2022]">Giá tốt nhất</h4>
+                <p className="font-sans text-xs text-[#6c757d]">Rẻ hơn OTA 15% - 20%</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3.5 justify-center md:justify-start">
+              <span className="text-2xl p-2.5 bg-white rounded-xl shadow-sm border border-[#e9ecef]">⚡</span>
+              <div>
+                <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#1e2022]">Xác nhận tức thì</h4>
+                <p className="font-sans text-xs text-[#6c757d]">Giữ phòng ngay lập tức</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3.5 justify-center md:justify-start">
+              <span className="text-2xl p-2.5 bg-white rounded-xl shadow-sm border border-[#e9ecef]">🛡️</span>
+              <div>
+                <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#1e2022]">100% Ảnh thực tế</h4>
+                <p className="font-sans text-xs text-[#6c757d]">Đúng từng góc nội thất</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3.5 justify-center md:justify-start">
+              <span className="text-2xl p-2.5 bg-white rounded-xl shadow-sm border border-[#e9ecef]">💬</span>
+              <div>
+                <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#1e2022]">Hỗ trợ 24/7</h4>
+                <p className="font-sans text-xs text-[#6c757d]">Quản gia trực Zalo/Phone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 3 — Amenities grid */}
       <AmenitiesSection />

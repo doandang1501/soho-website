@@ -133,7 +133,7 @@ export default async function StudioPage({
         <AnimateInView direction="up">
           <div className="flex items-center gap-3 mb-6">
             <span className="block w-7 h-px bg-[var(--color-gold)]" />
-            <h2 className="font-serif text-2xl text-[var(--color-ivory)]">
+            <h2 className="font-serif text-2xl text-[#1e2022]">
               {t("whatsIncluded")}
             </h2>
           </div>
@@ -141,16 +141,16 @@ export default async function StudioPage({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
           {included.map((item, i) => (
             <AnimateInView key={i} delay={i * 0.04} direction="up">
-              <div className="flex items-start gap-3 p-4 border border-[var(--color-border)] bg-[var(--color-charcoal-50)]">
+              <div className="flex items-start gap-3 p-4 border border-[#e9ecef] bg-[#f8f9fa]">
                 <span className="text-[var(--color-gold)] mt-0.5 text-sm flex-shrink-0">✦</span>
-                <span className="font-sans text-sm text-[var(--color-ivory-dim)]">{item}</span>
+                <span className="font-sans text-sm text-[#6c757d]">{item}</span>
               </div>
             </AnimateInView>
           ))}
         </div>
 
         {/* Dryer Notice */}
-        <p className="font-sans text-xs text-[var(--color-ivory-dim)] italic border-l-2 border-[var(--color-gold)] pl-3">
+        <p className="font-sans text-xs text-[#6c757d] italic border-l-2 border-[var(--color-gold)] pl-3">
           {tAmenities("dryerNotice")}
         </p>
       </div>

@@ -98,7 +98,7 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="min-h-full flex flex-col bg-[var(--color-charcoal)] text-[var(--color-ivory)] antialiased">
+      <body className="min-h-full flex flex-col bg-white text-[#1e2022] antialiased">
         {/* Google Analytics 4 (GA4) - Lazy loaded to avoid blocking initial render */}
         <Script
           strategy="lazyOnload"

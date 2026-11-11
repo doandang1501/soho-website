@@ -96,16 +96,16 @@ function CopyableField({
       title="Bấm để sao chép"
       className={`
         group inline-flex items-center gap-1.5 px-2 py-0.5 rounded
-        bg-[var(--color-charcoal-100)] border border-[var(--color-border)]
-        hover:border-[var(--color-gold)] transition-all cursor-pointer text-left
+        bg-[#f8f9fa] border border-[#dee2e6]
+        hover:border-[#c99a2c] transition-all cursor-pointer text-left
         ${className}
       `}
     >
-      <span className="font-mono text-[var(--color-ivory)] group-hover:text-[var(--color-gold)] transition-colors select-all">
+      <span className="font-mono text-[#1e2022] group-hover:text-[#c99a2c] font-semibold transition-colors select-all">
         {text}
       </span>
       {copied ? (
-        <span className="text-[10px] text-emerald-400 font-sans font-medium flex items-center gap-0.5 shrink-0">
+        <span className="text-[10px] text-emerald-600 font-sans font-semibold flex items-center gap-0.5 shrink-0">
           ✓ Đã chép
         </span>
       ) : (
@@ -344,23 +344,23 @@ export default function BookingModal({
           transition={{ duration: 0.28, ease: EASE }}
           className="
             relative w-full max-w-3xl max-h-[90vh] overflow-y-auto
-            bg-[#17181c] border border-[var(--color-border)]
-            shadow-2xl z-10 text-[var(--color-ivory)]
+            bg-white border border-[#e9ecef] rounded-2xl
+            shadow-2xl z-10 text-[#1e2022]
           "
         >
           {/* Header */}
-          <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 border-b border-[var(--color-border)] bg-[#17181c]/95 backdrop-blur-sm">
+          <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 border-b border-[#e9ecef] bg-white/95 backdrop-blur-sm">
             <div>
-              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-gold)] font-medium block">
+              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#c99a2c] font-bold block">
                 SOHO Residence & Hotel
               </span>
-              <h2 className="font-serif text-xl sm:text-2xl text-[var(--color-ivory)]">
+              <h2 className="font-serif text-xl sm:text-2xl text-[#1e2022]">
                 {t("modalTitle")}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)] hover:border-[var(--color-gold)] transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-full border border-[#dee2e6] flex items-center justify-center text-[#6c757d] hover:text-[#1e2022] hover:border-[#1e2022] transition-colors cursor-pointer"
               aria-label="Close"
             >
               ✕
@@ -368,13 +368,13 @@ export default function BookingModal({
           </div>
 
           {/* Search dates reminder strip */}
-          <div className="px-6 py-3 bg-[var(--color-charcoal-50)] border-b border-[var(--color-border)] flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
+          <div className="px-6 py-3 bg-[#f8f9fa] border-b border-[#e9ecef] flex flex-wrap items-center justify-between gap-3 text-xs font-sans text-[#495057]">
             <div className="flex items-center gap-3">
-              <span className="text-[var(--color-gold)]">📅</span>
+              <span className="text-[#c99a2c]">📅</span>
               <span>
                 <strong>{searchParams.checkIn}</strong> → <strong>{searchParams.checkOut}</strong> ({nights} {t("nights")})
               </span>
-              <span className="text-[var(--color-border)]">•</span>
+              <span className="text-[#ced4da]">•</span>
               <span>
                 {searchParams.adults} {t("adults")}{searchParams.children > 0 ? `, ${searchParams.children} ${t("children")}` : ""}
               </span>
@@ -383,7 +383,7 @@ export default function BookingModal({
               <button
                 type="button"
                 onClick={() => setStep("select_room")}
-                className="text-[var(--color-gold)] underline hover:text-[var(--color-gold-light)] cursor-pointer text-xs"
+                className="text-[#c99a2c] font-semibold underline hover:text-[#a77b1b] cursor-pointer text-xs"
               >
                 ← {t("changeRoom")}
               </button>
@@ -395,7 +395,7 @@ export default function BookingModal({
             {step === "loading" && (
               <div className="py-20 flex flex-col items-center justify-center gap-4 text-center">
                 <div className="w-10 h-10 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin" />
-                <p className="font-sans text-sm text-[var(--color-ivory-dim)]">
+                <p className="font-sans text-sm text-[#6c757d]">
                   {t("searching")}
                 </p>
               </div>
@@ -406,7 +406,7 @@ export default function BookingModal({
               <div>
                 {rooms.length === 0 ? (
                   <div className="py-12 text-center">
-                    <p className="font-sans text-sm text-[var(--color-ivory-dim)] max-w-md mx-auto mb-6 leading-relaxed">
+                    <p className="font-sans text-sm text-[#6c757d] max-w-md mx-auto mb-6 leading-relaxed">
                       {t("noRooms")}
                     </p>
                     <a
@@ -418,7 +418,7 @@ export default function BookingModal({
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    <p className="font-sans text-xs uppercase tracking-wider text-[var(--color-ivory-dim)] mb-2">
+                    <p className="font-sans text-xs uppercase tracking-wider text-[#6c757d] mb-2">
                       Chọn loại căn hộ phù hợp:
                     </p>
                     {rooms.map((room) => {
@@ -430,7 +430,7 @@ export default function BookingModal({
                         <div
                           key={room.id}
                           className="
-                            border border-[var(--color-border)] bg-[var(--color-charcoal-50)]
+                            border border-[#e9ecef] bg-[#f8f9fa]
                             p-4 sm:p-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4
                             hover:border-[var(--color-gold)]/60 transition-all duration-300
                           "
@@ -446,14 +446,14 @@ export default function BookingModal({
                               />
                             </div>
                             <div>
-                              <h3 className="font-serif text-lg text-[var(--color-ivory)]">
+                              <h3 className="font-serif text-lg text-[#1e2022]">
                                 {locale === "vi"
                                   ? room.meta?.nameVi || room.title
                                   : locale === "zh"
                                   ? room.meta?.nameZh || room.title
                                   : room.meta?.nameEn || room.title}
                               </h3>
-                              <div className="flex items-center gap-3 text-xs font-sans text-[var(--color-ivory-dim)] mt-1">
+                              <div className="flex items-center gap-3 text-xs font-sans text-[#6c757d] mt-1">
                                 <span>{t("maxGuests", { count: room.meta?.maxOccupancy || room.occ_adults })}</span>
                                 <span>•</span>
                                 <span className="text-[var(--color-gold)]">{t("roomAvailable", { count: room.quantity })}</span>
@@ -461,12 +461,12 @@ export default function BookingModal({
                             </div>
                           </div>
 
-                          <div className="flex sm:flex-col items-baseline sm:items-end justify-between sm:justify-center border-t sm:border-t-0 border-[var(--color-border)] pt-3 sm:pt-0">
+                          <div className="flex sm:flex-col items-baseline sm:items-end justify-between sm:justify-center border-t sm:border-t-0 border-[#e9ecef] pt-3 sm:pt-0">
                             <div>
                               <span className="font-serif text-xl text-[var(--color-gold)] font-medium">
                                 {formatPrice(totalPrice)}
                               </span>
-                              <span className="block text-[10px] text-[var(--color-ivory-dim)] text-right">
+                              <span className="block text-[10px] text-[#6c757d] text-right">
                                 {formatPrice(pricePerNight)} {t("perNight")}
                               </span>
                             </div>
@@ -495,33 +495,33 @@ export default function BookingModal({
             {step === "guest_form" && selectedRoom && (
               <div>
                 {/* Selected Room Summary */}
-                <div className="bg-[var(--color-charcoal-50)] border border-[var(--color-border)] p-4 mb-6 flex justify-between items-center">
+                <div className="bg-[#f8f9fa] border border-[#e9ecef] p-4 mb-6 flex justify-between items-center">
                   <div>
                     <span className="font-sans text-[10px] uppercase tracking-wider text-[var(--color-gold)] block">
                       Phòng đã chọn:
                     </span>
-                    <h4 className="font-serif text-lg text-[var(--color-ivory)]">
+                    <h4 className="font-serif text-lg text-[#1e2022]">
                       {locale === "vi" ? selectedRoom.meta?.nameVi : selectedRoom.title}
                     </h4>
-                    <span className="font-sans text-xs text-[var(--color-ivory-dim)]">
+                    <span className="font-sans text-xs text-[#6c757d]">
                       Tổng chi phí: <strong className="text-[var(--color-gold)]">{formatPrice(selectedRoom.rate_plans?.[0]?.estimated_total_price || 0)}</strong> ({nights} đêm)
                     </span>
                   </div>
                   <button
                     type="button"
                     onClick={() => setStep("select_room")}
-                    className="font-sans text-xs text-[var(--color-ivory-dim)] hover:text-[var(--color-gold)] underline cursor-pointer"
+                    className="font-sans text-xs text-[#6c757d] hover:text-[var(--color-gold)] underline cursor-pointer"
                   >
                     {t("changeRoom")}
                   </button>
                 </div>
 
                 <form onSubmit={handleSubmitBooking} className="space-y-4">
-                  <div className="border-b border-[var(--color-border)] pb-2 mb-4">
-                    <h3 className="font-serif text-lg text-[var(--color-ivory)]">
+                  <div className="border-b border-[#e9ecef] pb-2 mb-4">
+                    <h3 className="font-serif text-lg text-[#1e2022]">
                       {t("guestInfoTitle")}
                     </h3>
-                    <p className="font-sans text-xs text-[var(--color-ivory-dim)]">
+                    <p className="font-sans text-xs text-[#6c757d]">
                       {t("guestInfoSubtitle")}
                     </p>
                   </div>
@@ -534,7 +534,7 @@ export default function BookingModal({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-sans text-xs text-[var(--color-ivory-dim)] mb-1.5">
+                      <label className="block font-sans text-xs text-[#6c757d] mb-1.5">
                         {t("fullName")}
                       </label>
                       <input
@@ -544,15 +544,15 @@ export default function BookingModal({
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder={t("fullNamePlaceholder")}
                         className="
-                          w-full bg-[var(--color-charcoal-50)] border border-[var(--color-border)]
-                          text-[var(--color-ivory)] px-3.5 py-2.5 font-sans text-sm
+                          w-full bg-[#f8f9fa] border border-[#e9ecef]
+                          text-[#1e2022] px-3.5 py-2.5 font-sans text-sm
                           focus:border-[var(--color-gold)] focus:outline-none transition-colors
                         "
                       />
                     </div>
 
                     <div>
-                      <label className="block font-sans text-xs text-[var(--color-ivory-dim)] mb-1.5">
+                      <label className="block font-sans text-xs text-[#6c757d] mb-1.5">
                         {t("phone")}
                       </label>
                       <input
@@ -562,8 +562,8 @@ export default function BookingModal({
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder={t("phonePlaceholder")}
                         className="
-                          w-full bg-[var(--color-charcoal-50)] border border-[var(--color-border)]
-                          text-[var(--color-ivory)] px-3.5 py-2.5 font-sans text-sm
+                          w-full bg-[#f8f9fa] border border-[#e9ecef]
+                          text-[#1e2022] px-3.5 py-2.5 font-sans text-sm
                           focus:border-[var(--color-gold)] focus:outline-none transition-colors
                         "
                       />
@@ -571,7 +571,7 @@ export default function BookingModal({
                   </div>
 
                   <div>
-                    <label className="block font-sans text-xs text-[var(--color-ivory-dim)] mb-1.5">
+                    <label className="block font-sans text-xs text-[#6c757d] mb-1.5">
                       {t("email")}
                     </label>
                     <input
@@ -580,15 +580,15 @@ export default function BookingModal({
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t("emailPlaceholder")}
                       className="
-                        w-full bg-[var(--color-charcoal-50)] border border-[var(--color-border)]
-                        text-[var(--color-ivory)] px-3.5 py-2.5 font-sans text-sm
+                        w-full bg-[#f8f9fa] border border-[#e9ecef]
+                        text-[#1e2022] px-3.5 py-2.5 font-sans text-sm
                         focus:border-[var(--color-gold)] focus:outline-none transition-colors
                       "
                     />
                   </div>
 
                   <div>
-                    <label className="block font-sans text-xs text-[var(--color-ivory-dim)] mb-1.5">
+                    <label className="block font-sans text-xs text-[#6c757d] mb-1.5">
                       {t("notes")}
                     </label>
                     <textarea
@@ -597,8 +597,8 @@ export default function BookingModal({
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder={t("notesPlaceholder")}
                       className="
-                        w-full bg-[var(--color-charcoal-50)] border border-[var(--color-border)]
-                        text-[var(--color-ivory)] px-3.5 py-2 font-sans text-sm
+                        w-full bg-[#f8f9fa] border border-[#e9ecef]
+                        text-[#1e2022] px-3.5 py-2 font-sans text-sm
                         focus:border-[var(--color-gold)] focus:outline-none transition-colors resize-none
                       "
                     />
@@ -606,7 +606,7 @@ export default function BookingModal({
 
                   {/* ── Payment Methods Selector ── */}
                   <div className="pt-2">
-                    <label className="block font-sans text-xs text-[var(--color-ivory)] font-medium mb-2.5">
+                    <label className="block font-sans text-xs text-[#1e2022] font-medium mb-2.5">
                       {t("paymentMethod")}
                     </label>
 
@@ -619,17 +619,17 @@ export default function BookingModal({
                           p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
                           ${paymentMethod === "property"
                             ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[var(--color-gold)]/40"
+                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
                           }
                         `}
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-base">🏨</span>
-                          <span className="font-sans text-xs font-semibold text-[var(--color-ivory)]">
+                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
                             Tại khách sạn
                           </span>
                         </div>
-                        <span className="font-sans text-[11px] text-[var(--color-ivory-dim)]">
+                        <span className="font-sans text-[11px] text-[#6c757d]">
                           Tiền mặt / Thẻ / QR khi nhận phòng
                         </span>
                       </button>
@@ -642,17 +642,17 @@ export default function BookingModal({
                           p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
                           ${paymentMethod === "wise"
                             ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[var(--color-gold)]/40"
+                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
                           }
                         `}
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-base">🌐</span>
-                          <span className="font-sans text-xs font-semibold text-[var(--color-ivory)]">
+                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
                             Wise Transfer
                           </span>
                         </div>
-                        <span className="font-sans text-[11px] text-[var(--color-ivory-dim)]">
+                        <span className="font-sans text-[11px] text-[#6c757d]">
                           Chuyển khoản quốc tế (SGD, GBP, CAD, EUR...)
                         </span>
                       </button>
@@ -665,17 +665,17 @@ export default function BookingModal({
                           p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
                           ${paymentMethod === "zelle"
                             ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[var(--color-border)] bg-[var(--color-charcoal-50)] hover:border-[var(--color-gold)]/40"
+                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
                           }
                         `}
                       >
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-base">⚡</span>
-                          <span className="font-sans text-xs font-semibold text-[var(--color-ivory)]">
+                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
                             Zelle (USD)
                           </span>
                         </div>
-                        <span className="font-sans text-[11px] text-[var(--color-ivory-dim)]">
+                        <span className="font-sans text-[11px] text-[#6c757d]">
                           Dành cho khách hàng ngân hàng tại Mỹ
                         </span>
                       </button>
@@ -683,13 +683,13 @@ export default function BookingModal({
 
                     {/* Details for Selected Payment */}
                     {paymentMethod === "property" && (
-                      <div className="border border-[var(--color-border)] bg-[var(--color-charcoal-50)] p-3.5 flex items-start gap-3">
+                      <div className="border border-[#e9ecef] bg-[#f8f9fa] p-3.5 flex items-start gap-3">
                         <span className="text-lg">💳</span>
                         <div>
                           <span className="font-sans text-xs font-semibold text-[var(--color-gold)] block">
                             {t("payAtProperty")}
                           </span>
-                          <p className="font-sans text-[11px] text-[var(--color-ivory-dim)] leading-relaxed mt-0.5">
+                          <p className="font-sans text-[11px] text-[#6c757d] leading-relaxed mt-0.5">
                             {t("payAtPropertyNotice")}
                           </p>
                         </div>
@@ -697,8 +697,8 @@ export default function BookingModal({
                     )}
 
                     {paymentMethod === "zelle" && (
-                      <div className="border border-[var(--color-gold)]/60 bg-[var(--color-charcoal-50)] p-4">
-                        <div className="flex items-center justify-between mb-3 border-b border-[var(--color-border)] pb-2">
+                      <div className="border border-[var(--color-gold)]/60 bg-[#f8f9fa] p-4">
+                        <div className="flex items-center justify-between mb-3 border-b border-[#e9ecef] pb-2">
                           <span className="font-sans text-xs font-semibold text-[var(--color-gold)] uppercase tracking-wider">
                             Thông tin thanh toán Zelle (USD)
                           </span>
@@ -708,14 +708,14 @@ export default function BookingModal({
                         </div>
                         <div className="space-y-2 font-sans text-xs">
                           <div className="flex items-center justify-between flex-wrap gap-2">
-                            <span className="text-[var(--color-ivory-dim)]">Số điện thoại Zelle:</span>
+                            <span className="text-[#6c757d]">Số điện thoại Zelle:</span>
                             <CopyableField text="6562141655" />
                           </div>
                           <div className="flex items-center justify-between flex-wrap gap-2">
-                            <span className="text-[var(--color-ivory-dim)]">Người nhận (Recipient):</span>
+                            <span className="text-[#6c757d]">Người nhận (Recipient):</span>
                             <CopyableField text="Ngan Vu" />
                           </div>
-                          <p className="text-[11px] text-[var(--color-ivory-dim)] italic pt-2 border-t border-[var(--color-border)] mt-2">
+                          <p className="text-[11px] text-[#6c757d] italic pt-2 border-t border-[#e9ecef] mt-2">
                             * Sau khi gửi yêu cầu đặt phòng, quý khách có thể chuyển khoản qua Zelle với nội dung: <strong>[Tên của bạn] - [Số điện thoại]</strong>.
                           </p>
                         </div>
@@ -723,12 +723,12 @@ export default function BookingModal({
                     )}
 
                     {paymentMethod === "wise" && (
-                      <div className="border border-[var(--color-gold)]/60 bg-[var(--color-charcoal-50)] p-4">
-                        <div className="flex items-center justify-between mb-3 border-b border-[var(--color-border)] pb-2 flex-wrap gap-2">
+                      <div className="border border-[var(--color-gold)]/60 bg-[#f8f9fa] p-4">
+                        <div className="flex items-center justify-between mb-3 border-b border-[#e9ecef] pb-2 flex-wrap gap-2">
                           <span className="font-sans text-xs font-semibold text-[var(--color-gold)] uppercase tracking-wider">
                             Thông tin thanh toán Wise
                           </span>
-                          <div className="flex items-center gap-1.5 text-xs text-[var(--color-ivory-dim)]">
+                          <div className="flex items-center gap-1.5 text-xs text-[#6c757d]">
                             <span>Chủ tài khoản:</span>
                             <CopyableField text="Ngan Thi Thu Vu" />
                           </div>
@@ -736,7 +736,7 @@ export default function BookingModal({
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                           {/* QR Code */}
-                          <div className="flex flex-col items-center justify-center p-3 border border-[var(--color-border)] bg-black/40">
+                          <div className="flex flex-col items-center justify-center p-3 border border-[#e9ecef] bg-black/40">
                             <div className="relative w-36 h-36">
                               <Image
                                 src="/images/wise-qr.jpg"
@@ -746,7 +746,7 @@ export default function BookingModal({
                                 sizes="144px"
                               />
                             </div>
-                            <span className="font-sans text-[10px] text-[var(--color-ivory-dim)] mt-2 tracking-wider uppercase">
+                            <span className="font-sans text-[10px] text-[#6c757d] mt-2 tracking-wider uppercase">
                               Quét mã Wise
                             </span>
                           </div>
@@ -754,7 +754,7 @@ export default function BookingModal({
                           {/* Currency Selector & Bank Details */}
                           <div className="md:col-span-2 space-y-3 font-sans text-xs">
                             <div>
-                              <span className="block text-[11px] text-[var(--color-ivory-dim)] mb-1">
+                              <span className="block text-[11px] text-[#6c757d] mb-1">
                                 Chọn loại tiền tệ chuyển khoản:
                               </span>
                               <div className="flex flex-wrap gap-1.5">
@@ -767,7 +767,7 @@ export default function BookingModal({
                                       px-2.5 py-1 text-xs border font-medium cursor-pointer transition-colors
                                       ${selectedCurrency === c.code
                                         ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-[var(--color-charcoal)] font-semibold"
-                                        : "border-[var(--color-border)] text-[var(--color-ivory-dim)] hover:border-[var(--color-gold)]/50"
+                                        : "border-[#e9ecef] text-[#6c757d] hover:border-[var(--color-gold)]/50"
                                       }
                                     `}
                                   >
@@ -777,22 +777,22 @@ export default function BookingModal({
                               </div>
                             </div>
 
-                            <div className="border border-[var(--color-border)] p-3 bg-black/30 space-y-2">
+                            <div className="border border-[#e9ecef] p-3 bg-black/30 space-y-2">
                               <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[var(--color-ivory-dim)]">Phương thức:</span>
+                                <span className="text-[#6c757d]">Phương thức:</span>
                                 <span className="text-[var(--color-gold)] font-medium">{currentWiseInfo.method}</span>
                               </div>
                               <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[var(--color-ivory-dim)]">Ngân hàng:</span>
-                                <span className="text-[var(--color-ivory)]">{currentWiseInfo.bank}</span>
+                                <span className="text-[#6c757d]">Ngân hàng:</span>
+                                <span className="text-[#1e2022]">{currentWiseInfo.bank}</span>
                               </div>
                               <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[var(--color-ivory-dim)]">Số tài khoản / IBAN:</span>
+                                <span className="text-[#6c757d]">Số tài khoản / IBAN:</span>
                                 <CopyableField text={currentWiseInfo.accountNumber} />
                               </div>
                               {currentWiseInfo.codeLabel && (
                                 <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                  <span className="text-[var(--color-ivory-dim)]">{currentWiseInfo.codeLabel}:</span>
+                                  <span className="text-[#6c757d]">{currentWiseInfo.codeLabel}:</span>
                                   <CopyableField 
                                     text={currentWiseInfo.codeValue} 
                                     valueToCopy={
@@ -833,10 +833,10 @@ export default function BookingModal({
             {step === "submitting" && (
               <div className="py-20 flex flex-col items-center justify-center gap-4 text-center">
                 <div className="w-12 h-12 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin" />
-                <p className="font-serif text-lg text-[var(--color-ivory)]">
+                <p className="font-serif text-lg text-[#1e2022]">
                   {t("processing")}
                 </p>
-                <p className="font-sans text-xs text-[var(--color-ivory-dim)]">
+                <p className="font-sans text-xs text-[#6c757d]">
                   Vui lòng không đóng trình duyệt...
                 </p>
               </div>
@@ -849,16 +849,16 @@ export default function BookingModal({
                   ✓
                 </div>
 
-                <h3 className="font-serif text-2xl text-[var(--color-ivory)] mb-2">
+                <h3 className="font-serif text-2xl text-[#1e2022] mb-2">
                   {t("bookingSuccess")}
                 </h3>
-                <p className="font-sans text-xs text-[var(--color-ivory-dim)] max-w-md mx-auto mb-6">
+                <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
                   {t("bookingSuccessSub")}
                 </p>
 
                 {createdBooking?.id && (
-                  <div className="border border-[var(--color-gold)] bg-[var(--color-charcoal-50)] px-6 py-4 mb-6 inline-block">
-                    <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ivory-dim)] block mb-1">
+                  <div className="border border-[var(--color-gold)] bg-[#f8f9fa] px-6 py-4 mb-6 inline-block">
+                    <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6c757d] block mb-1">
                       {t("bookingCode")}
                     </span>
                     <div className="flex items-center gap-2 justify-center">
@@ -870,37 +870,37 @@ export default function BookingModal({
                   </div>
                 )}
 
-                <div className="w-full border border-[var(--color-border)] bg-[#171717] p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
-                  <div className="flex justify-between py-1 border-b border-[var(--color-border)]">
-                    <span className="text-[var(--color-ivory-dim)]">Khách sạn:</span>
-                    <span className="text-[var(--color-ivory)] font-medium">SOHO Residence & Hotel (100 Cô Giang, Q1, TP.HCM)</span>
+                <div className="w-full border border-[#e9ecef] bg-[#171717] p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
+                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                    <span className="text-[#6c757d]">Khách sạn:</span>
+                    <span className="text-[#1e2022] font-medium">SOHO Residence & Hotel (100 Cô Giang, Q1, TP.HCM)</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[var(--color-border)]">
-                    <span className="text-[var(--color-ivory-dim)]">Khách hàng:</span>
-                    <span className="text-[var(--color-ivory)] font-medium">{fullName} ({phone})</span>
+                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                    <span className="text-[#6c757d]">Khách hàng:</span>
+                    <span className="text-[#1e2022] font-medium">{fullName} ({phone})</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[var(--color-border)]">
-                    <span className="text-[var(--color-ivory-dim)]">Lịch lưu trú:</span>
-                    <span className="text-[var(--color-ivory)] font-medium">{searchParams.checkIn} → {searchParams.checkOut} ({nights} {t("nights")})</span>
+                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                    <span className="text-[#6c757d]">Lịch lưu trú:</span>
+                    <span className="text-[#1e2022] font-medium">{searchParams.checkIn} → {searchParams.checkOut} ({nights} {t("nights")})</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[var(--color-border)]">
-                    <span className="text-[var(--color-ivory-dim)]">Phương thức thanh toán:</span>
+                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                    <span className="text-[#6c757d]">Phương thức thanh toán:</span>
                     <span className="text-[var(--color-gold)] font-medium">
                       {paymentMethod === "wise" ? `Wise Transfer (${selectedCurrency})` : paymentMethod === "zelle" ? "Zelle (USD)" : "Tại chỗ khi nhận phòng"}
                     </span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-[var(--color-ivory-dim)]">Tổng tiền ước tính:</span>
+                    <span className="text-[#6c757d]">Tổng tiền ước tính:</span>
                     <span className="text-[var(--color-gold)] font-medium">
                       {formatPrice(selectedRoom?.rate_plans?.[0]?.estimated_total_price || 0)}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-3 bg-[var(--color-charcoal-50)] border border-[var(--color-border)] text-left font-sans text-xs text-[var(--color-ivory-dim)] mb-6 flex items-start gap-2.5">
+                <div className="p-3 bg-[#f8f9fa] border border-[#e9ecef] text-left font-sans text-xs text-[#6c757d] mb-6 flex items-start gap-2.5">
                   <span className="text-[var(--color-gold)] text-sm">ℹ️</span>
                   <div>
-                    <p className="text-[var(--color-ivory)] font-medium mb-0.5">
+                    <p className="text-[#1e2022] font-medium mb-0.5">
                       {t("receptionCall")}
                     </p>
                     <p>{t("checkInNotice")} • {t("checkOutNotice")}</p>
@@ -932,7 +932,7 @@ export default function BookingModal({
                 <h3 className="font-serif text-lg text-red-400 mb-2">
                   Đã có lỗi xảy ra
                 </h3>
-                <p className="font-sans text-xs text-[var(--color-ivory-dim)] max-w-md mx-auto mb-6">
+                <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
                   {errorMessage || "Không thể hoàn thành yêu cầu. Vui lòng thử lại hoặc gọi hotline (+84) 91 771 9966."}
                 </p>
                 <div className="flex justify-center gap-4">
@@ -940,7 +940,7 @@ export default function BookingModal({
                     type="button"
                     onClick={() => setStep("select_room")}
                     className="
-                      border border-[var(--color-border)] text-[var(--color-ivory)]
+                      border border-[#e9ecef] text-[#1e2022]
                       px-6 py-2.5 text-xs font-sans tracking-[0.15em] uppercase
                       hover:border-[var(--color-gold)] hover:text-[var(--color-gold)] cursor-pointer
                     "
