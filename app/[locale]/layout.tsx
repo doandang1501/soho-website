@@ -98,17 +98,17 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-[#1e2022] antialiased">
-        {/* Google Analytics 4 (GA4) - Lazy loaded to avoid blocking initial render */}
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-XB5PH0L00Q"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
+        <body className="min-h-full flex flex-col bg-white text-[#1e2022] antialiased">
+          {/* Google Analytics 4 (GA4) - Lazy loaded to avoid blocking initial render */}
+          <Script
+            strategy="lazyOnload"
+            src="https://www.googletagmanager.com/gtag/js?id=G-XB5PH0L00Q"
+          />
+          <Script
+            id="google-analytics"
+            strategy="lazyOnload"
+            dangerouslySetInnerHTML={{
+              __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -116,25 +116,25 @@ export default async function LocaleLayout({
                 page_path: window.location.pathname,
               });
             `,
-          }}
-        />
+            }}
+          />
 
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* Sticky header */}
-          <Header />
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {/* Sticky header */}
+            <Header />
 
-          {/* Sticky booking bar (below header) */}
-          <BookingBar />
+            {/* Sticky booking bar (below header) */}
+            <BookingBar />
 
-          {/* Page content */}
-          <main className="flex-1">
-            {children}
-          </main>
+            {/* Page content */}
+            <main className="flex-1">
+              {children}
+            </main>
 
-          {/* Footer */}
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
+            {/* Footer */}
+            <Footer />
+          </NextIntlClientProvider>
+        </body>
     </html>
   );
 }
