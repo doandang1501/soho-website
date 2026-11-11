@@ -98,8 +98,9 @@ export default function Header() {
                 alt="SOHO Residence & Hotel"
                 width={120}
                 height={48}
-                className="h-10 w-auto object-contain brightness-100 group-hover:brightness-110 transition-all duration-300"
+                className="h-9 sm:h-10 w-auto object-contain brightness-100 group-hover:brightness-110 transition-all duration-300"
                 priority
+                fetchPriority="high"
               />
             </Link>
 

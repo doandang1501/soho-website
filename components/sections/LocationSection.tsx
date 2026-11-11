@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import AnimateInView from "@/components/ui/AnimateInView";
 
@@ -13,6 +14,7 @@ const LANDMARK_KEYS = [
 
 export default function LocationSection() {
   const t = useTranslations("location");
+  const [loadMap, setLoadMap] = useState(false);
 
   return (
     <section
@@ -59,24 +61,47 @@ export default function LocationSection() {
         {/* Map + info layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
-          {/* Map embed — col-span-2 */}
+          {/* Map embed — col-span-2 with Interactive/Scroll Lazy-load */}
           <AnimateInView delay={0.1} direction="left" className="lg:col-span-2">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden border border-[var(--color-border)]">
+            <div 
+              className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden border border-[var(--color-border)] bg-[var(--color-charcoal-50)] flex items-center justify-center cursor-pointer"
+              onMouseEnter={() => setLoadMap(true)}
+              onTouchStart={() => setLoadMap(true)}
+            >
               {/* Gold corner accent */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[var(--color-gold)] z-10 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[var(--color-gold)] z-10 pointer-events-none" />
 
-              <iframe
-                title="SOHO Residence & Hotel location map"
-                src="https://maps.google.com/maps?q=100+C%C3%B4+Giang%2C+C%E1%BA%A7u+%C3%94ng+L%C3%A3nh%2C+H%E1%BB%93+Ch%C3%AD+Minh+700000%2C+Vietnam&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(0.3) invert(0.12) contrast(1.1)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0"
-              />
+              {loadMap ? (
+                <iframe
+                  title="SOHO Residence & Hotel location map"
+                  src="https://maps.google.com/maps?q=100+C%C3%B4+Giang%2C+C%E1%BA%A7u+%C3%94ng+L%C3%A3nh%2C+H%E1%BB%93+Ch%C3%AD+Minh+700000%2C+Vietnam&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: "grayscale(0.3) invert(0.12) contrast(1.1)" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                />
+              ) : (
+                <div 
+                  onClick={() => setLoadMap(true)}
+                  className="flex flex-col items-center justify-center p-6 text-center gap-3 z-10 w-full h-full group hover:bg-[var(--color-gold)]/5 transition-colors"
+                >
+                  <div className="w-14 h-14 rounded-full border border-[var(--color-gold)] flex items-center justify-center text-2xl text-[var(--color-gold)] group-hover:scale-110 transition-transform">
+                    📍
+                  </div>
+                  <div>
+                    <span className="font-serif text-lg text-[var(--color-ivory)] block mb-1">
+                      100 Cô Giang, Phường Cầu Ông Lãnh, Quận 1
+                    </span>
+                    <span className="font-sans text-xs text-[var(--color-gold)] uppercase tracking-widest border-b border-[var(--color-gold)]/40 pb-0.5">
+                      Bấm để tải bản đồ trực tiếp
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           </AnimateInView>
 

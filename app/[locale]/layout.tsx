@@ -101,14 +101,14 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--color-charcoal)] text-[var(--color-ivory)] antialiased">
-        {/* Google Analytics 4 (GA4) */}
+        {/* Google Analytics 4 (GA4) - Lazy loaded to avoid blocking initial render */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-XB5PH0L00Q"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

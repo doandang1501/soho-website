@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { validateBooking, type BookingValidationError } from "@/lib/booking";
 import DatePicker from "@/components/ui/DatePicker";
-import BookingModal from "@/components/booking/BookingModal";
+
+// Lazy-load BookingModal to reduce initial JS payload
+const BookingModal = dynamic(() => import("@/components/booking/BookingModal"), {
+  ssr: false,
+});
 
 const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 

@@ -72,9 +72,10 @@ export default function HeroSection() {
             alt={SLIDES[current].alt}
             fill
             priority={current === 0}
+            fetchPriority={current === 0 ? "high" : "auto"}
             className="object-cover object-center"
             sizes="100vw"
-            quality={90}
+            quality={current === 0 ? 90 : 75}
           />
         </motion.div>
       </AnimatePresence>
