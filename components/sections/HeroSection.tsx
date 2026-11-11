@@ -107,97 +107,102 @@ export default function HeroSection() {
       {/* ── Content ──────────────────────────────────────────────────────── */}
       <div className="relative z-10 w-full pb-8 sm:pb-12 md:pb-16 px-5 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto">
 
-        {/* Eyebrow */}
-        <motion.div
-          custom={0.2}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex items-center gap-3 mb-4"
-        >
-          <span className="block w-8 h-px bg-[var(--color-gold)]" />
-          <span className="font-sans text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[var(--color-gold-light)] font-semibold">
-            {t("eyebrow")}
-          </span>
-        </motion.div>
+        {/* Backdrop glass panel on bright background for high contrast & luxury feel */}
+        <div className="max-w-3xl bg-black/45 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-2xl border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
 
-        {/* H1 Title */}
-        <div className="mb-5 overflow-hidden">
-          <motion.h1
-            custom={0.35}
+          {/* Eyebrow */}
+          <motion.div
+            custom={0.2}
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-serif text-[clamp(2rem,5.5vw,4.8rem)] leading-[1.1] text-white block drop-shadow-sm"
+            className="flex items-center gap-3 mb-4"
           >
-            {titleLines.map((line, i) => (
-              <span key={i} className="block">
-                {i === 1 ? <span className="text-[#f1c964]">{line}</span> : line}
-                {i < titleLines.length - 1 ? " " : ""}
-              </span>
-            ))}
-          </motion.h1>
+            <span className="block w-8 h-px bg-[#e8b948]" />
+            <span className="font-sans text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[#f1c964] font-bold">
+              {t("eyebrow")}
+            </span>
+          </motion.div>
+
+          {/* H1 Title */}
+          <div className="mb-5 overflow-hidden">
+            <motion.h1
+              custom={0.35}
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-serif text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.15] text-white block drop-shadow-md font-normal"
+            >
+              {titleLines.map((line, i) => (
+                <span key={i} className="block">
+                  {i === 1 ? <span className="text-[#f5d061] font-medium">{line}</span> : line}
+                  {i < titleLines.length - 1 ? " " : ""}
+                </span>
+              ))}
+            </motion.h1>
+          </div>
+
+          {/* Subtitle */}
+          <motion.p
+            custom={0.5}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="font-sans text-sm sm:text-base text-white/95 leading-relaxed mb-8 drop-shadow"
+          >
+            {t("subtitle")}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            custom={0.65}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-wrap gap-3 sm:gap-4 items-center"
+          >
+            {/* Button 1: Khám phá căn hộ */}
+            <a
+              href="#rooms"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="
+                inline-flex items-center gap-3
+                bg-[#c99a2c] text-white font-sans font-bold text-xs tracking-[0.18em] uppercase
+                px-8 py-4 rounded-xl shadow-lg
+                transition-all duration-300
+                hover:bg-[#a77b1b] hover:shadow-[0_4px_20px_rgba(201,154,44,0.4)]
+                active:scale-95
+                group
+              "
+            >
+              {t("cta")}
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
+
+            {/* Button 2: Kiểm tra phòng trống */}
+            <button
+              type="button"
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-booking-modal"));
+              }}
+              className="
+                inline-flex items-center gap-3
+                border border-white/50 text-white bg-white/15 backdrop-blur-sm
+                font-sans font-semibold text-xs tracking-[0.18em] uppercase
+                px-8 py-4 rounded-xl
+                transition-all duration-300
+                hover:bg-white hover:text-[#1e2022] hover:border-white hover:shadow-lg
+                active:scale-95 cursor-pointer
+              "
+            >
+              {t("checkAvailability")}
+            </button>
+          </motion.div>
+
         </div>
-
-        {/* Subtitle */}
-        <motion.p
-          custom={0.5}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="font-sans text-sm sm:text-base text-white/90 max-w-2xl leading-relaxed mb-8 drop-shadow-sm"
-        >
-          {t("subtitle")}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          custom={0.65}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap gap-3 sm:gap-4 items-center"
-        >
-          {/* Button 1: Khám phá căn hộ */}
-          <a
-            href="#rooms"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="
-              inline-flex items-center gap-3
-              bg-[var(--color-gold)] text-white font-sans font-bold text-xs tracking-[0.18em] uppercase
-              px-8 py-4 rounded-sm
-              transition-all duration-300
-              hover:bg-[var(--color-gold-dark)] hover:shadow-lg
-              active:scale-95
-              group
-            "
-          >
-            {t("cta")}
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
-
-          {/* Button 2: Kiểm tra phòng trống */}
-          <button
-            type="button"
-            onClick={() => {
-              window.dispatchEvent(new CustomEvent("open-booking-modal"));
-            }}
-            className="
-              inline-flex items-center gap-3
-              border border-white/60 text-white bg-white/10 backdrop-blur-sm
-              font-sans font-semibold text-xs tracking-[0.18em] uppercase
-              px-8 py-4 rounded-sm
-              transition-all duration-300
-              hover:bg-white hover:text-[#1e2022] hover:border-white
-              active:scale-95 cursor-pointer
-            "
-          >
-            {t("checkAvailability")}
-          </button>
-        </motion.div>
 
         {/* ── Slide indicators ─────────────────────────────────────────────── */}
         <motion.div
