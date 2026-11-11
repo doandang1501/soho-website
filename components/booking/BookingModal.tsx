@@ -192,59 +192,59 @@ function CurrencyFlag({ code }: { code: string }) {
     case "SGD":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#ed2939" d="M0 0h640v240H0z"/>
-          <path fill="#fff" d="M0 240h640v240H0z"/>
-          <path fill="#fff" d="M205 120a70 70 0 1 1-140 0 70 70 0 0 1 140 0"/>
-          <path fill="#ed2939" d="M216 120a60 60 0 1 1-120 0 60 60 0 0 1 120 0"/>
+          <path fill="#ed2939" d="M0 0h640v240H0z" />
+          <path fill="#fff" d="M0 240h640v240H0z" />
+          <path fill="#fff" d="M205 120a70 70 0 1 1-140 0 70 70 0 0 1 140 0" />
+          <path fill="#ed2939" d="M216 120a60 60 0 1 1-120 0 60 60 0 0 1 120 0" />
         </svg>
       );
     case "GBP":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#012169" d="M0 0h640v480H0z"/>
-          <path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0z"/>
-          <path fill="#c8102e" d="m425 285 215 155v40h-40L390 320zm-210-90L0 40V0h40l210 160zm-15 90L0 440v40h40l185-140zm240-90L640 40V0h-40L380 150z"/>
-          <path fill="#fff" d="M260 0h120v480H260zM0 180h640v120H0z"/>
-          <path fill="#c8102e" d="M280 0h80v480h-80zM0 200h640v80H0z"/>
+          <path fill="#012169" d="M0 0h640v480H0z" />
+          <path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0z" />
+          <path fill="#c8102e" d="m425 285 215 155v40h-40L390 320zm-210-90L0 40V0h40l210 160zm-15 90L0 440v40h40l185-140zm240-90L640 40V0h-40L380 150z" />
+          <path fill="#fff" d="M260 0h120v480H260zM0 180h640v120H0z" />
+          <path fill="#c8102e" d="M280 0h80v480h-80zM0 200h640v80H0z" />
         </svg>
       );
     case "CAD":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#f00" d="M0 0h160v480H0zm480 0h160v480H480z"/>
-          <path fill="#fff" d="M160 0h320v480H160z"/>
-          <path fill="#f00" d="m320 90 20 40 40-10-15 45 35 15-30 20 15 40-40-10-5 50h-40l-5-50-40 10 15-40-30-20 35-15-15-45 40 10z"/>
+          <path fill="#f00" d="M0 0h160v480H0zm480 0h160v480H480z" />
+          <path fill="#fff" d="M160 0h320v480H160z" />
+          <path fill="#f00" d="m320 90 20 40 40-10-15 45 35 15-30 20 15 40-40-10-5 50h-40l-5-50-40 10 15-40-30-20 35-15-15-45 40 10z" />
         </svg>
       );
     case "PHP":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#0038a8" d="M0 0h640v240H0z"/>
-          <path fill="#ce1126" d="M0 240h640v240H0z"/>
-          <path fill="#fff" d="m0 0 360 240L0 480z"/>
-          <circle cx="110" cy="240" r="40" fill="#fcd116"/>
+          <path fill="#0038a8" d="M0 0h640v240H0z" />
+          <path fill="#ce1126" d="M0 240h640v240H0z" />
+          <path fill="#fff" d="m0 0 360 240L0 480z" />
+          <circle cx="110" cy="240" r="40" fill="#fcd116" />
         </svg>
       );
     case "NZD":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#00247d" d="M0 0h640v480H0z"/>
-          <path fill="#fff" d="m0 0 240 180H0zm320 0-80 60V0zM0 240l80-60H0z"/>
-          <path fill="#cc142b" d="m480 120 10 30h30l-25 20 10 30-25-20-25 20 10-30-25-20h30zm80 140 8 24h24l-20 16 8 24-20-16-20 16 8-24-20-16h24z"/>
+          <path fill="#00247d" d="M0 0h640v480H0z" />
+          <path fill="#fff" d="m0 0 240 180H0zm320 0-80 60V0zM0 240l80-60H0z" />
+          <path fill="#cc142b" d="m480 120 10 30h30l-25 20 10 30-25-20-25 20 10-30-25-20h30zm80 140 8 24h24l-20 16 8 24-20-16-20 16 8-24-20-16h24z" />
         </svg>
       );
     case "EUR":
       return (
         <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
-          <path fill="#039" d="M0 0h640v480H0z"/>
-          <circle cx="320" cy="140" r="14" fill="#fc0"/>
-          <circle cx="320" cy="340" r="14" fill="#fc0"/>
-          <circle cx="220" cy="240" r="14" fill="#fc0"/>
-          <circle cx="420" cy="240" r="14" fill="#fc0"/>
-          <circle cx="250" cy="170" r="14" fill="#fc0"/>
-          <circle cx="390" cy="170" r="14" fill="#fc0"/>
-          <circle cx="250" cy="310" r="14" fill="#fc0"/>
-          <circle cx="390" cy="310" r="14" fill="#fc0"/>
+          <path fill="#039" d="M0 0h640v480H0z" />
+          <circle cx="320" cy="140" r="14" fill="#fc0" />
+          <circle cx="320" cy="340" r="14" fill="#fc0" />
+          <circle cx="220" cy="240" r="14" fill="#fc0" />
+          <circle cx="420" cy="240" r="14" fill="#fc0" />
+          <circle cx="250" cy="170" r="14" fill="#fc0" />
+          <circle cx="390" cy="170" r="14" fill="#fc0" />
+          <circle cx="250" cy="310" r="14" fill="#fc0" />
+          <circle cx="390" cy="310" r="14" fill="#fc0" />
         </svg>
       );
     default:
@@ -421,7 +421,7 @@ export default function BookingModal({
 
     try {
       const defaultRatePlan = selectedRoom.rate_plans?.[0];
-      const paymentNote = paymentMethod === "wise" 
+      const paymentNote = paymentMethod === "wise"
         ? `[Phương thức TT: Wise (${selectedCurrency})]`
         : `[Phương thức TT: Zelle (USD)]`;
 
@@ -596,8 +596,8 @@ export default function BookingModal({
                                 {locale === "vi"
                                   ? room.meta?.nameVi || room.title
                                   : locale === "zh"
-                                  ? room.meta?.nameZh || room.title
-                                  : room.meta?.nameEn || room.title}
+                                    ? room.meta?.nameZh || room.title
+                                    : room.meta?.nameEn || room.title}
                               </h3>
                               <div className="flex items-center gap-3 text-xs font-sans text-[#6c757d] mt-1">
                                 <span>{t("maxGuests", { count: room.meta?.maxOccupancy || room.occ_adults })}</span>
@@ -803,7 +803,7 @@ export default function BookingModal({
                         <div className="flex items-center gap-2 shrink-0 ml-2">
                           {paymentMethod === "wise" ? (
                             <span className="w-5 h-5 rounded-full bg-[#c99a2c] flex items-center justify-center text-white">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
                             </span>
                           ) : (
                             <span className="w-5 h-5 rounded-full border border-[#dee2e6] flex items-center justify-center" />
@@ -819,7 +819,7 @@ export default function BookingModal({
                             strokeLinejoin="round"
                             className={`text-[#6c757d] transition-transform duration-200 ${paymentMethod === "wise" ? "rotate-180 text-[#c99a2c]" : ""}`}
                           >
-                            <path d="M6 9l6 6 6-6"/>
+                            <path d="M6 9l6 6 6-6" />
                           </svg>
                         </div>
                       </button>
@@ -895,357 +895,367 @@ export default function BookingModal({
                               {/* Account Holder */}
                               <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                 <span className="text-[#6c757d] text-[11px]">Account Holder:</span>
-                                <div className="flex items-center gap-1.5">
-                                  <span className="font-semibold text-[#1e2022] text-xs">Ngan Thi Thu Vu</span>
-                                  <CopyIconButton valueToCopy="Ngan Thi Thu Vu" />
-                                </div>
-                              </div>
-
-                              {/* Bank Name */}
-                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
-                                <span className="text-[#6c757d] text-[11px]">Bank Name:</span>
-                                <div className="flex items-center gap-1.5 min-w-0">
-                                  <span className="font-semibold text-[#1e2022] text-xs truncate max-w-[170px] sm:max-w-none">{currentWiseInfo.bank}</span>
-                                  <CopyIconButton valueToCopy={currentWiseInfo.bank} />
-                                </div>
-                              </div>
-
-                              {/* Account Number Box (Prominent & Elevated) */}
-                              <div className="bg-[#f8f9fa] rounded-lg p-2 sm:p-2.5 border border-[#e9ecef] flex items-center justify-between gap-2">
-                                <div>
-                                  <span className="block text-[9px] sm:text-[10px] text-[#6c757d] uppercase tracking-wider">Account Number</span>
-                                  <span className="font-mono text-sm sm:text-base font-bold text-[#1e2022] tracking-wide">
-                                    {currentWiseInfo.accountNumber}
-                                  </span>
-                                </div>
-                                <button
-                                  type="button"
-                                  onClick={async (e) => {
-                                    e.stopPropagation();
-                                    try { await navigator.clipboard.writeText(currentWiseInfo.accountNumber); } catch {}
-                                  }}
-                                  className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#dee2e6] bg-white hover:border-[#c99a2c] hover:text-[#c99a2c] transition-all text-[11px] font-sans font-medium text-[#495057] cursor-pointer"
-                                >
-                                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                                  </svg>
-                                  Copy
-                                </button>
-                              </div>
-
-                              {/* Bank Code / Sort Code / IBAN */}
-                              {currentWiseInfo.codeLabel && (
-                                <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
-                                  <span className="text-[#6c757d] text-[11px]">{currentWiseInfo.codeLabel}:</span>
                                   <div className="flex items-center gap-1.5">
-                                    <span className="font-semibold text-[#1e2022] text-xs">{currentWiseInfo.codeValue}</span>
-                                    <CopyIconButton 
-                                      valueToCopy={currentWiseInfo.code === "CAD" ? "705-00001" : currentWiseInfo.codeValue}
-                                    />
+                                    <span className="font-semibold text-[#1e2022] text-xs">Ngan Thi Thu Vu</span>
+                                    <CopyIconButton valueToCopy="Ngan Thi Thu Vu" />
                                   </div>
                                 </div>
-                              )}
-                            </div>
+
+                                {/* Bank Name */}
+                                <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                  <span className="text-[#6c757d] text-[11px]">Bank Name:</span>
+                                    <div className="flex items-center gap-1.5 min-w-0">
+                                      <span className="font-semibold text-[#1e2022] text-xs truncate max-w-[170px] sm:max-w-none">{currentWiseInfo.bank}</span>
+                                      <CopyIconButton valueToCopy={currentWiseInfo.bank} />
+                                    </div>
+                                  </div>
+
+                                  {/* Account Number Box (Prominent & Elevated) */}
+                                  <div className="bg-[#f8f9fa] rounded-lg p-2 sm:p-2.5 border border-[#e9ecef] flex items-center justify-between gap-2">
+                                    <div>
+                                      <span className="block text-[9px] sm:text-[10px] text-[#6c757d] uppercase tracking-wider">Account Number</span>
+                                      <span className="font-mono text-sm sm:text-base font-bold text-[#1e2022] tracking-wide">
+                                        {currentWiseInfo.accountNumber}
+                                      </span>
+                                    </div>
+                                    <button
+                                      type="button"
+                                      onClick={async (e) => {
+                                        e.stopPropagation();
+                                        try { await navigator.clipboard.writeText(currentWiseInfo.accountNumber); } catch { }
+                                      }}
+                                      className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#dee2e6] bg-white hover:border-[#c99a2c] hover:text-[#c99a2c] transition-all text-[11px] font-sans font-medium text-[#495057] cursor-pointer"
+                                    >
+                                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </div>
+
+                                  {/* Bank Code / Sort Code / IBAN (Spacer included for NZD to keep layout perfectly rigid) */}
+                                  {currentWiseInfo.codeLabel ? (
+                                    <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                      <span className="text-[#6c757d] text-[11px]">{currentWiseInfo.codeLabel}:</span>
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="font-semibold text-[#1e2022] text-xs">{currentWiseInfo.codeValue}</span>
+                                        <CopyIconButton
+                                          valueToCopy={currentWiseInfo.code === "CAD" ? "705-00001" : currentWiseInfo.codeValue}
+                                        />
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div className="flex items-center justify-between py-1 border-b border-transparent invisible select-none" aria-hidden="true">
+                                      <span className="text-[#6c757d] text-[11px]">Routing:</span>
+                                      <div className="flex items-center gap-1.5">
+                                        <span className="font-semibold text-xs">—</span>
+                                        <span className="p-1 inline-flex items-center text-transparent">
+                                          <svg width="13" height="13" viewBox="0 0 24 24"><rect width="13" height="13"/></svg>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  )}
+                                    </div>
                           </div>
 
-                          {/* Note */}
-                          <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
-                            * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
-                          </p>
-                        </div>
+                                {/* Note */}
+                                <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
+                                  * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
+                                </p>
+                              </div>
                       )}
-                    </div>
+                            </div>
 
-                    {/* ── BAR 2: Zelle (USD) ── */}
-                    <div
-                      ref={zelleRef}
-                      className={`
+                            {/* ── BAR 2: Zelle (USD) ── */}
+                            <div
+                              ref={zelleRef}
+                              className={`
                         rounded-xl border transition-all duration-300 overflow-hidden
                         ${paymentMethod === "zelle"
-                          ? "border-[#c99a2c] shadow-[0_2px_12px_rgba(201,154,44,0.12)]"
-                          : "border-[#e9ecef] bg-white hover:border-[#c99a2c]/40"
-                        }
+                                  ? "border-[#c99a2c] shadow-[0_2px_12px_rgba(201,154,44,0.12)]"
+                                  : "border-[#e9ecef] bg-white hover:border-[#c99a2c]/40"
+                                }
                       `}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => handleSelectPayment("zelle")}
-                        className={`
+                            >
+                              <button
+                                type="button"
+                                onClick={() => handleSelectPayment("zelle")}
+                                className={`
                           w-full px-3.5 py-3 sm:px-4 sm:py-3.5 flex items-center justify-between text-left transition-all duration-200 cursor-pointer
                           ${paymentMethod === "zelle"
-                            ? "bg-gradient-to-r from-[#fdfaf3] to-[#f8f4e8] border-b border-[#e9ecef]"
-                            : "bg-white hover:bg-[#fdfaf3]"
-                          }
+                                    ? "bg-gradient-to-r from-[#fdfaf3] to-[#f8f4e8] border-b border-[#e9ecef]"
+                                    : "bg-white hover:bg-[#fdfaf3]"
+                                  }
                         `}
-                      >
-                        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                          <span className="w-8 h-8 rounded-lg bg-[#6d1ed4]/10 flex items-center justify-center text-base sm:text-lg shrink-0">
-                            ⚡
-                          </span>
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
-                                Zelle (USD)
-                              </span>
-                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#6d1ed4]/10 text-[#6d1ed4] font-semibold shrink-0">
-                                US Direct
-                              </span>
-                            </div>
-                            <p className="font-sans text-[11px] text-[#6c757d] truncate">
-                              Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-2 shrink-0 ml-2">
-                          {paymentMethod === "zelle" ? (
-                            <span className="w-5 h-5 rounded-full bg-[#c99a2c] flex items-center justify-center text-white">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            </span>
-                          ) : (
-                            <span className="w-5 h-5 rounded-full border border-[#dee2e6] flex items-center justify-center" />
-                          )}
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className={`text-[#6c757d] transition-transform duration-200 ${paymentMethod === "zelle" ? "rotate-180 text-[#c99a2c]" : ""}`}
-                          >
-                            <path d="M6 9l6 6 6-6"/>
-                          </svg>
-                        </div>
-                      </button>
-
-                      {/* Zelle Dropdown Details */}
-                      {paymentMethod === "zelle" && (
-                        <div className="p-3 sm:p-4 bg-white space-y-3">
-                          {/* Header info */}
-                          <div className="flex items-baseline justify-between border-b border-[#f1f3f5] pb-2">
-                            <div>
-                              <h4 className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
-                                Zelle — USD Transfer
-                              </h4>
-                              <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d]">
-                                Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
-                              </p>
-                            </div>
-                            <span className="px-2 py-0.5 rounded-full bg-[#c99a2c]/10 text-[#c99a2c] text-[10px] sm:text-[11px] font-bold shrink-0">
-                              US Direct
-                            </span>
-                          </div>
-
-                          {/* QR Code & Details Layout */}
-                          <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-3 items-start pt-1">
-                            {/* QR Code */}
-                            <div className="flex sm:flex-col items-center gap-2.5 p-2 rounded-lg border border-[#e9ecef] bg-[#f8f9fa] shrink-0">
-                              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md bg-white p-1 border border-[#e9ecef] shrink-0">
-                                <Image
-                                  src="/images/zelle-qr.png"
-                                  alt="Zelle QR Code"
-                                  fill
-                                  className="object-contain p-0.5"
-                                  sizes="(max-width: 640px) 80px, 96px"
-                                />
-                              </div>
-                              <div className="text-left sm:text-center min-w-0">
-                                <span className="font-sans text-[10px] text-[#6c757d] uppercase tracking-wider block font-semibold">
-                                  Quét mã Zelle
-                                </span>
-                                <span className="text-[10px] text-[#6d1ed4] font-medium block">
-                                  Zero Fee
-                                </span>
-                              </div>
-                            </div>
-
-                            {/* Details */}
-                            <div className="space-y-2 font-sans text-xs">
-                              {/* Phone */}
-                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
-                                <span className="text-[#6c757d] text-[11px]">Zelle Phone Number:</span>
-                                <div className="flex items-center gap-1.5">
-                                  <span className="font-semibold text-[#1e2022] text-xs">656-214-1655</span>
-                                  <CopyIconButton valueToCopy="6562141655" />
+                              >
+                                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                  <span className="w-8 h-8 rounded-lg bg-[#6d1ed4]/10 flex items-center justify-center text-base sm:text-lg shrink-0">
+                                    ⚡
+                                  </span>
+                                  <div className="min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <span className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                        Zelle (USD)
+                                      </span>
+                                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#6d1ed4]/10 text-[#6d1ed4] font-semibold shrink-0">
+                                        US Direct
+                                      </span>
+                                    </div>
+                                    <p className="font-sans text-[11px] text-[#6c757d] truncate">
+                                      Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
+                                    </p>
+                                  </div>
                                 </div>
-                              </div>
 
-                              {/* Recipient */}
-                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
-                                <span className="text-[#6c757d] text-[11px]">Recipient:</span>
-                                <div className="flex items-center gap-1.5">
-                                  <span className="font-semibold text-[#1e2022] text-xs">Ngan Vu</span>
-                                  <CopyIconButton valueToCopy="Ngan Vu" />
+                                <div className="flex items-center gap-2 shrink-0 ml-2">
+                                  {paymentMethod === "zelle" ? (
+                                    <span className="w-5 h-5 rounded-full bg-[#c99a2c] flex items-center justify-center text-white">
+                                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                                    </span>
+                                  ) : (
+                                    <span className="w-5 h-5 rounded-full border border-[#dee2e6] flex items-center justify-center" />
+                                  )}
+                                  <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className={`text-[#6c757d] transition-transform duration-200 ${paymentMethod === "zelle" ? "rotate-180 text-[#c99a2c]" : ""}`}
+                                  >
+                                    <path d="M6 9l6 6 6-6" />
+                                  </svg>
                                 </div>
-                              </div>
+                              </button>
 
-                              {/* Note */}
-                              <p className="text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
-                                * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản qua Zelle với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                              {/* Zelle Dropdown Details */}
+                              {paymentMethod === "zelle" && (
+                                <div className="p-3 sm:p-4 bg-white space-y-3">
+                                  {/* Header info */}
+                                  <div className="flex items-baseline justify-between border-b border-[#f1f3f5] pb-2">
+                                    <div>
+                                      <h4 className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                        Zelle — USD Transfer
+                                      </h4>
+                                      <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d]">
+                                        Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
+                                      </p>
+                                    </div>
+                                    <span className="px-2 py-0.5 rounded-full bg-[#c99a2c]/10 text-[#c99a2c] text-[10px] sm:text-[11px] font-bold shrink-0">
+                                      US Direct
+                                    </span>
+                                  </div>
+
+                                  {/* QR Code & Details Layout */}
+                                  <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-3 items-start pt-1">
+                                    {/* QR Code */}
+                                    <div className="flex sm:flex-col items-center gap-2.5 p-2 rounded-lg border border-[#e9ecef] bg-[#f8f9fa] shrink-0">
+                                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md bg-white p-1 border border-[#e9ecef] shrink-0">
+                                        <Image
+                                          src="/images/zelle-qr.png"
+                                          alt="Zelle QR Code"
+                                          fill
+                                          className="object-contain p-0.5"
+                                          sizes="(max-width: 640px) 80px, 96px"
+                                        />
+                                      </div>
+                                      <div className="text-left sm:text-center min-w-0">
+                                        <span className="font-sans text-[10px] text-[#6c757d] uppercase tracking-wider block font-semibold">
+                                          Quét mã Zelle
+                                        </span>
+                                        <span className="text-[10px] text-[#6d1ed4] font-medium block">
+                                          Zero Fee
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    {/* Details */}
+                                    <div className="space-y-2 font-sans text-xs">
+                                      {/* Phone */}
+                                      <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                        <span className="text-[#6c757d] text-[11px]">Zelle Phone Number:</span>
+                                          <div className="flex items-center gap-1.5">
+                                            <span className="font-semibold text-[#1e2022] text-xs">656-214-1655</span>
+                                            <CopyIconButton valueToCopy="6562141655" />
+                                          </div>
+                                        </div>
+
+                                        {/* Recipient */}
+                                        <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                          <span className="text-[#6c757d] text-[11px]">Recipient:</span>
+                                            <div className="flex items-center gap-1.5">
+                                              <span className="font-semibold text-[#1e2022] text-xs">Ngan Vu</span>
+                                              <CopyIconButton valueToCopy="Ngan Vu" />
+                                            </div>
+                                          </div>
+
+                                          {/* Note */}
+                                          <p className="text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
+                                            * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản qua Zelle với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
                       )}
-                    </div>
-                  </div>
+                                  </div>
+                                </div>
 
                   {/* Submit CTA */}
-                  <div className="pt-3">
-                    <button
-                      type="submit"
-                      className="
+                              <div className="pt-3">
+                                <button
+                                  type="submit"
+                                  className="
                         w-full bg-[var(--color-gold)] text-[var(--color-charcoal)]
                         font-sans font-semibold text-xs tracking-[0.18em] uppercase
                         py-3.5 transition-all duration-300
                         hover:bg-[var(--color-gold-light)] hover:shadow-gold
                         active:scale-[0.98] cursor-pointer
                       "
-                    >
-                      {t("confirmBooking")}
-                    </button>
-                  </div>
-                </form>
-              </div>
+                                >
+                                  {t("confirmBooking")}
+                                </button>
+                              </div>
+                            </form>
+                          </div>
             )}
 
-            {/* ── State 4: Submitting ── */}
-            {step === "submitting" && (
-              <div className="py-20 flex flex-col items-center justify-center gap-4 text-center">
-                <div className="w-12 h-12 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin" />
-                <p className="font-serif text-lg text-[#1e2022]">
-                  {t("processing")}
-                </p>
-                <p className="font-sans text-xs text-[#6c757d]">
-                  Vui lòng không đóng trình duyệt...
-                </p>
-              </div>
-            )}
+                          {/* ── State 4: Submitting ── */}
+                          {step === "submitting" && (
+                            <div className="py-20 flex flex-col items-center justify-center gap-4 text-center">
+                              <div className="w-12 h-12 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin" />
+                              <p className="font-serif text-lg text-[#1e2022]">
+                                {t("processing")}
+                              </p>
+                              <p className="font-sans text-xs text-[#6c757d]">
+                                Vui lòng không đóng trình duyệt...
+                              </p>
+                            </div>
+                          )}
 
-            {/* ── State 5: Booking Success ── */}
-            {step === "success" && (
-              <div className="py-6 text-center flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full border-2 border-[var(--color-gold)] flex items-center justify-center text-3xl text-[var(--color-gold)] mb-4">
-                  ✓
-                </div>
+                          {/* ── State 5: Booking Success ── */}
+                          {step === "success" && (
+                            <div className="py-6 text-center flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full border-2 border-[var(--color-gold)] flex items-center justify-center text-3xl text-[var(--color-gold)] mb-4">
+                                ✓
+                              </div>
 
-                <h3 className="font-serif text-2xl text-[#1e2022] mb-2">
-                  {t("bookingSuccess")}
-                </h3>
-                <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
-                  {t("bookingSuccessSub")}
-                </p>
+                              <h3 className="font-serif text-2xl text-[#1e2022] mb-2">
+                                {t("bookingSuccess")}
+                              </h3>
+                              <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
+                                {t("bookingSuccessSub")}
+                              </p>
 
-                {createdBooking?.id && (
-                  <div className="border border-[var(--color-gold)] bg-[#f8f9fa] px-6 py-4 mb-6 inline-block">
-                    <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6c757d] block mb-1">
-                      {t("bookingCode")}
-                    </span>
-                    <div className="flex items-center gap-2 justify-center">
-                      <CopyableField 
-                        text={createdBooking.id.slice(0, 8).toUpperCase()} 
-                        className="text-lg sm:text-xl font-bold py-1 px-3 border-[var(--color-gold)]"
-                      />
-                    </div>
-                  </div>
-                )}
+                              {createdBooking?.id && (
+                                <div className="border border-[var(--color-gold)] bg-[#f8f9fa] px-6 py-4 mb-6 inline-block">
+                                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6c757d] block mb-1">
+                                    {t("bookingCode")}
+                                  </span>
+                                  <div className="flex items-center gap-2 justify-center">
+                                    <CopyableField
+                                      text={createdBooking.id.slice(0, 8).toUpperCase()}
+                                      className="text-lg sm:text-xl font-bold py-1 px-3 border-[var(--color-gold)]"
+                                    />
+                                  </div>
+                                </div>
+                              )}
 
-                <div className="w-full border border-[#e9ecef] bg-[#f8f9fa] rounded-xl p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
-                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
-                    <span className="text-[#6c757d]">Khách sạn:</span>
-                    <span className="text-[#1e2022] font-medium">SOHO Residence & Hotel (100 Cô Giang, Q1, TP.HCM)</span>
-                  </div>
-                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
-                    <span className="text-[#6c757d]">Khách hàng:</span>
-                    <span className="text-[#1e2022] font-medium">{fullName} ({phone})</span>
-                  </div>
-                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
-                    <span className="text-[#6c757d]">Lịch lưu trú:</span>
-                    <span className="text-[#1e2022] font-medium">{searchParams.checkIn} → {searchParams.checkOut} ({nights} {t("nights")})</span>
-                  </div>
-                  <div className="flex justify-between py-1 border-b border-[#e9ecef]">
-                    <span className="text-[#6c757d]">Phương thức thanh toán:</span>
-                    <span className="text-[var(--color-gold)] font-medium">
-                      {paymentMethod === "wise" ? `Wise Transfer (${selectedCurrency})` : "Zelle (USD)"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-1">
-                    <span className="text-[#6c757d]">Tổng tiền ước tính:</span>
-                    <span className="text-[var(--color-gold)] font-medium">
-                      {formatPrice(selectedRoom?.rate_plans?.[0]?.estimated_total_price || 0)}
-                    </span>
-                  </div>
-                </div>
+                              <div className="w-full border border-[#e9ecef] bg-[#f8f9fa] rounded-xl p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
+                                <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                                  <span className="text-[#6c757d]">Khách sạn:</span>
+                                  <span className="text-[#1e2022] font-medium">SOHO Residence & Hotel (100 Cô Giang, Q1, TP.HCM)</span>
+                                </div>
+                                <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                                  <span className="text-[#6c757d]">Khách hàng:</span>
+                                  <span className="text-[#1e2022] font-medium">{fullName} ({phone})</span>
+                                </div>
+                                <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                                  <span className="text-[#6c757d]">Lịch lưu trú:</span>
+                                  <span className="text-[#1e2022] font-medium">{searchParams.checkIn} → {searchParams.checkOut} ({nights} {t("nights")})</span>
+                                </div>
+                                <div className="flex justify-between py-1 border-b border-[#e9ecef]">
+                                  <span className="text-[#6c757d]">Phương thức thanh toán:</span>
+                                  <span className="text-[var(--color-gold)] font-medium">
+                                    {paymentMethod === "wise" ? `Wise Transfer (${selectedCurrency})` : "Zelle (USD)"}
+                                  </span>
+                                </div>
+                                <div className="flex justify-between py-1">
+                                  <span className="text-[#6c757d]">Tổng tiền ước tính:</span>
+                                  <span className="text-[var(--color-gold)] font-medium">
+                                    {formatPrice(selectedRoom?.rate_plans?.[0]?.estimated_total_price || 0)}
+                                  </span>
+                                </div>
+                              </div>
 
-                <div className="p-3 bg-[#f8f9fa] border border-[#e9ecef] text-left font-sans text-xs text-[#6c757d] mb-6 flex items-start gap-2.5">
-                  <span className="text-[var(--color-gold)] text-sm">ℹ️</span>
-                  <div>
-                    <p className="text-[#1e2022] font-medium mb-0.5">
-                      {t("receptionCall")}
-                    </p>
-                    <p>{t("checkInNotice")} • {t("checkOutNotice")}</p>
-                    <p className="mt-1">{t("supportHotline")} <span className="text-[var(--color-gold)] font-semibold">(+84) 91 771 9966</span></p>
-                  </div>
-                </div>
+                              <div className="p-3 bg-[#f8f9fa] border border-[#e9ecef] text-left font-sans text-xs text-[#6c757d] mb-6 flex items-start gap-2.5">
+                                <span className="text-[var(--color-gold)] text-sm">ℹ️</span>
+                                <div>
+                                  <p className="text-[#1e2022] font-medium mb-0.5">
+                                    {t("receptionCall")}
+                                  </p>
+                                  <p>{t("checkInNotice")} • {t("checkOutNotice")}</p>
+                                  <p className="mt-1">{t("supportHotline")} <span className="text-[var(--color-gold)] font-semibold">(+84) 91 771 9966</span></p>
+                                </div>
+                              </div>
 
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="
+                              <button
+                                type="button"
+                                onClick={onClose}
+                                className="
                     bg-[var(--color-gold)] text-[var(--color-charcoal)]
                     font-sans font-semibold text-xs tracking-[0.18em] uppercase
                     px-10 py-3.5 transition-all duration-300
                     hover:bg-[var(--color-gold-light)] active:scale-95 cursor-pointer
                   "
-                >
-                  {t("close")}
-                </button>
-              </div>
-            )}
+                              >
+                                {t("close")}
+                              </button>
+                            </div>
+                          )}
 
-            {/* ── State 6: Error ── */}
-            {step === "error" && (
-              <div className="py-12 text-center">
-                <div className="w-12 h-12 rounded-full border border-red-500/40 text-red-400 flex items-center justify-center text-xl mx-auto mb-4">
-                  ✕
-                </div>
-                <h3 className="font-serif text-lg text-red-400 mb-2">
-                  Đã có lỗi xảy ra
-                </h3>
-                <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
-                  {errorMessage || "Không thể hoàn thành yêu cầu. Vui lòng thử lại hoặc gọi hotline (+84) 91 771 9966."}
-                </p>
-                <div className="flex justify-center gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setStep("select_room")}
-                    className="
+                          {/* ── State 6: Error ── */}
+                          {step === "error" && (
+                            <div className="py-12 text-center">
+                              <div className="w-12 h-12 rounded-full border border-red-500/40 text-red-400 flex items-center justify-center text-xl mx-auto mb-4">
+                                ✕
+                              </div>
+                              <h3 className="font-serif text-lg text-red-400 mb-2">
+                                Đã có lỗi xảy ra
+                              </h3>
+                              <p className="font-sans text-xs text-[#6c757d] max-w-md mx-auto mb-6">
+                                {errorMessage || "Không thể hoàn thành yêu cầu. Vui lòng thử lại hoặc gọi hotline (+84) 91 771 9966."}
+                              </p>
+                              <div className="flex justify-center gap-4">
+                                <button
+                                  type="button"
+                                  onClick={() => setStep("select_room")}
+                                  className="
                       border border-[#e9ecef] text-[#1e2022]
                       px-6 py-2.5 text-xs font-sans tracking-[0.15em] uppercase
                       hover:border-[var(--color-gold)] hover:text-[var(--color-gold)] cursor-pointer
                     "
-                  >
-                    ← Thử chọn lại
-                  </button>
-                  <a
-                    href="tel:+84917719966"
-                    className="
+                                >
+                                  ← Thử chọn lại
+                                </button>
+                                <a
+                                  href="tel:+84917719966"
+                                  className="
                       bg-[var(--color-gold)] text-[var(--color-charcoal)]
                       px-6 py-2.5 text-xs font-sans font-semibold tracking-[0.15em] uppercase
                     "
-                  >
-                    Gọi Hotline
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
+                                >
+                                  Gọi Hotline
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </div>
         </motion.div>
-      </div>
-    </AnimatePresence>
-  );
+                  </div>
+                </AnimatePresence>
+                );
 }
