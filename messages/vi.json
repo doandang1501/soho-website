@@ -203,6 +203,11 @@
       }
     }
   },
+  "testimonials": {
+    "eyebrow": "Đánh Giá Thực Tế",
+    "title": "Khách Hàng Nói Về SOHO",
+    "subtitle": "Những trải nghiệm lưu trú chân thực được chia sẻ từ du khách khắp nơi trên thế giới."
+  },
   "footer": {
     "tagline": "Khách sạn căn hộ dịch vụ tiện nghi tại Quận 1, TP. Hồ Chí Minh.",
     "residences": "Căn Hộ",

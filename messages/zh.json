@@ -203,6 +203,11 @@
       }
     }
   },
+  "testimonials": {
+    "eyebrow": "住客好评",
+    "title": "住客眼中的 SOHO",
+    "subtitle": "来自世界各地旅行者的真实入住体验分享。"
+  },
   "footer": {
     "tagline": "位于胡志明市第一郡的便利舒适服务式公寓酒店。",
     "residences": "客房房型",

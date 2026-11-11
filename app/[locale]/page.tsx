@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import HeroSection      from "@/components/sections/HeroSection";
-import RoomsSection     from "@/components/sections/RoomsSection";
+import HeroSection from "@/components/sections/HeroSection";
+import RoomsSection from "@/components/sections/RoomsSection";
 import AmenitiesSection from "@/components/sections/AmenitiesSection";
-import LocationSection  from "@/components/sections/LocationSection";
-import FAQSection       from "@/components/sections/FAQSection";
-import ContactSection   from "@/components/sections/ContactSection";
+import LocationSection from "@/components/sections/LocationSection";
+import FAQSection from "@/components/sections/FAQSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export async function generateMetadata({
   params,
@@ -16,9 +17,9 @@ export async function generateMetadata({
 
   if (locale === "vi") {
     return {
-      title: "SOHO Residence & Hotel – Căn Hộ Dịch Vụ Quận 1, TP.HCM",
+      title: "SOHO Residence & Hotel | Căn Hộ Dịch Vụ Quận 1",
       description:
-        "SOHO Residence & Hotel tại Quận 1, TP.HCM. Căn hộ Studio, 2–3 phòng ngủ có bếp, ban công, máy giặt riêng. Gần phố Bùi Viện và Chợ Bến Thành.",
+      "SOHO Residence & Hotel tại Quận 1, TP.HCM. Căn hộ Studio, 2–3 phòng ngủ tiện nghi có bếp, ban công, máy giặt riêng. Gần phố đi bộ Bùi Viện và Chợ Bến Thành.",
       keywords: [
         "căn hộ dịch vụ Quận 1",
         "khách sạn căn hộ Quận 1",
@@ -35,9 +36,9 @@ export async function generateMetadata({
         },
       },
       openGraph: {
-        title: "SOHO Residence & Hotel – Căn Hộ Dịch Vụ Quận 1, TP.HCM",
+        title: "SOHO Residence & Hotel | Căn Hộ Dịch Vụ Quận 1",
         description:
-          "SOHO Residence & Hotel tại Quận 1, TP.HCM. Căn hộ Studio, 2–3 phòng ngủ có bếp, ban công, máy giặt riêng. Gần phố Bùi Viện và Chợ Bến Thành.",
+        "SOHO Residence & Hotel tại Quận 1, TP.HCM. Căn hộ Studio, 2–3 phòng ngủ tiện nghi có bếp, ban công, máy giặt riêng. Gần phố đi bộ Bùi Viện và Chợ Bến Thành.",
         url: "https://sohoresidencehotel.vn/vi",
         siteName: "SOHO Residence & Hotel",
         images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
@@ -47,9 +48,9 @@ export async function generateMetadata({
 
   if (locale === "zh") {
     return {
-      title: "SOHO Residence & Hotel – 胡志明市第一郡服务式公寓",
+      title: "SOHO Residence & Hotel | 胡志明市第一郡服务式公寓",
       description:
-        "SOHO Residence & Hotel 位于胡志明市第一郡。配备厨房、独立阳台及专属洗衣机的开间、两居室和三居室公寓。临近范五老步行街与滨城市场。",
+      "SOHO Residence & Hotel 位于胡志明市第一郡核心区域。配备厨房、独立阳台及专属洗衣机的优质开间、两居室和三居室公寓。临近范五老步行街与滨城市场。",
       alternates: {
         canonical: "https://sohoresidencehotel.vn/zh",
         languages: {
@@ -59,9 +60,9 @@ export async function generateMetadata({
         },
       },
       openGraph: {
-        title: "SOHO Residence & Hotel – 胡志明市第一郡服务式公寓",
+        title: "SOHO Residence & Hotel | 胡志明市第一郡服务式公寓",
         description:
-          "SOHO Residence & Hotel 位于胡志明市第一郡。配备厨房、独立阳台及专属洗衣机的开间、两居室和三居室公寓。",
+        "SOHO Residence & Hotel 位于胡志明市第一郡核心区域。配备厨房、独立阳台及专属洗衣机的优质开间、两居室和三居室公寓。",
         url: "https://sohoresidencehotel.vn/zh",
         siteName: "SOHO Residence & Hotel",
         images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
@@ -70,9 +71,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: "SOHO Residence & Hotel – Serviced Apartments in District 1, HCMC",
+    title: "SOHO Residence & Hotel | Serviced Apartments District 1",
     description:
-      "SOHO Residence & Hotel in District 1, Ho Chi Minh City. Studio, 2-bed & 3-bed serviced apartments with kitchen, private balcony, and washing machine.",
+    "SOHO Residence & Hotel in District 1, Ho Chi Minh City. Studio, 2-bedroom & 3-bedroom serviced apartments with private kitchen, balcony, and washing machine. Near Bui Vien.",
     alternates: {
       canonical: "https://sohoresidencehotel.vn",
       languages: {
@@ -82,9 +83,9 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: "SOHO Residence & Hotel – Serviced Apartments in District 1, HCMC",
+      title: "SOHO Residence & Hotel | Serviced Apartments District 1",
       description:
-        "SOHO Residence & Hotel in District 1, Ho Chi Minh City. Studio, 2-bed & 3-bed serviced apartments.",
+      "SOHO Residence & Hotel in District 1, Ho Chi Minh City. Studio, 2-bedroom & 3-bedroom serviced apartments with private kitchen, balcony, and washing machine.",
       url: "https://sohoresidencehotel.vn",
       siteName: "SOHO Residence & Hotel",
       images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
@@ -148,18 +149,18 @@ export default async function HomePage({
     mainEntity: [
       {
         "@type": "Question",
-        name: locale === "vi" 
-          ? "SOHO có căn hộ cho gia đình không?" 
-          : locale === "zh" 
-          ? "SOHO 是否提供适合家庭入住的公寓？" 
-          : "Does SOHO offer apartments for families?",
+        name: locale === "vi"
+          ? "SOHO có căn hộ cho gia đình không?"
+          : locale === "zh"
+            ? "SOHO 是否提供适合家庭入住的公寓？"
+            : "Does SOHO offer apartments for families?",
         acceptedAnswer: {
           "@type": "Answer",
           text: locale === "vi"
             ? "Có. SOHO có căn 2 phòng ngủ 55 m² (phù hợp 3–4 người) và căn 3 phòng ngủ 95 m² (phù hợp 5–6 người). Cả hai đều có phòng khách, bếp nấu nướng và máy giặt riêng tại ban công."
             : locale === "zh"
-            ? "是的。SOHO 提供 55 m² 两居室公寓（适合 3–4 人）及 95 m² 三居室公寓（适合 5–6 人）。均配有客厅、厨房与独立专属洗衣机。"
-            : "Yes. SOHO offers 2-bedroom (55 m², 3–4 guests) and 3-bedroom (95 m², 5–6 guests) apartments with spacious living areas, kitchens, and private washing machines.",
+              ? "是的。SOHO 提供 55 m² 两居室公寓（适合 3–4 人）及 95 m² 三居室公寓（适合 5–6 人）。均配有客厅、厨房与独立专属洗衣机。"
+              : "Yes. SOHO offers 2-bedroom (55 m², 3–4 guests) and 3-bedroom (95 m², 5–6 guests) apartments with spacious living areas, kitchens, and private washing machines.",
         },
       },
       {
@@ -167,15 +168,15 @@ export default async function HomePage({
         name: locale === "vi"
           ? "SOHO có máy giặt và máy sấy không?"
           : locale === "zh"
-          ? "SOHO 是否配备洗衣机和烘干机？"
-          : "Does SOHO have washing machines and dryers?",
+            ? "SOHO 是否配备洗衣机和烘干机？"
+            : "Does SOHO have washing machines and dryers?",
         acceptedAnswer: {
           "@type": "Answer",
           text: locale === "vi"
             ? "Mỗi căn hộ tại SOHO đều có máy giặt riêng tại ban công. Đối với nhu cầu sấy khô, khách sạn có máy sấy dùng chung tại khu giặt ủi được nhân viên hỗ trợ."
             : locale === "zh"
-            ? "每套公寓独立阳台均配有专属洗衣机。公共洗衣区配有烘干机，工作人员乐意提供协助。"
-            : "Every apartment has an individual washing machine on its private balcony. Shared clothes dryers are available in the laundry area with staff assistance.",
+              ? "每套公寓独立阳台均配有专属洗衣机。公共洗衣区配有烘干机，工作人员乐意提供协助。"
+              : "Every apartment has an individual washing machine on its private balcony. Shared clothes dryers are available in the laundry area with staff assistance.",
         },
       },
       {
@@ -183,15 +184,15 @@ export default async function HomePage({
         name: locale === "vi"
           ? "SOHO gần phố Bùi Viện và Chợ Bến Thành không?"
           : locale === "zh"
-          ? "SOHO 是否靠近范五老街和滨城市场？"
-          : "Is SOHO close to Bui Vien Street and Ben Thanh Market?",
+            ? "SOHO 是否靠近范五老街和滨城市场？"
+            : "Is SOHO close to Bui Vien Street and Ben Thanh Market?",
         acceptedAnswer: {
           "@type": "Answer",
           text: locale === "vi"
             ? "SOHO Residence & Hotel tọa lạc tại 100 Cô Giang, Quận 1, rất gần và thuận tiện di chuyển đến phố đi bộ Bùi Viện và Chợ Bến Thành."
             : locale === "zh"
-            ? "SOHO 位于胡志明市第一郡 Cô Giang 街100号，前往范五老步行街与滨城市场非常便捷。"
-            : "SOHO Residence & Hotel is located at 100 Co Giang Street, District 1, providing convenient access to Bui Vien Walking Street and Ben Thanh Market.",
+              ? "SOHO 位于胡志明市第一郡 Cô Giang 街100号，前往范五老步行街与滨城市场非常便捷。"
+              : "SOHO Residence & Hotel is located at 100 Co Giang Street, District 1, providing convenient access to Bui Vien Walking Street and Ben Thanh Market.",
         },
       },
       {
@@ -199,15 +200,15 @@ export default async function HomePage({
         name: locale === "vi"
           ? "Quy trình nhận phòng tại SOHO diễn ra như thế nào?"
           : locale === "zh"
-          ? "在 SOHO 如何办理入住？"
-          : "How does check-in work at SOHO?",
+            ? "在 SOHO 如何办理入住？"
+            : "How does check-in work at SOHO?",
         acceptedAnswer: {
           "@type": "Answer",
           text: locale === "vi"
             ? "Khi đến sảnh tòa nhà, quý khách gọi trực tiếp hotline +84 91 771 9966. Nhân viên SOHO sẽ xuống đón và hỗ trợ nhận phòng. Khách đến sau 22:00 vui lòng thông báo trước. SOHO không áp dụng tự nhận phòng."
             : locale === "zh"
-            ? "抵达大堂时请致电 +84 91 771 9966，工作人员下楼协助办理入住。22:00后到达请提前告知。SOHO 不设自助入住。"
-            : "Upon arrival at the lobby, call +84 91 771 9966 for staff to assist your check-in. Guests arriving after 22:00 should inform in advance. SOHO does not operate self-check-in.",
+              ? "抵达大堂时请致电 +84 91 771 9966，工作人员下楼协助办理入住。22:00后到达请提前告知。SOHO 不设自助入住。"
+              : "Upon arrival at the lobby, call +84 91 771 9966 for staff to assist your check-in. Guests arriving after 22:00 should inform in advance. SOHO does not operate self-check-in.",
         },
       },
     ],
@@ -244,7 +245,10 @@ export default async function HomePage({
       {/* 5 — FAQ Section (AEO) */}
       <FAQSection />
 
-      {/* 6 — Contact CTA */}
+      {/* 6 — Guest Testimonials */}
+      <TestimonialsSection />
+
+      {/* 7 — Contact CTA */}
       <ContactSection />
     </>
   );

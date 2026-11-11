@@ -203,6 +203,11 @@
       }
     }
   },
+  "testimonials": {
+    "eyebrow": "Guest Reviews",
+    "title": "What Guests Say About SOHO",
+    "subtitle": "Authentic experiences shared by travellers from around the world."
+  },
   "footer": {
     "tagline": "Comfortable serviced apartment-hotel in District 1, Ho Chi Minh City.",
     "residences": "Residences",

@@ -113,6 +113,7 @@ export default function HeroSection() {
             {titleLines.map((line, i) => (
               <span key={i} className="block">
                 {i === 1 ? <span className="text-gold-gradient">{line}</span> : line}
+                {i < titleLines.length - 1 ? " " : ""}
               </span>
             ))}
           </motion.h1>

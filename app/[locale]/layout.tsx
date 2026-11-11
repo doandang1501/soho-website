@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   verification: {
     google: "asdughxL5e5BcG7BTvYtbq-E_H-qHebq6b5dtyDpiwo",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   title: {
     default: "SOHO Residence & Hotel",
     template: "%s | SOHO Residence & Hotel",
