@@ -166,7 +166,7 @@ export default function BookingModal({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"wise" | "zelle">("wise");
+  const [paymentMethod, setPaymentMethod] = useState<"wise" | "zelle" | null>(null);
   const [selectedCurrency, setSelectedCurrency] = useState("SGD");
   const [formError, setFormError] = useState("");
 
@@ -174,7 +174,12 @@ export default function BookingModal({
   const zelleRef = useRef<HTMLDivElement>(null);
 
   const handleSelectPayment = (method: "wise" | "zelle") => {
+    if (paymentMethod === method) {
+      setPaymentMethod(null);
+      return;
+    }
     setPaymentMethod(method);
+    setFormError("");
     setTimeout(() => {
       const target = method === "wise" ? wiseRef.current : zelleRef.current;
       if (target) {
@@ -204,6 +209,7 @@ export default function BookingModal({
     setStep("loading");
     setErrorMessage("");
     setSelectedRoom(null);
+    setPaymentMethod(null);
 
     const fetchAvailability = async () => {
       try {
@@ -271,6 +277,7 @@ export default function BookingModal({
   const handleSelectRoom = (room: AvailableRoomType) => {
     setSelectedRoom(room);
     setFormError("");
+    setPaymentMethod(null);
     setStep("guest_form");
   };
 
@@ -284,6 +291,10 @@ export default function BookingModal({
     }
     if (!phone.trim()) {
       setFormError("Vui lòng nhập số điện thoại để lễ tân liên hệ xác nhận.");
+      return;
+    }
+    if (!paymentMethod) {
+      setFormError("Vui lòng chọn phương thức thanh toán (Wise hoặc Zelle).");
       return;
     }
 
