@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,15 +11,17 @@ const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 const WISE_CURRENCIES = [
   {
     code: "SGD",
+    flag: "🇸🇬",
     name: "Đô la Singapore (SGD)",
     method: "FAST / PayNow",
     bank: "Wise Asia-Pacific Pte. Ltd.",
     accountNumber: "337-134-96",
-    codeLabel: "Mã ngân hàng (Bank Code)",
+    codeLabel: "Bank Code",
     codeValue: "0516",
   },
   {
     code: "GBP",
+    flag: "🇬🇧",
     name: "Bảng Anh (GBP)",
     method: "Faster Payments",
     bank: "Wise Payments Limited",
@@ -29,6 +31,7 @@ const WISE_CURRENCIES = [
   },
   {
     code: "CAD",
+    flag: "🇨🇦",
     name: "Đô la Canada (CAD)",
     method: "EFT",
     bank: "Wise Payments Canada Inc.",
@@ -38,6 +41,7 @@ const WISE_CURRENCIES = [
   },
   {
     code: "PHP",
+    flag: "🇵🇭",
     name: "Peso Philippines (PHP)",
     method: "InstaPay",
     bank: "Wise Pilipinas Inc.",
@@ -47,6 +51,7 @@ const WISE_CURRENCIES = [
   },
   {
     code: "NZD",
+    flag: "🇳🇿",
     name: "Đô la New Zealand (NZD)",
     method: "Local Bank Transfer",
     bank: "Wise Payments New Zealand Ltd.",
@@ -54,6 +59,7 @@ const WISE_CURRENCIES = [
   },
   {
     code: "EUR",
+    flag: "🇪🇺",
     name: "Euro (EUR)",
     method: "SEPA Instant",
     bank: "Wise Europe SA",
@@ -160,9 +166,22 @@ export default function BookingModal({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"property" | "wise" | "zelle">("property");
+  const [paymentMethod, setPaymentMethod] = useState<"wise" | "zelle">("wise");
   const [selectedCurrency, setSelectedCurrency] = useState("SGD");
   const [formError, setFormError] = useState("");
+
+  const wiseRef = useRef<HTMLDivElement>(null);
+  const zelleRef = useRef<HTMLDivElement>(null);
+
+  const handleSelectPayment = (method: "wise" | "zelle") => {
+    setPaymentMethod(method);
+    setTimeout(() => {
+      const target = method === "wise" ? wiseRef.current : zelleRef.current;
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 120);
+  };
 
   const formatPrice = (amount: number) => {
     return new Intl.NumberFormat("vi-VN").format(amount) + " VNĐ";
@@ -275,9 +294,7 @@ export default function BookingModal({
       const defaultRatePlan = selectedRoom.rate_plans?.[0];
       const paymentNote = paymentMethod === "wise" 
         ? `[Phương thức TT: Wise (${selectedCurrency})]`
-        : paymentMethod === "zelle"
-        ? `[Phương thức TT: Zelle (USD)]`
-        : `[Phương thức TT: Tại chỗ]`;
+        : `[Phương thức TT: Zelle (USD)]`;
 
       const fullNotes = [notes.trim(), paymentNote].filter(Boolean).join(" - ");
 
@@ -527,7 +544,7 @@ export default function BookingModal({
                   </div>
 
                   {formError && (
-                    <div className="p-3 bg-red-950/60 border border-red-800 text-red-200 text-xs font-sans">
+                    <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs font-sans rounded-lg">
                       {formError}
                     </div>
                   )}
@@ -604,210 +621,350 @@ export default function BookingModal({
                     />
                   </div>
 
-                  {/* ── Payment Methods Selector ── */}
-                  <div className="pt-2">
-                    <label className="block font-sans text-xs text-[#1e2022] font-medium mb-2.5">
-                      {t("paymentMethod")}
-                    </label>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-4">
-                      {/* 1: Pay at property */}
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod("property")}
-                        className={`
-                          p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
-                          ${paymentMethod === "property"
-                            ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
-                          }
-                        `}
-                      >
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-base">🏨</span>
-                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
-                            Tại khách sạn
-                          </span>
-                        </div>
-                        <span className="font-sans text-[11px] text-[#6c757d]">
-                          Tiền mặt / Thẻ / QR khi nhận phòng
-                        </span>
-                      </button>
-
-                      {/* 2: Wise Transfer */}
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod("wise")}
-                        className={`
-                          p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
-                          ${paymentMethod === "wise"
-                            ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
-                          }
-                        `}
-                      >
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-base">🌐</span>
-                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
-                            Wise Transfer
-                          </span>
-                        </div>
-                        <span className="font-sans text-[11px] text-[#6c757d]">
-                          Chuyển khoản quốc tế (SGD, GBP, CAD, EUR...)
-                        </span>
-                      </button>
-
-                      {/* 3: Zelle */}
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod("zelle")}
-                        className={`
-                          p-3 border text-left transition-all cursor-pointer flex flex-col justify-between
-                          ${paymentMethod === "zelle"
-                            ? "border-[var(--color-gold)] bg-[var(--color-gold)]/10"
-                            : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[var(--color-gold)]/40"
-                          }
-                        `}
-                      >
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-base">⚡</span>
-                          <span className="font-sans text-xs font-semibold text-[#1e2022]">
-                            Zelle (USD)
-                          </span>
-                        </div>
-                        <span className="font-sans text-[11px] text-[#6c757d]">
-                          Dành cho khách hàng ngân hàng tại Mỹ
-                        </span>
-                      </button>
+                  {/* ── Payment Methods Accordion (2 Horizontal Bars) ── */}
+                  <div className="pt-3 space-y-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-5 h-px bg-[#c99a2c]" />
+                      <span className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#c99a2c] font-bold">
+                        {t("paymentMethod")}
+                      </span>
                     </div>
 
-                    {/* Details for Selected Payment */}
-                    {paymentMethod === "property" && (
-                      <div className="border border-[#e9ecef] bg-[#f8f9fa] p-3.5 flex items-start gap-3">
-                        <span className="text-lg">💳</span>
-                        <div>
-                          <span className="font-sans text-xs font-semibold text-[var(--color-gold)] block">
-                            {t("payAtProperty")}
+                    {/* ── BAR 1: Wise Transfer ── */}
+                    <div
+                      ref={wiseRef}
+                      className={`
+                        rounded-xl border transition-all duration-300 overflow-hidden
+                        ${paymentMethod === "wise"
+                          ? "border-[#c99a2c] shadow-[0_2px_12px_rgba(201,154,44,0.12)]"
+                          : "border-[#e9ecef] bg-white hover:border-[#c99a2c]/40"
+                        }
+                      `}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => handleSelectPayment("wise")}
+                        className={`
+                          w-full px-3.5 py-3 sm:px-4 sm:py-3.5 flex items-center justify-between text-left transition-all duration-200 cursor-pointer
+                          ${paymentMethod === "wise"
+                            ? "bg-gradient-to-r from-[#fdfaf3] to-[#f8f4e8] border-b border-[#e9ecef]"
+                            : "bg-white hover:bg-[#fdfaf3]"
+                          }
+                        `}
+                      >
+                        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                          <span className="w-8 h-8 rounded-lg bg-[#9fe870]/20 flex items-center justify-center text-base sm:text-lg shrink-0">
+                            🌐
                           </span>
-                          <p className="font-sans text-[11px] text-[#6c757d] leading-relaxed mt-0.5">
-                            {t("payAtPropertyNotice")}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {paymentMethod === "zelle" && (
-                      <div className="border border-[var(--color-gold)]/60 bg-[#f8f9fa] p-4">
-                        <div className="flex items-center justify-between mb-3 border-b border-[#e9ecef] pb-2">
-                          <span className="font-sans text-xs font-semibold text-[var(--color-gold)] uppercase tracking-wider">
-                            Thông tin thanh toán Zelle (USD)
-                          </span>
-                          <span className="text-xs bg-[var(--color-gold)]/20 text-[var(--color-gold)] px-2 py-0.5">
-                            US Direct
-                          </span>
-                        </div>
-                        <div className="space-y-2 font-sans text-xs">
-                          <div className="flex items-center justify-between flex-wrap gap-2">
-                            <span className="text-[#6c757d]">Số điện thoại Zelle:</span>
-                            <CopyableField text="6562141655" />
-                          </div>
-                          <div className="flex items-center justify-between flex-wrap gap-2">
-                            <span className="text-[#6c757d]">Người nhận (Recipient):</span>
-                            <CopyableField text="Ngan Vu" />
-                          </div>
-                          <p className="text-[11px] text-[#6c757d] italic pt-2 border-t border-[#e9ecef] mt-2">
-                            * Sau khi gửi yêu cầu đặt phòng, quý khách có thể chuyển khoản qua Zelle với nội dung: <strong>[Tên của bạn] - [Số điện thoại]</strong>.
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {paymentMethod === "wise" && (
-                      <div className="border border-[var(--color-gold)]/60 bg-[#f8f9fa] p-4">
-                        <div className="flex items-center justify-between mb-3 border-b border-[#e9ecef] pb-2 flex-wrap gap-2">
-                          <span className="font-sans text-xs font-semibold text-[var(--color-gold)] uppercase tracking-wider">
-                            Thông tin thanh toán Wise
-                          </span>
-                          <div className="flex items-center gap-1.5 text-xs text-[#6c757d]">
-                            <span>Chủ tài khoản:</span>
-                            <CopyableField text="Ngan Thi Thu Vu" />
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                          {/* QR Code */}
-                          <div className="flex flex-col items-center justify-center p-3 border border-[#e9ecef] bg-black/40">
-                            <div className="relative w-36 h-36">
-                              <Image
-                                src="/images/wise-qr.jpg"
-                                alt="Wise Payment QR"
-                                fill
-                                className="object-contain"
-                                sizes="144px"
-                              />
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2">
+                              <span className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                Wise Transfer
+                              </span>
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#c99a2c]/10 text-[#c99a2c] font-semibold shrink-0">
+                                Quốc tế
+                              </span>
                             </div>
-                            <span className="font-sans text-[10px] text-[#6c757d] mt-2 tracking-wider uppercase">
-                              Quét mã Wise
+                            <p className="font-sans text-[11px] text-[#6c757d] truncate">
+                              Chuyển khoản quốc tế — SGD, GBP, CAD, EUR, PHP, NZD
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 shrink-0 ml-2">
+                          {paymentMethod === "wise" ? (
+                            <span className="w-5 h-5 rounded-full bg-[#c99a2c] flex items-center justify-center text-white">
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                          ) : (
+                            <span className="w-5 h-5 rounded-full border border-[#dee2e6] flex items-center justify-center" />
+                          )}
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={`text-[#6c757d] transition-transform duration-200 ${paymentMethod === "wise" ? "rotate-180 text-[#c99a2c]" : ""}`}
+                          >
+                            <path d="M6 9l6 6 6-6"/>
+                          </svg>
+                        </div>
+                      </button>
+
+                      {/* Wise Dropdown Details */}
+                      {paymentMethod === "wise" && (
+                        <div className="p-3 sm:p-4 bg-white space-y-3">
+                          {/* Header info */}
+                          <div className="flex items-baseline justify-between border-b border-[#f1f3f5] pb-2">
+                            <div>
+                              <h4 className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                Bank Transfer
+                              </h4>
+                              <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d]">
+                                Select your currency to view local bank details.
+                              </p>
+                            </div>
+                            <span className="px-2 py-0.5 rounded-full bg-[#c99a2c]/10 text-[#c99a2c] text-[10px] sm:text-[11px] font-bold shrink-0">
+                              {currentWiseInfo.method}
                             </span>
                           </div>
 
-                          {/* Currency Selector & Bank Details */}
-                          <div className="md:col-span-2 space-y-3 font-sans text-xs">
-                            <div>
-                              <span className="block text-[11px] text-[#6c757d] mb-1">
-                                Chọn loại tiền tệ chuyển khoản:
-                              </span>
-                              <div className="flex flex-wrap gap-1.5">
-                                {WISE_CURRENCIES.map((c) => (
-                                  <button
-                                    key={c.code}
-                                    type="button"
-                                    onClick={() => setSelectedCurrency(c.code)}
-                                    className={`
-                                      px-2.5 py-1 text-xs border font-medium cursor-pointer transition-colors
-                                      ${selectedCurrency === c.code
-                                        ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-[var(--color-charcoal)] font-semibold"
-                                        : "border-[#e9ecef] text-[#6c757d] hover:border-[var(--color-gold)]/50"
-                                      }
-                                    `}
-                                  >
+                          {/* Currency Grid */}
+                          <div>
+                            <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                              {WISE_CURRENCIES.map((c) => (
+                                <button
+                                  key={c.code}
+                                  type="button"
+                                  onClick={() => setSelectedCurrency(c.code)}
+                                  className={`
+                                    flex flex-col items-center gap-0.5 py-1.5 px-1 rounded-lg border transition-all duration-200 cursor-pointer
+                                    ${selectedCurrency === c.code
+                                      ? "border-[#c99a2c] bg-gradient-to-b from-[#fdf8ed] to-[#f5ecd4] shadow-xs"
+                                      : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[#c99a2c]/40 hover:bg-[#fdfaf3]"
+                                    }
+                                  `}
+                                >
+                                  <span className="text-base sm:text-lg leading-none">{c.flag}</span>
+                                  <span className={`font-sans text-[11px] sm:text-xs font-semibold ${selectedCurrency === c.code ? "text-[#c99a2c]" : "text-[#1e2022]"}`}>
                                     {c.code}
-                                  </button>
-                                ))}
+                                  </span>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* QR Code & Details Layout */}
+                          <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-3 items-start pt-1">
+                            {/* QR Code */}
+                            <div className="flex sm:flex-col items-center gap-2.5 p-2 rounded-lg border border-[#e9ecef] bg-[#f8f9fa] shrink-0">
+                              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md bg-white p-1 border border-[#e9ecef] shrink-0">
+                                <Image
+                                  src="/images/wise-qr.png"
+                                  alt="Wise QR Code"
+                                  fill
+                                  className="object-contain p-0.5"
+                                  sizes="(max-width: 640px) 80px, 96px"
+                                />
+                              </div>
+                              <div className="text-left sm:text-center min-w-0">
+                                <span className="font-sans text-[10px] text-[#6c757d] uppercase tracking-wider block font-semibold">
+                                  Quét mã Wise
+                                </span>
+                                <span className="text-[10px] text-[#c99a2c] font-medium block">
+                                  Fast Transfer
+                                </span>
                               </div>
                             </div>
 
-                            <div className="border border-[#e9ecef] p-3 bg-black/30 space-y-2">
-                              <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[#6c757d]">Phương thức:</span>
-                                <span className="text-[var(--color-gold)] font-medium">{currentWiseInfo.method}</span>
+                            {/* Bank Details */}
+                            <div className="space-y-2 font-sans text-xs">
+                              {/* Account Holder */}
+                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                <span className="text-[#6c757d] text-[11px]">Account Holder:</span>
+                                <div className="flex items-center gap-1">
+                                  <span className="font-semibold text-[#1e2022] text-xs">Ngan Thi Thu Vu</span>
+                                  <CopyableField text="Ngan Thi Thu Vu" className="border-0 bg-transparent px-0.5 text-xs" />
+                                </div>
                               </div>
-                              <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[#6c757d]">Ngân hàng:</span>
-                                <span className="text-[#1e2022]">{currentWiseInfo.bank}</span>
+
+                              {/* Bank Name */}
+                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                <span className="text-[#6c757d] text-[11px]">Bank Name:</span>
+                                <div className="flex items-center gap-1 min-w-0">
+                                  <span className="font-semibold text-[#1e2022] text-xs truncate max-w-[170px] sm:max-w-none">{currentWiseInfo.bank}</span>
+                                  <CopyableField text={currentWiseInfo.bank} className="border-0 bg-transparent px-0.5 text-xs shrink-0" />
+                                </div>
                               </div>
-                              <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                <span className="text-[#6c757d]">Số tài khoản / IBAN:</span>
-                                <CopyableField text={currentWiseInfo.accountNumber} />
+
+                              {/* Account Number Box (Prominent & Elevated) */}
+                              <div className="bg-[#f8f9fa] rounded-lg p-2 sm:p-2.5 border border-[#e9ecef] flex items-center justify-between gap-2">
+                                <div>
+                                  <span className="block text-[9px] sm:text-[10px] text-[#6c757d] uppercase tracking-wider">Account Number</span>
+                                  <span className="font-mono text-sm sm:text-base font-bold text-[#1e2022] tracking-wide">
+                                    {currentWiseInfo.accountNumber}
+                                  </span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={async (e) => {
+                                    e.stopPropagation();
+                                    try { await navigator.clipboard.writeText(currentWiseInfo.accountNumber); } catch {}
+                                  }}
+                                  className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#dee2e6] bg-white hover:border-[#c99a2c] hover:text-[#c99a2c] transition-all text-[11px] font-sans font-medium text-[#495057] cursor-pointer"
+                                >
+                                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                  </svg>
+                                  Copy
+                                </button>
                               </div>
+
+                              {/* Bank Code / Sort Code / IBAN */}
                               {currentWiseInfo.codeLabel && (
-                                <div className="flex items-center justify-between flex-wrap gap-1.5">
-                                  <span className="text-[#6c757d]">{currentWiseInfo.codeLabel}:</span>
-                                  <CopyableField 
-                                    text={currentWiseInfo.codeValue} 
-                                    valueToCopy={
-                                      currentWiseInfo.code === "CAD"
-                                        ? "705-00001"
-                                        : currentWiseInfo.codeValue
-                                    }
-                                  />
+                                <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                  <span className="text-[#6c757d] text-[11px]">{currentWiseInfo.codeLabel}:</span>
+                                  <div className="flex items-center gap-1">
+                                    <span className="font-semibold text-[#1e2022] text-xs">{currentWiseInfo.codeValue}</span>
+                                    <CopyableField 
+                                      text={currentWiseInfo.codeValue} 
+                                      valueToCopy={currentWiseInfo.code === "CAD" ? "705-00001" : currentWiseInfo.codeValue}
+                                      className="border-0 bg-transparent px-0.5 text-xs" 
+                                    />
+                                  </div>
                                 </div>
                               )}
                             </div>
                           </div>
+
+                          {/* Note */}
+                          <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
+                            * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
+                          </p>
                         </div>
-                      </div>
-                    )}
+                      )}
+                    </div>
+
+                    {/* ── BAR 2: Zelle (USD) ── */}
+                    <div
+                      ref={zelleRef}
+                      className={`
+                        rounded-xl border transition-all duration-300 overflow-hidden
+                        ${paymentMethod === "zelle"
+                          ? "border-[#c99a2c] shadow-[0_2px_12px_rgba(201,154,44,0.12)]"
+                          : "border-[#e9ecef] bg-white hover:border-[#c99a2c]/40"
+                        }
+                      `}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => handleSelectPayment("zelle")}
+                        className={`
+                          w-full px-3.5 py-3 sm:px-4 sm:py-3.5 flex items-center justify-between text-left transition-all duration-200 cursor-pointer
+                          ${paymentMethod === "zelle"
+                            ? "bg-gradient-to-r from-[#fdfaf3] to-[#f8f4e8] border-b border-[#e9ecef]"
+                            : "bg-white hover:bg-[#fdfaf3]"
+                          }
+                        `}
+                      >
+                        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                          <span className="w-8 h-8 rounded-lg bg-[#6d1ed4]/10 flex items-center justify-center text-base sm:text-lg shrink-0">
+                            ⚡
+                          </span>
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2">
+                              <span className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                Zelle (USD)
+                              </span>
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#6d1ed4]/10 text-[#6d1ed4] font-semibold shrink-0">
+                                US Direct
+                              </span>
+                            </div>
+                            <p className="font-sans text-[11px] text-[#6c757d] truncate">
+                              Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 shrink-0 ml-2">
+                          {paymentMethod === "zelle" ? (
+                            <span className="w-5 h-5 rounded-full bg-[#c99a2c] flex items-center justify-center text-white">
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                          ) : (
+                            <span className="w-5 h-5 rounded-full border border-[#dee2e6] flex items-center justify-center" />
+                          )}
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={`text-[#6c757d] transition-transform duration-200 ${paymentMethod === "zelle" ? "rotate-180 text-[#c99a2c]" : ""}`}
+                          >
+                            <path d="M6 9l6 6 6-6"/>
+                          </svg>
+                        </div>
+                      </button>
+
+                      {/* Zelle Dropdown Details */}
+                      {paymentMethod === "zelle" && (
+                        <div className="p-3 sm:p-4 bg-white space-y-3">
+                          {/* Header info */}
+                          <div className="flex items-baseline justify-between border-b border-[#f1f3f5] pb-2">
+                            <div>
+                              <h4 className="font-sans text-xs sm:text-sm font-bold text-[#1e2022]">
+                                Zelle — USD Transfer
+                              </h4>
+                              <p className="font-sans text-[10px] sm:text-[11px] text-[#6c757d]">
+                                Dành cho khách hàng có tài khoản ngân hàng tại Mỹ
+                              </p>
+                            </div>
+                            <span className="px-2 py-0.5 rounded-full bg-[#c99a2c]/10 text-[#c99a2c] text-[10px] sm:text-[11px] font-bold shrink-0">
+                              US Direct
+                            </span>
+                          </div>
+
+                          {/* QR Code & Details Layout */}
+                          <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-3 items-start pt-1">
+                            {/* QR Code */}
+                            <div className="flex sm:flex-col items-center gap-2.5 p-2 rounded-lg border border-[#e9ecef] bg-[#f8f9fa] shrink-0">
+                              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md bg-white p-1 border border-[#e9ecef] shrink-0">
+                                <Image
+                                  src="/images/zelle-qr.png"
+                                  alt="Zelle QR Code"
+                                  fill
+                                  className="object-contain p-0.5"
+                                  sizes="(max-width: 640px) 80px, 96px"
+                                />
+                              </div>
+                              <div className="text-left sm:text-center min-w-0">
+                                <span className="font-sans text-[10px] text-[#6c757d] uppercase tracking-wider block font-semibold">
+                                  Quét mã Zelle
+                                </span>
+                                <span className="text-[10px] text-[#6d1ed4] font-medium block">
+                                  Zero Fee
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Details */}
+                            <div className="space-y-2 font-sans text-xs">
+                              {/* Phone */}
+                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                <span className="text-[#6c757d] text-[11px]">Zelle Phone Number:</span>
+                                <div className="flex items-center gap-1">
+                                  <span className="font-semibold text-[#1e2022] text-xs">656-214-1655</span>
+                                  <CopyableField text="6562141655" className="border-0 bg-transparent px-0.5 text-xs" />
+                                </div>
+                              </div>
+
+                              {/* Recipient */}
+                              <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
+                                <span className="text-[#6c757d] text-[11px]">Recipient:</span>
+                                <div className="flex items-center gap-1">
+                                  <span className="font-semibold text-[#1e2022] text-xs">Ngan Vu</span>
+                                  <CopyableField text="Ngan Vu" className="border-0 bg-transparent px-0.5 text-xs" />
+                                </div>
+                              </div>
+
+                              {/* Note */}
+                              <p className="text-[10px] sm:text-[11px] text-[#6c757d] italic leading-relaxed pt-1 border-t border-[#f1f3f5]">
+                                * Sau khi gửi yêu cầu đặt phòng, quý khách vui lòng chuyển khoản qua Zelle với nội dung: <strong className="text-[#1e2022] not-italic">[Tên của bạn] - [Số điện thoại]</strong>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Submit CTA */}
@@ -870,7 +1027,7 @@ export default function BookingModal({
                   </div>
                 )}
 
-                <div className="w-full border border-[#e9ecef] bg-[#171717] p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
+                <div className="w-full border border-[#e9ecef] bg-[#f8f9fa] rounded-xl p-4 text-left font-sans text-xs mb-6 flex flex-col gap-2">
                   <div className="flex justify-between py-1 border-b border-[#e9ecef]">
                     <span className="text-[#6c757d]">Khách sạn:</span>
                     <span className="text-[#1e2022] font-medium">SOHO Residence & Hotel (100 Cô Giang, Q1, TP.HCM)</span>
@@ -886,7 +1043,7 @@ export default function BookingModal({
                   <div className="flex justify-between py-1 border-b border-[#e9ecef]">
                     <span className="text-[#6c757d]">Phương thức thanh toán:</span>
                     <span className="text-[var(--color-gold)] font-medium">
-                      {paymentMethod === "wise" ? `Wise Transfer (${selectedCurrency})` : paymentMethod === "zelle" ? "Zelle (USD)" : "Tại chỗ khi nhận phòng"}
+                      {paymentMethod === "wise" ? `Wise Transfer (${selectedCurrency})` : "Zelle (USD)"}
                     </span>
                   </div>
                   <div className="flex justify-between py-1">
