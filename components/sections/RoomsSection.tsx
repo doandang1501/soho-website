@@ -19,7 +19,7 @@ const ROOMS = [
   {
     key:     "twobed",
     image:   "/images/type_2.jpg",
-    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.jpg", "/images/2bed-3.jpg"],
+    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.webp", "/images/2bed-3.webp"],
     detailHref: "/2-bedroom",
   },
   {

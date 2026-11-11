@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const SLIDES = [
-  { src: "/images/hero_1.jpeg", alt: "SOHO Residence & Hotel - Không gian lưu trú tiện nghi giữa trung tâm Sài Gòn" },
-  { src: "/images/hero_2.png", alt: "SOHO Residence & Hotel - Căn hộ phòng ngủ tiện nghi" },
-  { src: "/images/hero_3.jpeg", alt: "SOHO Residence & Hotel - Khách sạn căn hộ Quận 1" },
+  { src: "/images/hero_1.webp", alt: "SOHO Residence & Hotel - Không gian lưu trú tiện nghi giữa trung tâm Sài Gòn" },
+  { src: "/images/hero_2.webp", alt: "SOHO Residence & Hotel - Căn hộ phòng ngủ tiện nghi" },
+  { src: "/images/hero_3.webp", alt: "SOHO Residence & Hotel - Khách sạn căn hộ Quận 1" },
 ];
 
 const SLIDE_DURATION = 5500;

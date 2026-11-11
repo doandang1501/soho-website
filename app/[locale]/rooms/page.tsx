@@ -25,7 +25,7 @@ const ROOMS = [
     key:     "twobed",
     image:   "/images/type_2.jpg",
     href:    "/2-bedroom",
-    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.jpg", "/images/2bed-3.jpg", "/images/2bed-4.jpg"],
+    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.webp", "/images/2bed-3.webp", "/images/2bed-4.jpg"],
   },
   {
     key:     "threebed",
@@ -53,7 +53,7 @@ export default async function RoomsPage({
       {/* ── Page header ─────────────────────────────────────────────────── */}
       <div className="relative h-48 sm:h-56 md:h-72 overflow-hidden mb-10 md:mb-16">
         <Image
-          src="/images/hero_2.png"
+          src="/images/hero_2.webp"
           alt="SOHO Rooms"
           fill
           priority

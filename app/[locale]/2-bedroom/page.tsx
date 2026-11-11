@@ -73,8 +73,8 @@ export async function generateMetadata({
 
 const IMAGES = [
   "/images/2bed-1.jpg",
-  "/images/2bed-2.jpg",
-  "/images/2bed-3.jpg",
+  "/images/2bed-2.webp",
+  "/images/2bed-3.webp",
   "/images/2bed-4.jpg",
 ];
 

@@ -41,7 +41,7 @@ export async function generateMetadata({
         "SOHO Residence & Hotel tại Quận 1, TP.HCM. Căn hộ Studio, 2–3 phòng ngủ tiện nghi có bếp, ban công, máy giặt riêng. Gần phố đi bộ Bùi Viện và Chợ Bến Thành.",
         url: "https://sohoresidencehotel.vn/vi",
         siteName: "SOHO Residence & Hotel",
-        images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
+        images: [{ url: "/images/hero_1.webp", width: 1200, height: 630 }],
       },
     };
   }
@@ -65,7 +65,7 @@ export async function generateMetadata({
         "SOHO Residence & Hotel 位于胡志明市第一郡核心区域。配备厨房、独立阳台及专属洗衣机的优质开间、两居室和三居室公寓。",
         url: "https://sohoresidencehotel.vn/zh",
         siteName: "SOHO Residence & Hotel",
-        images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
+        images: [{ url: "/images/hero_1.webp", width: 1200, height: 630 }],
       },
     };
   }
@@ -88,7 +88,7 @@ export async function generateMetadata({
       "SOHO Residence & Hotel in District 1, Ho Chi Minh City. Studio, 2-bedroom & 3-bedroom serviced apartments with private kitchen, balcony, and washing machine.",
       url: "https://sohoresidencehotel.vn",
       siteName: "SOHO Residence & Hotel",
-      images: [{ url: "/images/hero_1.jpeg", width: 1200, height: 630 }],
+      images: [{ url: "/images/hero_1.webp", width: 1200, height: 630 }],
     },
   };
 }

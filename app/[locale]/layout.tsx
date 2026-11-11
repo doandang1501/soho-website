@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "SOHO Residence & Hotel",
     images: [
       {
-        url: "/images/hero_1.jpeg",
+        url: "/images/hero_1.webp",
         width: 1200,
         height: 630,
         alt: "SOHO Residence & Hotel",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/hero_1.jpeg"],
+    images: ["/images/hero_1.webp"],
   },
   robots: {
     index: true,

@@ -39,7 +39,7 @@ export const ROOM_METADATA_MAP: Record<string, GoHostRoomMeta> = {
     nameEn: "2-Bedroom Apartment",
     nameZh: "两居室公寓",
     image: "/images/type_2.jpg",
-    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.jpg", "/images/2bed-3.jpg"],
+    gallery: ["/images/2bed-1.jpg", "/images/2bed-2.webp", "/images/2bed-3.webp"],
     detailHref: "/2-bedroom",
     maxOccupancy: 6,
   },
