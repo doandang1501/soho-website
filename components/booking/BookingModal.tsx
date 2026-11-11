@@ -134,6 +134,124 @@ function CopyableField({
   );
 }
 
+// ── Copy Icon Only Button ─────────────────────────────────────────────────────
+function CopyIconButton({
+  valueToCopy,
+  title = "Sao chép",
+}: {
+  valueToCopy: string;
+  title?: string;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(valueToCopy);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      title={title}
+      className="p-1 rounded text-[#6c757d] hover:text-[#c99a2c] hover:bg-[#c99a2c]/10 transition-colors cursor-pointer shrink-0 inline-flex items-center gap-1"
+      aria-label={title}
+    >
+      {copied ? (
+        <span className="text-[10px] text-emerald-600 font-sans font-semibold flex items-center gap-0.5 shrink-0">
+          ✓ Đã chép
+        </span>
+      ) : (
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
+// ── Currency Flag SVG Component (Reliable across Windows & Mobile) ────────────
+function CurrencyFlag({ code }: { code: string }) {
+  switch (code) {
+    case "SGD":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#ed2939" d="M0 0h640v240H0z"/>
+          <path fill="#fff" d="M0 240h640v240H0z"/>
+          <path fill="#fff" d="M205 120a70 70 0 1 1-140 0 70 70 0 0 1 140 0"/>
+          <path fill="#ed2939" d="M216 120a60 60 0 1 1-120 0 60 60 0 0 1 120 0"/>
+        </svg>
+      );
+    case "GBP":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#012169" d="M0 0h640v480H0z"/>
+          <path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0z"/>
+          <path fill="#c8102e" d="m425 285 215 155v40h-40L390 320zm-210-90L0 40V0h40l210 160zm-15 90L0 440v40h40l185-140zm240-90L640 40V0h-40L380 150z"/>
+          <path fill="#fff" d="M260 0h120v480H260zM0 180h640v120H0z"/>
+          <path fill="#c8102e" d="M280 0h80v480h-80zM0 200h640v80H0z"/>
+        </svg>
+      );
+    case "CAD":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#f00" d="M0 0h160v480H0zm480 0h160v480H480z"/>
+          <path fill="#fff" d="M160 0h320v480H160z"/>
+          <path fill="#f00" d="m320 90 20 40 40-10-15 45 35 15-30 20 15 40-40-10-5 50h-40l-5-50-40 10 15-40-30-20 35-15-15-45 40 10z"/>
+        </svg>
+      );
+    case "PHP":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#0038a8" d="M0 0h640v240H0z"/>
+          <path fill="#ce1126" d="M0 240h640v240H0z"/>
+          <path fill="#fff" d="m0 0 360 240L0 480z"/>
+          <circle cx="110" cy="240" r="40" fill="#fcd116"/>
+        </svg>
+      );
+    case "NZD":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#00247d" d="M0 0h640v480H0z"/>
+          <path fill="#fff" d="m0 0 240 180H0zm320 0-80 60V0zM0 240l80-60H0z"/>
+          <path fill="#cc142b" d="m480 120 10 30h30l-25 20 10 30-25-20-25 20 10-30-25-20h30zm80 140 8 24h24l-20 16 8 24-20-16-20 16 8-24-20-16h24z"/>
+        </svg>
+      );
+    case "EUR":
+      return (
+        <svg className="w-5 h-3.5 rounded-[2px] shadow-xs shrink-0" viewBox="0 0 640 480">
+          <path fill="#039" d="M0 0h640v480H0z"/>
+          <circle cx="320" cy="140" r="14" fill="#fc0"/>
+          <circle cx="320" cy="340" r="14" fill="#fc0"/>
+          <circle cx="220" cy="240" r="14" fill="#fc0"/>
+          <circle cx="420" cy="240" r="14" fill="#fc0"/>
+          <circle cx="250" cy="170" r="14" fill="#fc0"/>
+          <circle cx="390" cy="170" r="14" fill="#fc0"/>
+          <circle cx="250" cy="310" r="14" fill="#fc0"/>
+          <circle cx="390" cy="310" r="14" fill="#fc0"/>
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -733,14 +851,14 @@ export default function BookingModal({
                                   type="button"
                                   onClick={() => setSelectedCurrency(c.code)}
                                   className={`
-                                    flex flex-col items-center gap-0.5 py-1.5 px-1 rounded-lg border transition-all duration-200 cursor-pointer
+                                    flex flex-col items-center gap-1 py-1.5 px-1 rounded-lg border transition-all duration-200 cursor-pointer
                                     ${selectedCurrency === c.code
                                       ? "border-[#c99a2c] bg-gradient-to-b from-[#fdf8ed] to-[#f5ecd4] shadow-xs"
                                       : "border-[#e9ecef] bg-[#f8f9fa] hover:border-[#c99a2c]/40 hover:bg-[#fdfaf3]"
                                     }
                                   `}
                                 >
-                                  <span className="text-base sm:text-lg leading-none">{c.flag}</span>
+                                  <CurrencyFlag code={c.code} />
                                   <span className={`font-sans text-[11px] sm:text-xs font-semibold ${selectedCurrency === c.code ? "text-[#c99a2c]" : "text-[#1e2022]"}`}>
                                     {c.code}
                                   </span>
@@ -777,18 +895,18 @@ export default function BookingModal({
                               {/* Account Holder */}
                               <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                 <span className="text-[#6c757d] text-[11px]">Account Holder:</span>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1.5">
                                   <span className="font-semibold text-[#1e2022] text-xs">Ngan Thi Thu Vu</span>
-                                  <CopyableField text="Ngan Thi Thu Vu" className="border-0 bg-transparent px-0.5 text-xs" />
+                                  <CopyIconButton valueToCopy="Ngan Thi Thu Vu" />
                                 </div>
                               </div>
 
                               {/* Bank Name */}
                               <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                 <span className="text-[#6c757d] text-[11px]">Bank Name:</span>
-                                <div className="flex items-center gap-1 min-w-0">
+                                <div className="flex items-center gap-1.5 min-w-0">
                                   <span className="font-semibold text-[#1e2022] text-xs truncate max-w-[170px] sm:max-w-none">{currentWiseInfo.bank}</span>
-                                  <CopyableField text={currentWiseInfo.bank} className="border-0 bg-transparent px-0.5 text-xs shrink-0" />
+                                  <CopyIconButton valueToCopy={currentWiseInfo.bank} />
                                 </div>
                               </div>
 
@@ -820,12 +938,10 @@ export default function BookingModal({
                               {currentWiseInfo.codeLabel && (
                                 <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                   <span className="text-[#6c757d] text-[11px]">{currentWiseInfo.codeLabel}:</span>
-                                  <div className="flex items-center gap-1">
+                                  <div className="flex items-center gap-1.5">
                                     <span className="font-semibold text-[#1e2022] text-xs">{currentWiseInfo.codeValue}</span>
-                                    <CopyableField 
-                                      text={currentWiseInfo.codeValue} 
+                                    <CopyIconButton 
                                       valueToCopy={currentWiseInfo.code === "CAD" ? "705-00001" : currentWiseInfo.codeValue}
-                                      className="border-0 bg-transparent px-0.5 text-xs" 
                                     />
                                   </div>
                                 </div>
@@ -952,18 +1068,18 @@ export default function BookingModal({
                               {/* Phone */}
                               <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                 <span className="text-[#6c757d] text-[11px]">Zelle Phone Number:</span>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1.5">
                                   <span className="font-semibold text-[#1e2022] text-xs">656-214-1655</span>
-                                  <CopyableField text="6562141655" className="border-0 bg-transparent px-0.5 text-xs" />
+                                  <CopyIconButton valueToCopy="6562141655" />
                                 </div>
                               </div>
 
                               {/* Recipient */}
                               <div className="flex items-center justify-between py-1 border-b border-[#f1f3f5]">
                                 <span className="text-[#6c757d] text-[11px]">Recipient:</span>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1.5">
                                   <span className="font-semibold text-[#1e2022] text-xs">Ngan Vu</span>
-                                  <CopyableField text="Ngan Vu" className="border-0 bg-transparent px-0.5 text-xs" />
+                                  <CopyIconButton valueToCopy="Ngan Vu" />
                                 </div>
                               </div>
 
