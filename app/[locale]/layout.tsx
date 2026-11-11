@@ -12,17 +12,19 @@ import "../globals.css";
 
 // ── Fonts ──────────────────────────────────────────────────────────────────────
 const playfair = Playfair_Display({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-playfair",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "700"],
+  preload: true,
 });
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
+  preload: true,
 });
 
 // ── Root Layout Metadata with Verification, hreflang & OpenGraph ───────────────

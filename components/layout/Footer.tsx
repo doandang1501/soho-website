@@ -16,9 +16,9 @@ export default function Footer() {
   ] as const;
 
   const ROOM_LINKS = [
-    { labelKey: "studioLink",   href: "/#rooms" },
-    { labelKey: "twobedLink",   href: "/#rooms" },
-    { labelKey: "threebedLink", href: "/#rooms" },
+    { labelKey: "studioLink",   href: "/studio" },
+    { labelKey: "twobedLink",   href: "/2-bedroom" },
+    { labelKey: "threebedLink", href: "/3-bedroom" },
   ] as const;
 
   return (

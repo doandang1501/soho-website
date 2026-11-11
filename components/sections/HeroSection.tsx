@@ -167,7 +167,7 @@ export default function HeroSection() {
             }}
             className="
               inline-flex items-center gap-3
-              bg-[var(--color-gold)] text-[#111111]
+              bg-[#d4a836] text-[#000000]
               font-sans font-bold text-xs tracking-[0.18em] uppercase
               px-8 py-4
               transition-all duration-300
@@ -206,17 +206,23 @@ export default function HeroSection() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-center gap-2 mt-10"
+          className="flex items-center gap-1 mt-10 -ml-2"
         >
           {SLIDES.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-0.5 transition-all duration-500 ${
-                i === current ? "w-8 bg-[var(--color-gold)]" : "w-3 bg-[rgba(245,240,232,0.3)] hover:bg-[rgba(245,240,232,0.6)]"
-              }`}
+              className="p-2.5 flex items-center justify-center cursor-pointer group"
               aria-label={`Go to slide ${i + 1}`}
-            />
+            >
+              <span
+                className={`block h-1 transition-all duration-500 rounded-full ${
+                  i === current
+                    ? "w-8 bg-[var(--color-gold)]"
+                    : "w-4 bg-[rgba(245,240,232,0.35)] group-hover:bg-[rgba(245,240,232,0.7)]"
+                }`}
+              />
+            </button>
           ))}
         </motion.div>
 
