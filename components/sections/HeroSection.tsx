@@ -34,7 +34,12 @@ export default function HeroSection() {
   const t = useTranslations("hero");
 
   const [current,  setCurrent]  = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const next = useCallback(
     () => setCurrent((c) => (c + 1) % SLIDES.length),
@@ -58,27 +63,42 @@ export default function HeroSection() {
       aria-label="Hero section"
     >
       {/* ── Background Slideshow ─────────────────────────────────────────── */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={current}
-          variants={imgVariants}
-          initial="enter"
-          animate="active"
-          exit="exit"
-          className="absolute inset-0"
-        >
-          <Image
-            src={SLIDES[current].src}
-            alt={SLIDES[current].alt}
-            fill
-            priority={current === 0}
-            fetchPriority={current === 0 ? "high" : "auto"}
-            className="object-cover object-center"
-            sizes="100vw"
-            quality={current === 0 ? 90 : 75}
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* LCP Static Base Image (Instant First Paint, No JS Render Delay) */}
+      <div className="absolute inset-0">
+        <Image
+          src={SLIDES[0].src}
+          alt={SLIDES[0].alt}
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover object-center"
+          sizes="100vw"
+          quality={75}
+        />
+      </div>
+
+      {/* Animated transitions only when moving between slides after hydration */}
+      {hasMounted && current > 0 && (
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={current}
+            variants={imgVariants}
+            initial="enter"
+            animate="active"
+            exit="exit"
+            className="absolute inset-0"
+          >
+            <Image
+              src={SLIDES[current].src}
+              alt={SLIDES[current].alt}
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              quality={75}
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {/* ── Gradient overlays ────────────────────────────────────────────── */}
       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(22,23,27,0.38)] via-[rgba(22,23,27,0.18)] to-[rgba(22,23,27,0.78)]" />
@@ -147,8 +167,8 @@ export default function HeroSection() {
             }}
             className="
               inline-flex items-center gap-3
-              bg-[var(--color-gold)] text-[var(--color-charcoal)]
-              font-sans font-semibold text-xs tracking-[0.18em] uppercase
+              bg-[var(--color-gold)] text-[#111111]
+              font-sans font-bold text-xs tracking-[0.18em] uppercase
               px-8 py-4
               transition-all duration-300
               hover:bg-[var(--color-gold-light)] hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]
